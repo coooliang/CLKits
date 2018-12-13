@@ -81,7 +81,6 @@
 				A07A62ACDD0DA08A0ABF7598 /* Pods-CLKits.debug.xcconfig */,
 				752AC904E3F8FA24B0AF07F5 /* Pods-CLKits.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,12 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				9024A83221C1FA9F00475C50 /* UIButton+CLFaster.h */,
-				9024A83321C1FA9F00475C50 /* UIView+CLFaster.h */,
-				9024A83421C1FA9F00475C50 /* UILabel+CLFaster.h */,
-				9024A83521C1FA9F00475C50 /* UIViewCLFaster.h */,
-				9024A83621C1FA9F00475C50 /* UIView+CLFaster.m */,
 				9024A83721C1FA9F00475C50 /* UIButton+CLFaster.m */,
+				9024A83421C1FA9F00475C50 /* UILabel+CLFaster.h */,
 				9024A83821C1FA9F00475C50 /* UILabel+CLFaster.m */,
+				9024A83321C1FA9F00475C50 /* UIView+CLFaster.h */,
+				9024A83621C1FA9F00475C50 /* UIView+CLFaster.m */,
+				9024A83521C1FA9F00475C50 /* UIViewCLFaster.h */,
 			);
 			path = CLFaster;
 			sourceTree = "<group>";
@@ -158,8 +157,8 @@
 		9024A83E21C1FA9F00475C50 /* CLPopAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				9024A83F21C1FA9F00475C50 /* UIView+CLPopAnimation.m */,
 				9024A84021C1FA9F00475C50 /* UIView+CLPopAnimation.h */,
+				9024A83F21C1FA9F00475C50 /* UIView+CLPopAnimation.m */,
 			);
 			path = CLPopAnimation;
 			sourceTree = "<group>";

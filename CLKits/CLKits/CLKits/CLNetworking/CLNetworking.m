@@ -104,7 +104,7 @@ typedef NS_ENUM(NSInteger, CLNetworkingRequestType){
     NSError *error = NULL;
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [datas enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSString *fn = [NSString stringWithFormat:@"%@%lu",fileName,idx];
+            NSString *fn = [NSString stringWithFormat:@"%@%lu",fileName,(unsigned long)idx];
             [formData appendPartWithFileData:obj name:fn fileName:fn mimeType:@"multipart/form-data"];
         }];
     } error:&error];
