@@ -19,7 +19,7 @@ pod 'AFNetworking', '~> 3.2.1'
 
 -(void)postJson:(NSString *)url params:(NSDictionary * _Nullable)params successBlock:(void(^)(id result))successBlock failBlock:(void(^)(id result))failBlock;
 
--(void)upload:(NSString *)url data:(NSData *)data fileName:(NSString *)fileName parameters:(NSDictionary * _Nullable)params successBlock:(void(^)(id result))successBlock failBlock:(void(^)(id result))failBlock progressBlock:(void(^)(NSProgress *progress))progressBlock;
+-(void)upload:(NSString *)url datas:(NSArray *)datas fileName:(NSString *)fileName parameters:(NSDictionary * _Nullable)params successBlock:(void(^)(id result))successBlock failBlock:(void(^)(id result))failBlock progressBlock:(void(^)(NSProgress *progress))progressBlock;
 
 -(void)download:(NSString *)url fileName:(NSString *)fileName successBlock:(void(^)(NSURL *result))successBlock failBlock:(void(^)(NSError *result))failBlock progressBlock:(void(^)(NSProgress *progress))progressBlock;
 

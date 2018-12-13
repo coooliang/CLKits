@@ -147,8 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				9024A83A21C1FA9F00475C50 /* CLNetworking.h */,
-				9024A83B21C1FA9F00475C50 /* EWSHttpRequest.h */,
 				9024A83C21C1FA9F00475C50 /* CLNetworking.m */,
+				9024A83B21C1FA9F00475C50 /* EWSHttpRequest.h */,
 				9024A83D21C1FA9F00475C50 /* EWSHttpRequest.m */,
 			);
 			path = CLNetworking;

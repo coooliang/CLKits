@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = "coooliang"
   spec.platform     = :ios, "8.0"
-  spec.source       = { :git => "https://github.com/coooliang/CLKits.git", :commit => "d00bc82d0b441c3faebb35b5d0c0cea7cf769ca6" }
+  spec.source       = { :git => "https://github.com/coooliang/CLKits.git", :commit => "ec99b4327097338b134ca6a67ce2e2e7f9ac7a0e" }
   spec.source_files  = "CLKits/CLKits/CLKits/**/*.{h,m}"
   spec.requires_arc = true
   spec.frameworks = "Foundation","UIKit"
