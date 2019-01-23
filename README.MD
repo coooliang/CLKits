@@ -3,9 +3,9 @@
 ### CLNetworking:
 
 ```
-pod 'AFNetworking', '~> 3.2.1'
-```
+pod 'CLKits/CLNetworking', '~> 1.0.1'
 
+```
 ```
 @interface CLNetworking : NSObject
 
@@ -30,7 +30,7 @@ pod 'AFNetworking', '~> 3.2.1'
 
 ### CLPopAnimation:
 ```
-pod 'pop', '~> 1.0.12'
+pod 'CLKits/CLPopAnimation', '~> 1.0.1'
 ```
 ```
 
