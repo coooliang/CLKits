@@ -29,18 +29,18 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'CLFaster' do |ss|
-    ss.source_files = 'CLKits/CLFaster/**/*.{h,m}'
+    ss.source_files = 'Sources/CLFaster/**/*.{h,m}'
     ss.ios.frameworks = 'UIKit'
   end
 
   s.subspec 'CLNetworking' do |ss|
-    ss.source_files = 'CLKits/CLNetworking/**/*.{h,m}'
+    ss.source_files = 'Sources/CLNetworking/**/*.{h,m}'
     ss.dependency "AFNetworking", "~> 3.2.1"
     ss.ios.frameworks = 'AVFoundation'
   end
 
   s.subspec 'CLPopAnimation' do |ss|
-    ss.source_files = 'CLKits/CLPopAnimation/**/*.{h,m}'
+    ss.source_files = 'Sources/CLPopAnimation/**/*.{h,m}'
     ss.dependency "pop", "~> 1.0.12"
     ss.ios.frameworks = 'UIKit'
   end
