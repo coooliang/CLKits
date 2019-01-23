@@ -1,8 +1,8 @@
 //
-//  UILabel+CLFaster.h
-//  PopTest
+//  CLUIViewController.h
+//  CLKits
 //
-//  Created by chenliang on 23/11/2018.
+//  Created by 陈亮 on 2018/12/30.
 //  Copyright © 2018 chenl. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UILabel (CLFaster)
-
-
+@interface CLUIViewController : UIViewController
 
 @end
 

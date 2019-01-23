@@ -14,27 +14,21 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CLKits (1.0.1):
-    - CLKits/All (= 1.0.1)
-  - CLKits/All (1.0.1):
-    - AFNetworking (~> 3.2.1)
-    - pop (~> 1.0.12)
   - pop (1.0.12)
 
 DEPENDENCIES:
-  - CLKits (~> 1.0.1)
+  - AFNetworking (~> 3.2.1)
+  - pop (~> 1.0.12)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - CLKits
     - pop
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CLKits: 7f72cadabeea4a0fe031192ff1e9467ff537ff78
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
 
-PODFILE CHECKSUM: 7e2925edf23b30371c88a435ac8147d8443138c4
+PODFILE CHECKSUM: f7d3e8268b7aeb835401cfbe376dcd1af619cf76
 
 COCOAPODS: 1.5.3

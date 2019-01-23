@@ -15,6 +15,14 @@
 		9024A82A21C1FA6900475C50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A82921C1FA6900475C50 /* main.m */; };
 		9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84A21C1FAB900475C50 /* CLNetworkingViewController.m */; };
 		9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84D21C1FAB900475C50 /* CLPopingViewController.m */; };
+		BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0221F89D84005248B5 /* CLUIViewController.m */; };
+		BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0B21F89DDD005248B5 /* UIView+CLFaster.m */; };
+		BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0C21F89DDD005248B5 /* UIButton+CLFaster.m */; };
+		BA850C1B21F89DDD005248B5 /* UILabel+CLFaster.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0D21F89DDD005248B5 /* UILabel+CLFaster.m */; };
+		BA850C1C21F89DDD005248B5 /* CLNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C1121F89DDD005248B5 /* CLNetworking.m */; };
+		BA850C1D21F89DDD005248B5 /* EWSHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C1221F89DDD005248B5 /* EWSHttpRequest.m */; };
+		BA850C1E21F89DDD005248B5 /* CLCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C1521F89DDD005248B5 /* CLCircleProgress.m */; };
+		BA850C1F21F89DDD005248B5 /* UIView+CLPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C1721F89DDD005248B5 /* UIView+CLPopAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +42,23 @@
 		9024A84D21C1FAB900475C50 /* CLPopingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPopingViewController.m; sourceTree = "<group>"; };
 		9FDBF9F0FFE168A1B954F59E /* Pods-CLKits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLKits.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLKits/Pods-CLKits.release.xcconfig"; sourceTree = "<group>"; };
 		A737BD4D605BC371409D9C32 /* libPods-CLKits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLKits.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA850C0221F89D84005248B5 /* CLUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUIViewController.m; sourceTree = "<group>"; };
+		BA850C0321F89D84005248B5 /* CLUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUIViewController.h; sourceTree = "<group>"; };
+		BA850C0721F89DDD005248B5 /* UIButton+CLFaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLFaster.h"; sourceTree = "<group>"; };
+		BA850C0821F89DDD005248B5 /* UIView+CLFaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLFaster.h"; sourceTree = "<group>"; };
+		BA850C0921F89DDD005248B5 /* UILabel+CLFaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CLFaster.h"; sourceTree = "<group>"; };
+		BA850C0A21F89DDD005248B5 /* UIViewCLFaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewCLFaster.h; sourceTree = "<group>"; };
+		BA850C0B21F89DDD005248B5 /* UIView+CLFaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLFaster.m"; sourceTree = "<group>"; };
+		BA850C0C21F89DDD005248B5 /* UIButton+CLFaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLFaster.m"; sourceTree = "<group>"; };
+		BA850C0D21F89DDD005248B5 /* UILabel+CLFaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CLFaster.m"; sourceTree = "<group>"; };
+		BA850C0F21F89DDD005248B5 /* CLNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNetworking.h; sourceTree = "<group>"; };
+		BA850C1021F89DDD005248B5 /* EWSHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWSHttpRequest.h; sourceTree = "<group>"; };
+		BA850C1121F89DDD005248B5 /* CLNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNetworking.m; sourceTree = "<group>"; };
+		BA850C1221F89DDD005248B5 /* EWSHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWSHttpRequest.m; sourceTree = "<group>"; };
+		BA850C1421F89DDD005248B5 /* CLCircleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCircleProgress.h; sourceTree = "<group>"; };
+		BA850C1521F89DDD005248B5 /* CLCircleProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCircleProgress.m; sourceTree = "<group>"; };
+		BA850C1721F89DDD005248B5 /* UIView+CLPopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLPopAnimation.m"; sourceTree = "<group>"; };
+		BA850C1821F89DDD005248B5 /* UIView+CLPopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLPopAnimation.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +102,7 @@
 		9024A81921C1FA6800475C50 /* CLKits */ = {
 			isa = PBXGroup;
 			children = (
+				BA850C0521F89DDD005248B5 /* Sources */,
 				9024A84721C1FAB900475C50 /* test-ui */,
 				9024A81A21C1FA6800475C50 /* AppDelegate.h */,
 				9024A81B21C1FA6800475C50 /* AppDelegate.m */,
@@ -93,6 +119,7 @@
 		9024A84721C1FAB900475C50 /* test-ui */ = {
 			isa = PBXGroup;
 			children = (
+				BA850C0121F89D84005248B5 /* CLUI-demo */,
 				9024A84821C1FAB900475C50 /* CLNetworking-demo */,
 				9024A84B21C1FAB900475C50 /* CLPopAnimation-demo */,
 			);
@@ -115,6 +142,70 @@
 				9024A84D21C1FAB900475C50 /* CLPopingViewController.m */,
 			);
 			path = "CLPopAnimation-demo";
+			sourceTree = "<group>";
+		};
+		BA850C0121F89D84005248B5 /* CLUI-demo */ = {
+			isa = PBXGroup;
+			children = (
+				BA850C0221F89D84005248B5 /* CLUIViewController.m */,
+				BA850C0321F89D84005248B5 /* CLUIViewController.h */,
+			);
+			path = "CLUI-demo";
+			sourceTree = "<group>";
+		};
+		BA850C0521F89DDD005248B5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BA850C0621F89DDD005248B5 /* CLFaster */,
+				BA850C0E21F89DDD005248B5 /* CLNetworking */,
+				BA850C1321F89DDD005248B5 /* CLUI */,
+				BA850C1621F89DDD005248B5 /* CLPopAnimation */,
+			);
+			name = Sources;
+			path = ../../Sources;
+			sourceTree = "<group>";
+		};
+		BA850C0621F89DDD005248B5 /* CLFaster */ = {
+			isa = PBXGroup;
+			children = (
+				BA850C0721F89DDD005248B5 /* UIButton+CLFaster.h */,
+				BA850C0821F89DDD005248B5 /* UIView+CLFaster.h */,
+				BA850C0921F89DDD005248B5 /* UILabel+CLFaster.h */,
+				BA850C0A21F89DDD005248B5 /* UIViewCLFaster.h */,
+				BA850C0B21F89DDD005248B5 /* UIView+CLFaster.m */,
+				BA850C0C21F89DDD005248B5 /* UIButton+CLFaster.m */,
+				BA850C0D21F89DDD005248B5 /* UILabel+CLFaster.m */,
+			);
+			path = CLFaster;
+			sourceTree = "<group>";
+		};
+		BA850C0E21F89DDD005248B5 /* CLNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				BA850C0F21F89DDD005248B5 /* CLNetworking.h */,
+				BA850C1021F89DDD005248B5 /* EWSHttpRequest.h */,
+				BA850C1121F89DDD005248B5 /* CLNetworking.m */,
+				BA850C1221F89DDD005248B5 /* EWSHttpRequest.m */,
+			);
+			path = CLNetworking;
+			sourceTree = "<group>";
+		};
+		BA850C1321F89DDD005248B5 /* CLUI */ = {
+			isa = PBXGroup;
+			children = (
+				BA850C1421F89DDD005248B5 /* CLCircleProgress.h */,
+				BA850C1521F89DDD005248B5 /* CLCircleProgress.m */,
+			);
+			path = CLUI;
+			sourceTree = "<group>";
+		};
+		BA850C1621F89DDD005248B5 /* CLPopAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				BA850C1721F89DDD005248B5 /* UIView+CLPopAnimation.m */,
+				BA850C1821F89DDD005248B5 /* UIView+CLPopAnimation.h */,
+			);
+			path = CLPopAnimation;
 			sourceTree = "<group>";
 		};
 		CBCF55F8E0109B516B196A2D /* Pods */ = {
@@ -222,10 +313,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9024A81F21C1FA6800475C50 /* ViewController.m in Sources */,
+				BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */,
 				9024A82A21C1FA6900475C50 /* main.m in Sources */,
 				9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
+				BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */,
+				BA850C1C21F89DDD005248B5 /* CLNetworking.m in Sources */,
 				9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */,
+				BA850C1B21F89DDD005248B5 /* UILabel+CLFaster.m in Sources */,
+				BA850C1F21F89DDD005248B5 /* UIView+CLPopAnimation.m in Sources */,
+				BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */,
+				BA850C1D21F89DDD005248B5 /* EWSHttpRequest.m in Sources */,
+				BA850C1E21F89DDD005248B5 /* CLCircleProgress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
