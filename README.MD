@@ -1,4 +1,17 @@
-#### this kit just save your time
+# this kit just save your time
+
+###Target Support iOS 8
+
+###You can pod install with cocoapods
+
+```
+pod 'CLKits', '~> 1.0.1'
+	or   
+pod 'CLKits/CLFaster', '~> 1.0.1'
+pod 'CLKits/CLNetworking', '~> 1.0.1'
+pod 'CLKits/CLPopAnimation', '~> 1.0.1'
+
+```
 
 ### CLNetworking:
 
