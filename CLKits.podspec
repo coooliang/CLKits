@@ -18,30 +18,31 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.ios.deployment_target = '8.0'
-  s.ios.frameworks = 'AVFoundation', 'UIKit'
   s.default_subspec = 'All'
-  
-  s.subspec 'All' do |ss|
-    ss.source_files = 'Sources/**/*.{h,m}'
-    ss.dependency "AFNetworking", "~> 3.2.1"
-    ss.dependency "pop", "~> 1.0.12"
+
+  s.subspec 'All' do |all|
+    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}'
+    all.dependency "AFNetworking", "~> 3.2.1"
+    all.dependency "pop", "~> 1.0.12"
+    all.ios.frameworks = 'AVFoundation', 'UIKit'
   end
 
+
   s.subspec 'CLFaster' do |ss|
-    ss.dependency 'CLKits/CLFaster'
     ss.source_files = 'CLKits/CLFaster/**/*.{h,m}'
+    ss.ios.frameworks = 'UIKit'
   end
 
   s.subspec 'CLNetworking' do |ss|
-    ss.dependency 'CLKits/CLNetworking'
     ss.source_files = 'CLKits/CLNetworking/**/*.{h,m}'
     ss.dependency "AFNetworking", "~> 3.2.1"
+    ss.ios.frameworks = 'AVFoundation'
   end
 
   s.subspec 'CLPopAnimation' do |ss|
-    ss.dependency 'CLKits/CLPopAnimation'
     ss.source_files = 'CLKits/CLPopAnimation/**/*.{h,m}'
     ss.dependency "pop", "~> 1.0.12"
+    ss.ios.frameworks = 'UIKit'
   end
 
 end
