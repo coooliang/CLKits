@@ -6,20 +6,42 @@
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
-Pod::Spec.new do |spec|
-  spec.name         = "CLKits"
-  spec.version      = "1.0.0"
-  spec.summary      = "CLKit just save your time"
-  spec.homepage     = "https://github.com/coooliang/CLKits"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author       = "coooliang"
-  spec.platform     = :ios, "8.0"
-  spec.source       = { :git => "https://github.com/coooliang/CLKits.git", :commit => "ec99b4327097338b134ca6a67ce2e2e7f9ac7a0e" }
-  spec.source_files  = "CLKits/CLKits/CLKits/**/*.{h,m}"
-  spec.requires_arc = true
-  spec.frameworks = "Foundation","UIKit"
-  spec.dependency "AFNetworking", "~> 3.2.1"
-  spec.dependency "pop", "~> 1.0.12"
+Pod::Spec.new do |s|
+  s.name         = "CLKits"
+  s.version      = "1.0.1"
+  s.summary      = "CLKit just save your time"
+  s.homepage     = "https://github.com/coooliang/CLKits"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.author       = "coooliang"
+  s.platform     = :ios, "8.0"
+  s.source       = { :git => "https://github.com/coooliang/CLKits.git", :tag => "#{s.version}" }
+  s.requires_arc = true
 
+  s.ios.deployment_target = '8.0'
+  s.ios.frameworks = 'AVFoundation', 'UIKit'
+  s.default_subspec = 'All'
+  
+  s.subspec 'All' do |ss|
+    ss.source_files = 'Sources/**/*.{h,m}'
+    ss.dependency "AFNetworking", "~> 3.2.1"
+    ss.dependency "pop", "~> 1.0.12"
+  end
+
+  s.subspec 'CLFaster' do |ss|
+    ss.dependency 'CLKits/CLFaster'
+    ss.source_files = 'CLKits/CLFaster/**/*.{h,m}'
+  end
+
+  s.subspec 'CLNetworking' do |ss|
+    ss.dependency 'CLKits/CLNetworking'
+    ss.source_files = 'CLKits/CLNetworking/**/*.{h,m}'
+    ss.dependency "AFNetworking", "~> 3.2.1"
+  end
+
+  s.subspec 'CLPopAnimation' do |ss|
+    ss.dependency 'CLKits/CLPopAnimation'
+    ss.source_files = 'CLKits/CLPopAnimation/**/*.{h,m}'
+    ss.dependency "pop", "~> 1.0.12"
+  end
 
 end
