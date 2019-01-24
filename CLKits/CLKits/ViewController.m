@@ -10,6 +10,7 @@
 
 #import "CLPopingViewController.h"
 #import "CLNetworkingViewController.h"
+#import "CLDBViewController.h"
 
 @interface ViewController ()
 
@@ -26,6 +27,10 @@
     UIButton *getJsonButton = [self createButton:@"CLNetworking" frame:CGRectMake(20, 180, 150, 40)];
     [getJsonButton addTarget:self action:@selector(CLNetworking) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:getJsonButton];
+    
+    UIButton *dbButton = [self createButton:@"CLDB" frame:CGRectMake(20, 260, 150, 40)];
+    [dbButton addTarget:self action:@selector(CLDB) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:dbButton];
 }
 
 -(UIButton *)createButton:(NSString *)title frame:(CGRect)frame{
@@ -45,5 +50,9 @@
     [self.navigationController pushViewController:net animated:YES];
 }
 
+-(void)CLDB{
+    CLDBViewController *db = [[CLDBViewController alloc]init];
+    [self.navigationController pushViewController:db animated:YES];
+}
 
 @end
