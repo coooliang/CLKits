@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CLKits"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "CLKit just save your time"
   s.homepage     = "https://github.com/coooliang/CLKits"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -21,9 +21,10 @@ Pod::Spec.new do |s|
   s.default_subspec = 'All'
 
   s.subspec 'All' do |all|
-    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}'
+    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}'
     all.dependency "AFNetworking", "~> 3.2.1"
     all.dependency "pop", "~> 1.0.12"
+    all.dependency "FMDB", "~> 2.7.5"
     all.ios.frameworks = 'AVFoundation', 'UIKit'
   end
 
@@ -45,4 +46,9 @@ Pod::Spec.new do |s|
     ss.ios.frameworks = 'UIKit'
   end
 
+  s.subspec 'JKDBModel' do |ss|
+    ss.source_files = 'Sources/JKDBModel/**/*.{h,m}'
+    ss.dependency "FMDB", "~> 2.7.5"
+    ss.ios.frameworks = 'AVFoundation'
+  end
 end

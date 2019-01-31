@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     User *user = [User new];
-    user.userName = @"hello";
+    user.pk = 2;
+    user.userName = @"hello2";
     [user saveOrUpdate];
     
     NSLog(@"users = %@",[User findAll]);
