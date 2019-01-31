@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04BB729421F98F3B009E7E9C /* NSObject+CLDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB729321F98F3B009E7E9C /* NSObject+CLDB.m */; };
 		04BB729821F99037009E7E9C /* CLDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB729721F99037009E7E9C /* CLDBViewController.m */; };
 		04BB729B21F99065009E7E9C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB729A21F99065009E7E9C /* User.m */; };
-		04BB729F21F995BC009E7E9C /* XiaoChen.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB729E21F995BC009E7E9C /* XiaoChen.m */; };
 		4231D09E5CCFD058D14C4D43 /* libPods-CLKits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A737BD4D605BC371409D9C32 /* libPods-CLKits.a */; };
 		9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A81B21C1FA6800475C50 /* AppDelegate.m */; };
 		9024A81F21C1FA6800475C50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A81E21C1FA6800475C50 /* ViewController.m */; };
@@ -19,6 +17,8 @@
 		9024A82A21C1FA6900475C50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A82921C1FA6900475C50 /* main.m */; };
 		9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84A21C1FAB900475C50 /* CLNetworkingViewController.m */; };
 		9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84D21C1FAB900475C50 /* CLPopingViewController.m */; };
+		BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B722034BE600C9D7AE /* JKDBHelper.m */; };
+		BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B822034BE600C9D7AE /* JKDBModel.m */; };
 		BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0221F89D84005248B5 /* CLUIViewController.m */; };
 		BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0B21F89DDD005248B5 /* UIView+CLFaster.m */; };
 		BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0C21F89DDD005248B5 /* UIButton+CLFaster.m */; };
@@ -30,15 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04BB729221F98F3B009E7E9C /* NSObject+CLDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CLDB.h"; sourceTree = "<group>"; };
-		04BB729321F98F3B009E7E9C /* NSObject+CLDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CLDB.m"; sourceTree = "<group>"; };
 		04BB729621F99037009E7E9C /* CLDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDBViewController.h; sourceTree = "<group>"; };
 		04BB729721F99037009E7E9C /* CLDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDBViewController.m; sourceTree = "<group>"; };
 		04BB729921F99065009E7E9C /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		04BB729A21F99065009E7E9C /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		04BB729C21F99565009E7E9C /* CLDBProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDBProtocol.h; sourceTree = "<group>"; };
-		04BB729D21F995BC009E7E9C /* XiaoChen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XiaoChen.h; sourceTree = "<group>"; };
-		04BB729E21F995BC009E7E9C /* XiaoChen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaoChen.m; sourceTree = "<group>"; };
 		519DF7D04BF0E33D5ACA5B27 /* Pods-CLKits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLKits.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLKits/Pods-CLKits.debug.xcconfig"; sourceTree = "<group>"; };
 		9024A81721C1FA6800475C50 /* CLKits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLKits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9024A81A21C1FA6800475C50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,6 +50,10 @@
 		9024A84D21C1FAB900475C50 /* CLPopingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPopingViewController.m; sourceTree = "<group>"; };
 		9FDBF9F0FFE168A1B954F59E /* Pods-CLKits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLKits.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLKits/Pods-CLKits.release.xcconfig"; sourceTree = "<group>"; };
 		A737BD4D605BC371409D9C32 /* libPods-CLKits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLKits.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA15E2B622034BE600C9D7AE /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
+		BA15E2B722034BE600C9D7AE /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
+		BA15E2B822034BE600C9D7AE /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
+		BA15E2B922034BE600C9D7AE /* JKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBHelper.h; sourceTree = "<group>"; };
 		BA850C0221F89D84005248B5 /* CLUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUIViewController.m; sourceTree = "<group>"; };
 		BA850C0321F89D84005248B5 /* CLUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUIViewController.h; sourceTree = "<group>"; };
 		BA850C0721F89DDD005248B5 /* UIButton+CLFaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLFaster.h"; sourceTree = "<group>"; };
@@ -86,14 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04BB729121F9615A009E7E9C /* CLDB */ = {
+		04BB729121F9615A009E7E9C /* JKDBModel */ = {
 			isa = PBXGroup;
 			children = (
-				04BB729221F98F3B009E7E9C /* NSObject+CLDB.h */,
-				04BB729321F98F3B009E7E9C /* NSObject+CLDB.m */,
-				04BB729C21F99565009E7E9C /* CLDBProtocol.h */,
+				BA15E2B922034BE600C9D7AE /* JKDBHelper.h */,
+				BA15E2B722034BE600C9D7AE /* JKDBHelper.m */,
+				BA15E2B622034BE600C9D7AE /* JKDBModel.h */,
+				BA15E2B822034BE600C9D7AE /* JKDBModel.m */,
 			);
-			path = CLDB;
+			path = JKDBModel;
 			sourceTree = "<group>";
 		};
 		04BB729521F9900C009E7E9C /* CLDB-demo */ = {
@@ -103,8 +103,6 @@
 				04BB729721F99037009E7E9C /* CLDBViewController.m */,
 				04BB729921F99065009E7E9C /* User.h */,
 				04BB729A21F99065009E7E9C /* User.m */,
-				04BB729D21F995BC009E7E9C /* XiaoChen.h */,
-				04BB729E21F995BC009E7E9C /* XiaoChen.m */,
 			);
 			path = "CLDB-demo";
 			sourceTree = "<group>";
@@ -193,7 +191,7 @@
 		BA850C0521F89DDD005248B5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				04BB729121F9615A009E7E9C /* CLDB */,
+				04BB729121F9615A009E7E9C /* JKDBModel */,
 				BA850C0621F89DDD005248B5 /* CLFaster */,
 				BA850C0E21F89DDD005248B5 /* CLNetworking */,
 				BA850C1321F89DDD005248B5 /* CLUI */,
@@ -354,18 +352,18 @@
 				9024A81F21C1FA6800475C50 /* ViewController.m in Sources */,
 				04BB729821F99037009E7E9C /* CLDBViewController.m in Sources */,
 				BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */,
-				04BB729421F98F3B009E7E9C /* NSObject+CLDB.m in Sources */,
 				9024A82A21C1FA6900475C50 /* main.m in Sources */,
 				9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
+				BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */,
 				BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */,
 				BA850C1C21F89DDD005248B5 /* CLNetworking.m in Sources */,
 				9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */,
 				BA850C1B21F89DDD005248B5 /* UILabel+CLFaster.m in Sources */,
 				BA850C1F21F89DDD005248B5 /* UIView+CLPopAnimation.m in Sources */,
 				BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */,
+				BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */,
 				BA850C1D21F89DDD005248B5 /* EWSHttpRequest.m in Sources */,
-				04BB729F21F995BC009E7E9C /* XiaoChen.m in Sources */,
 				BA850C1E21F89DDD005248B5 /* CLCircleProgress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

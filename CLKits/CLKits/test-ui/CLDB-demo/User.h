@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JKDBModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User : NSObject
+@interface User : JKDBModel
 
-@property(nonatomic,strong)NSString *nid;
+@property(nonatomic,strong)NSString *userName;
 
 @end
 

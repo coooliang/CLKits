@@ -8,7 +8,7 @@
 
 #import "CLDBViewController.h"
 #import "User.h"
-#import "NSObject+CLDB.h"
+
 
 @interface CLDBViewController ()
 
@@ -18,11 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    User *user = [User new];
+    user.userName = @"hello";
+    [user saveOrUpdate];
     
-    [User CL_objectForId:@"1"];
-    
-    User *u = [[User alloc]init];
-    [u CL_save];
+    NSLog(@"users = %@",[User findAll]);
 }
 
 @end
