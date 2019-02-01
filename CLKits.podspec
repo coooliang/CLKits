@@ -52,3 +52,9 @@ Pod::Spec.new do |s|
     ss.ios.frameworks = 'AVFoundation'
   end
 end
+
+# https://blog.csdn.net/coooliang/article/details/84869937
+
+# pod trunk push --allow-warnings --use-libraries
+# rm ~/Library/Caches/CocoaPods/search_index.json
+# pod search CLKits
