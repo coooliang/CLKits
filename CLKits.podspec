@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name         = "CLKits"
   s.version      = "1.0.2"
-  s.summary      = "CLKit just save your time"
+  s.summary      = "CLKits framework just save your time. deployment target ios 8.0"
   s.homepage     = "https://github.com/coooliang/CLKits"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = "coooliang"
@@ -51,6 +51,9 @@ Pod::Spec.new do |s|
     ss.dependency "FMDB", "~> 2.7.5"
     ss.ios.frameworks = 'AVFoundation'
   end
+
+  
+
 end
 
 # https://blog.csdn.net/coooliang/article/details/84869937

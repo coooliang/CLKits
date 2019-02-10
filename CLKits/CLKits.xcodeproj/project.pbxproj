@@ -19,6 +19,8 @@
 		9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84D21C1FAB900475C50 /* CLPopingViewController.m */; };
 		BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B722034BE600C9D7AE /* JKDBHelper.m */; };
 		BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B822034BE600C9D7AE /* JKDBModel.m */; };
+		BA15E2E42204807E00C9D7AE /* CLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2E32204807E00C9D7AE /* CLAlertView.m */; };
+		BA15E2E72204880D00C9D7AE /* CLActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2E62204880D00C9D7AE /* CLActionSheet.m */; };
 		BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0221F89D84005248B5 /* CLUIViewController.m */; };
 		BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0B21F89DDD005248B5 /* UIView+CLFaster.m */; };
 		BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0C21F89DDD005248B5 /* UIButton+CLFaster.m */; };
@@ -54,6 +56,10 @@
 		BA15E2B722034BE600C9D7AE /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
 		BA15E2B822034BE600C9D7AE /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
 		BA15E2B922034BE600C9D7AE /* JKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBHelper.h; sourceTree = "<group>"; };
+		BA15E2E22204807E00C9D7AE /* CLAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAlertView.h; sourceTree = "<group>"; };
+		BA15E2E32204807E00C9D7AE /* CLAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAlertView.m; sourceTree = "<group>"; };
+		BA15E2E52204880D00C9D7AE /* CLActionSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLActionSheet.h; sourceTree = "<group>"; };
+		BA15E2E62204880D00C9D7AE /* CLActionSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLActionSheet.m; sourceTree = "<group>"; };
 		BA850C0221F89D84005248B5 /* CLUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUIViewController.m; sourceTree = "<group>"; };
 		BA850C0321F89D84005248B5 /* CLUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUIViewController.h; sourceTree = "<group>"; };
 		BA850C0721F89DDD005248B5 /* UIButton+CLFaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLFaster.h"; sourceTree = "<group>"; };
@@ -179,11 +185,45 @@
 			path = "CLPopAnimation-demo";
 			sourceTree = "<group>";
 		};
+		BA15E2DE22047B1D00C9D7AE /* CLProgress */ = {
+			isa = PBXGroup;
+			children = (
+				BA850C1421F89DDD005248B5 /* CLCircleProgress.h */,
+				BA850C1521F89DDD005248B5 /* CLCircleProgress.m */,
+			);
+			path = CLProgress;
+			sourceTree = "<group>";
+		};
+		BA15E2DF22047F1C00C9D7AE /* CLHUD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CLHUD;
+			sourceTree = "<group>";
+		};
+		BA15E2E02204800F00C9D7AE /* CLActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				BA15E2E52204880D00C9D7AE /* CLActionSheet.h */,
+				BA15E2E62204880D00C9D7AE /* CLActionSheet.m */,
+			);
+			path = CLActionSheet;
+			sourceTree = "<group>";
+		};
+		BA15E2E12204804100C9D7AE /* CLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				BA15E2E22204807E00C9D7AE /* CLAlertView.h */,
+				BA15E2E32204807E00C9D7AE /* CLAlertView.m */,
+			);
+			path = CLAlertView;
+			sourceTree = "<group>";
+		};
 		BA850C0121F89D84005248B5 /* CLUI-demo */ = {
 			isa = PBXGroup;
 			children = (
-				BA850C0221F89D84005248B5 /* CLUIViewController.m */,
 				BA850C0321F89D84005248B5 /* CLUIViewController.h */,
+				BA850C0221F89D84005248B5 /* CLUIViewController.m */,
 			);
 			path = "CLUI-demo";
 			sourceTree = "<group>";
@@ -219,8 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				BA850C0F21F89DDD005248B5 /* CLNetworking.h */,
-				BA850C1021F89DDD005248B5 /* EWSHttpRequest.h */,
 				BA850C1121F89DDD005248B5 /* CLNetworking.m */,
+				BA850C1021F89DDD005248B5 /* EWSHttpRequest.h */,
 				BA850C1221F89DDD005248B5 /* EWSHttpRequest.m */,
 			);
 			path = CLNetworking;
@@ -229,8 +269,10 @@
 		BA850C1321F89DDD005248B5 /* CLUI */ = {
 			isa = PBXGroup;
 			children = (
-				BA850C1421F89DDD005248B5 /* CLCircleProgress.h */,
-				BA850C1521F89DDD005248B5 /* CLCircleProgress.m */,
+				BA15E2E12204804100C9D7AE /* CLAlertView */,
+				BA15E2E02204800F00C9D7AE /* CLActionSheet */,
+				BA15E2DF22047F1C00C9D7AE /* CLHUD */,
+				BA15E2DE22047B1D00C9D7AE /* CLProgress */,
 			);
 			path = CLUI;
 			sourceTree = "<group>";
@@ -350,11 +392,13 @@
 			files = (
 				04BB729B21F99065009E7E9C /* User.m in Sources */,
 				9024A81F21C1FA6800475C50 /* ViewController.m in Sources */,
+				BA15E2E42204807E00C9D7AE /* CLAlertView.m in Sources */,
 				04BB729821F99037009E7E9C /* CLDBViewController.m in Sources */,
 				BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */,
 				9024A82A21C1FA6900475C50 /* main.m in Sources */,
 				9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
+				BA15E2E72204880D00C9D7AE /* CLActionSheet.m in Sources */,
 				BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */,
 				BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */,
 				BA850C1C21F89DDD005248B5 /* CLNetworking.m in Sources */,

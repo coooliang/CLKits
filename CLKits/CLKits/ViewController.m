@@ -11,6 +11,7 @@
 #import "CLPopingViewController.h"
 #import "CLNetworkingViewController.h"
 #import "CLDBViewController.h"
+#import "CLUIViewController.h"
 
 @interface ViewController ()
 
@@ -31,6 +32,10 @@
     UIButton *dbButton = [self createButton:@"CLDB" frame:CGRectMake(20, 260, 150, 40)];
     [dbButton addTarget:self action:@selector(CLDB) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:dbButton];
+    
+    UIButton *uiButton = [self createButton:@"CLUI" frame:CGRectMake(20, 320, 150, 40)];
+    [uiButton addTarget:self action:@selector(CLUI) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:uiButton];
 }
 
 -(UIButton *)createButton:(NSString *)title frame:(CGRect)frame{
@@ -53,6 +58,11 @@
 -(void)CLDB{
     CLDBViewController *db = [[CLDBViewController alloc]init];
     [self.navigationController pushViewController:db animated:YES];
+}
+
+-(void)CLUI{
+    CLUIViewController *ui = [[CLUIViewController alloc]init];
+    [self.navigationController pushViewController:ui animated:YES];
 }
 
 @end

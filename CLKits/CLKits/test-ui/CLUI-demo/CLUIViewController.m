@@ -10,6 +10,9 @@
 #import "UIViewCLFaster.h"
 #import "CLCircleProgress.h"
 
+#import "CLAlertView.h"
+#import "CLActionSheet.h"
+
 @interface CLUIViewController ()
 
 @property(nonatomic,strong)UIButton *button;
@@ -36,6 +39,11 @@
     CLCircleProgress *c2 = [[CLCircleProgress alloc]initWithFrame:CGRectMake(150, 250, 100, 100)];
     [self.view addSubview:c2];
     [c2 show];
+    
+    UIButton *button1 = [self createButton:CGRectMake(50, 200, 100, 50) title:@"alert"];
+    [button1 addTarget:self action:@selector(click1) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button1];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -49,6 +57,12 @@
     [button setBorder:1 color:[UIColor blackColor]];
     [self.view addSubview:button];
     return button;
+}
+
+-(void)click1{
+    [[CLActionSheet new]show:@[@"hello",@"world",@"cancel"] block:^(int index) {
+        NSLog(@"%d",index);
+    }];
 }
 
 @end
