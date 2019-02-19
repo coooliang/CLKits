@@ -17,6 +17,11 @@
 		9024A82A21C1FA6900475C50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A82921C1FA6900475C50 /* main.m */; };
 		9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84A21C1FAB900475C50 /* CLNetworkingViewController.m */; };
 		9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84D21C1FAB900475C50 /* CLPopingViewController.m */; };
+		B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B41E2D2F221A5B5900DD5845 /* CLHUD.m */; };
+		B47324CF221BA318000361CA /* ColorfulActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47324CB221BA318000361CA /* ColorfulActivityView.m */; };
+		B47324D0221BA318000361CA /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47324CE221BA318000361CA /* ActivityIndicatorView.m */; };
+		B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = B47324D4221BDC2A000361CA /* ViewMaskAnimatedCircle.png */; };
+		B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */ = {isa = PBXBuildFile; fileRef = B47324D5221BDC2A000361CA /* ViewMaskCenter.png */; };
 		BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B722034BE600C9D7AE /* JKDBHelper.m */; };
 		BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B822034BE600C9D7AE /* JKDBModel.m */; };
 		BA15E2E42204807E00C9D7AE /* CLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2E32204807E00C9D7AE /* CLAlertView.m */; };
@@ -52,6 +57,14 @@
 		9024A84D21C1FAB900475C50 /* CLPopingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPopingViewController.m; sourceTree = "<group>"; };
 		9FDBF9F0FFE168A1B954F59E /* Pods-CLKits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLKits.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLKits/Pods-CLKits.release.xcconfig"; sourceTree = "<group>"; };
 		A737BD4D605BC371409D9C32 /* libPods-CLKits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLKits.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41E2D2E221A5B5900DD5845 /* CLHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLHUD.h; sourceTree = "<group>"; };
+		B41E2D2F221A5B5900DD5845 /* CLHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLHUD.m; sourceTree = "<group>"; };
+		B47324CB221BA318000361CA /* ColorfulActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorfulActivityView.m; sourceTree = "<group>"; };
+		B47324CC221BA318000361CA /* ColorfulActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorfulActivityView.h; sourceTree = "<group>"; };
+		B47324CD221BA318000361CA /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
+		B47324CE221BA318000361CA /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorView.m; sourceTree = "<group>"; };
+		B47324D4221BDC2A000361CA /* ViewMaskAnimatedCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ViewMaskAnimatedCircle.png; sourceTree = "<group>"; };
+		B47324D5221BDC2A000361CA /* ViewMaskCenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ViewMaskCenter.png; sourceTree = "<group>"; };
 		BA15E2B622034BE600C9D7AE /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
 		BA15E2B722034BE600C9D7AE /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
 		BA15E2B822034BE600C9D7AE /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
@@ -185,6 +198,36 @@
 			path = "CLPopAnimation-demo";
 			sourceTree = "<group>";
 		};
+		B41E2D2D221A5B3200DD5845 /* CLHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B41E2D2E221A5B5900DD5845 /* CLHUD.h */,
+				B41E2D2F221A5B5900DD5845 /* CLHUD.m */,
+			);
+			path = CLHUD;
+			sourceTree = "<group>";
+		};
+		B47324CA221BA29E000361CA /* CLProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B47324CD221BA318000361CA /* ActivityIndicatorView.h */,
+				B47324CE221BA318000361CA /* ActivityIndicatorView.m */,
+				B47324CC221BA318000361CA /* ColorfulActivityView.h */,
+				B47324CB221BA318000361CA /* ColorfulActivityView.m */,
+				B47324D8221BDC3C000361CA /* resources */,
+			);
+			path = CLProgressHUD;
+			sourceTree = "<group>";
+		};
+		B47324D8221BDC3C000361CA /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				B47324D4221BDC2A000361CA /* ViewMaskAnimatedCircle.png */,
+				B47324D5221BDC2A000361CA /* ViewMaskCenter.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		BA15E2DE22047B1D00C9D7AE /* CLProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,13 +235,6 @@
 				BA850C1521F89DDD005248B5 /* CLCircleProgress.m */,
 			);
 			path = CLProgress;
-			sourceTree = "<group>";
-		};
-		BA15E2DF22047F1C00C9D7AE /* CLHUD */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CLHUD;
 			sourceTree = "<group>";
 		};
 		BA15E2E02204800F00C9D7AE /* CLActionSheet */ = {
@@ -269,9 +305,10 @@
 		BA850C1321F89DDD005248B5 /* CLUI */ = {
 			isa = PBXGroup;
 			children = (
+				B47324CA221BA29E000361CA /* CLProgressHUD */,
+				B41E2D2D221A5B3200DD5845 /* CLHUD */,
 				BA15E2E12204804100C9D7AE /* CLAlertView */,
 				BA15E2E02204800F00C9D7AE /* CLActionSheet */,
-				BA15E2DF22047F1C00C9D7AE /* CLHUD */,
 				BA15E2DE22047B1D00C9D7AE /* CLProgress */,
 			);
 			path = CLUI;
@@ -354,6 +391,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9024A82721C1FA6900475C50 /* LaunchScreen.storyboard in Resources */,
+				B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */,
+				B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */,
 				9024A82421C1FA6900475C50 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,9 +436,12 @@
 				BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */,
 				9024A82A21C1FA6900475C50 /* main.m in Sources */,
 				9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */,
+				B47324CF221BA318000361CA /* ColorfulActivityView.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
+				B47324D0221BA318000361CA /* ActivityIndicatorView.m in Sources */,
 				BA15E2E72204880D00C9D7AE /* CLActionSheet.m in Sources */,
 				BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */,
+				B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */,
 				BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */,
 				BA850C1C21F89DDD005248B5 /* CLNetworking.m in Sources */,
 				9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */,

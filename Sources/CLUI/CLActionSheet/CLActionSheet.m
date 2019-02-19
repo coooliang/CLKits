@@ -12,13 +12,14 @@
 typedef void (^CLAlertViewBlock)(int index);
 
 @implementation CLActionSheet{
-    CLAlertViewBlock _alertClickBlock;
+    UIAlertController *_alertController;
 }
 
 -(void)show:(NSArray *)params block:(void(^)(int index))block{
     NSParameterAssert(params);
-    _alertClickBlock = block;
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    _alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    _alertController.modalInPopover = NO;
     for (int index=0; index<params.count; index++) {
         int style = UIAlertActionStyleDefault;
         if (index == params.count-1) {
@@ -29,9 +30,13 @@ typedef void (^CLAlertViewBlock)(int index);
                 block(index);
             }
         }];
-        [alertController addAction:alertAction];
+        [_alertController addAction:alertAction];
     }
+
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:_alertController animated:YES completion:^{
+        
+    }];
     
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
+
 @end

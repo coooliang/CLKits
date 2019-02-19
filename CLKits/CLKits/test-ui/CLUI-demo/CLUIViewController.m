@@ -12,6 +12,7 @@
 
 #import "CLAlertView.h"
 #import "CLActionSheet.h"
+#import "CLHUD.h"
 
 @interface CLUIViewController ()
 
@@ -44,6 +45,13 @@
     [button1 addTarget:self action:@selector(click1) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
     
+    UIButton *button2 = [self createButton:CGRectMake(50, 260, 100, 50) title:@"hud"];
+    [button2 addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button2];
+    
+    UIButton *button3 = [self createButton:CGRectMake(50, 320, 100, 50) title:@"mask"];
+    [button3 addTarget:self action:@selector(click3) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button3];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -63,6 +71,23 @@
     [[CLActionSheet new]show:@[@"hello",@"world",@"cancel"] block:^(int index) {
         NSLog(@"%d",index);
     }];
+}
+
+-(void)click2{
+    [CLHUD showProgressHUDInView:self.view];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hideProgress) userInfo:nil repeats:NO];
+}
+-(void)hideProgress{
+    [CLHUD hideProgressHUD];
+}
+
+
+-(void)click3{
+    [CLHUD showProgressHUDInView:self.view];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hideMask) userInfo:nil repeats:NO];
+}
+-(void)hideMask{
+    [CLHUD hideMask];
 }
 
 @end

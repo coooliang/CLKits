@@ -14,20 +14,10 @@ typedef void (^CLAlertViewBlock)(int index);
     CLAlertViewBlock _alertClickBlock;
 }
 
--(void)show:(NSString *)title message:(NSString *)message buttons:(NSArray *)params block:(void(^)(int index))block{
+-(void)showInView:(UIView *)view title:(NSString *)title message:(NSString *)message buttons:(NSArray *)params block:(void(^)(int index))block{
     NSParameterAssert(params);
     _alertClickBlock = block;
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    for (int index=0; index<params.count; index++) {
-        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:params[index] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            if (block) {
-                block(index);
-            }
-        }];
-        [alertController addAction:alertAction];
-    }
     
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

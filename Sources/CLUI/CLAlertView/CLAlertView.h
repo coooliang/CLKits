@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    CLSystemAlert,
+    CLCustomAlert,
+    SCLAlertView,
+} CLAlertViewType;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CLAlertView : NSObject
 
--(void)show:(NSString *)title message:(NSString *)message buttons:(NSArray *)params block:(void(^)(int index))block;
+-(UIView *)showInView:(UIView *)view title:(NSString *)title message:(NSString *)message buttons:(NSArray *)params block:(void(^)(int index))block;
 
 @end
 
