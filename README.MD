@@ -48,7 +48,6 @@ fork with: [JKDBModel](https://github.com/Joker-King/JKDBModel)
 
 ```
 pod 'CLKits/JKDBModel', '~> 1.0.4'
-
 ```
 
 ```
