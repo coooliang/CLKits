@@ -5,19 +5,78 @@
 ###You can pod install with cocoapods
 
 ```
-pod 'CLKits', '~> 1.0.2'
+pod 'CLKits', '~> 1.0.4'
 	or   
-pod 'CLKits/CLFaster', '~> 1.0.2'
-pod 'CLKits/CLNetworking', '~> 1.0.2'
-pod 'CLKits/CLPopAnimation', '~> 1.0.2'
-pod 'CLKits/JKDBModel', '~> 1.0.2'
+pod 'CLKits/CLFaster', '~> 1.0.4'
+pod 'CLKits/CLNetworking', '~> 1.0.4'
+pod 'CLKits/CLPopAnimation', '~> 1.0.4'
+pod 'CLKits/JKDBModel', '~> 1.0.4'
+pod 'CLKits/CLHUD', '~> 1.0.4'
+```
+
+### CLHUD
+use: [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD) , [FTIndicator](https://github.com/liufengting/FTIndicator)
 
 ```
+pod 'CLKits/CLHUD', '~> 1.0.4'
+```
+
+```
+typedef enum : NSUInteger {
+    CLHUDDark,
+    CLHUDLight
+} CLHUDStyleType;
+
+@interface CLHUD : NSObject
+
++(void)setStyle:(CLHUDStyleType)type;
+
++(void)showCL:(UIView *)view;
++(void)hideCL;
+
++(void)showSV;
++(void)hideSV;
+
++(void)showToast:(NSString *)msg;
++(void)showInfo:(NSString *)msg;
++(void)showNotification:(NSString *)title msg:(NSString *)msg;
+
+@end
+```
+
+###JKDBModel
+fork with: [JKDBModel](https://github.com/Joker-King/JKDBModel)
+, use: [FMDB](https://github.com/ccgus/fmdb)
+
+```
+pod 'CLKits/JKDBModel', '~> 1.0.4'
+
+```
+
+```
+@interface User : JKDBModel
+
+@property(nonatomic,strong)NSString *userName;
+
+@end
+
+//easy to use:
+{
+	User *user = [User new];
+	user.pk = 2;
+	user.userName = @"hello2";
+	[user saveOrUpdate];
+	    
+	NSLog(@"users = %@",[User findAll]);
+}
+```
+
 
 ### CLNetworking:
+use [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 
 ```
-pod 'CLKits/CLNetworking', '~> 1.0.2'
+pod 'CLKits/CLNetworking', '~> 1.0.4'
 ```
 ```
 @interface CLNetworking : NSObject
@@ -42,8 +101,10 @@ pod 'CLKits/CLNetworking', '~> 1.0.2'
 ```
 
 ### CLPopAnimation:
+use [pop](https://github.com/facebook/pop)
+
 ```
-pod 'CLKits/CLPopAnimation', '~> 1.0.2'
+pod 'CLKits/CLPopAnimation', '~> 1.0.4'
 ```
 ```
 
