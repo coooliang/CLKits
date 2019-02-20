@@ -1,8 +1,6 @@
 # this kit just save your time
-
-###Target Support iOS 8
-
-###You can pod install with cocoapods
+### Target Support iOS 8
+### You can pod install with cocoapods
 
 ```
 pod 'CLKits', '~> 1.0.4'
@@ -44,7 +42,7 @@ typedef enum : NSUInteger {
 @end
 ```
 
-###JKDBModel
+### JKDBModel
 fork with: [JKDBModel](https://github.com/Joker-King/JKDBModel)
 , use: [FMDB](https://github.com/ccgus/fmdb)
 
@@ -72,7 +70,7 @@ pod 'CLKits/JKDBModel', '~> 1.0.4'
 ```
 
 
-### CLNetworking:
+### CLNetworking
 use [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 
 ```
@@ -100,7 +98,7 @@ pod 'CLKits/CLNetworking', '~> 1.0.4'
 @end
 ```
 
-### CLPopAnimation:
+### CLPopAnimation
 use [pop](https://github.com/facebook/pop)
 
 ```
