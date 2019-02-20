@@ -86,6 +86,8 @@
 
 
 -(void)click4{
+//    [CLHUD setStyle:CLHUDLight];
+    [CLHUD showToast:@"hello world"];
     [CLHUD showInfo:@"hello world"];
     [CLHUD showNotification:@"title" msg:@"hello world"];
 }
