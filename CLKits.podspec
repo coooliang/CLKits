@@ -65,6 +65,9 @@ end
 
 # https://blog.csdn.net/coooliang/article/details/84869937
 
+# cd /Users/lion/Documents/CLKits/
+
+# pod spec lint CLKits.podspec --allow-warnings
 # pod trunk push --allow-warnings --use-libraries
 # rm ~/Library/Caches/CocoaPods/search_index.json
 # pod search CLKits
