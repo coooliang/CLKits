@@ -67,7 +67,19 @@ end
 
 # cd /Users/lion/Documents/CLKits/
 
+# 1.validate
 # pod spec lint CLKits.podspec --allow-warnings
+
+# 2.register
+# pod trunk register 61917380@qq.com 'Lion' --description='Lion'
+
+# 4.push
 # pod trunk push --allow-warnings --use-libraries
+
+# 5.search
 # rm ~/Library/Caches/CocoaPods/search_index.json
 # pod search CLKits
+
+# PS:
+# - ERROR | [CLKits/All,CLKits/JKDBModel] xcodebuild:  CLKits/Sources/JKDBModel/JKDBHelper.h:10:9: error: 'FMDB.h' file not found with <angled> include; use "quotes" instead
+# #import "FMDB.h"
