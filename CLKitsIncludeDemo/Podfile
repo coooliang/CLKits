@@ -4,12 +4,14 @@ inhibit_all_warnings!
 source 'https://github.com/CocoaPods/Specs.git'
 
 def pods
-    #pod 'CLKits', '~> 1.0.2'
+    #pod 'CLKits', '~> 1.0.4'
     
-    pod 'CLKits/CLFaster', '~> 1.0.2'
-    pod 'CLKits/CLNetworking', '~> 1.0.2'
-    pod 'CLKits/CLPopAnimation', '~> 1.0.2'
-    pod 'CLKits/JKDBModel', '~> 1.0.2'
+    pod 'CLKits/CLFaster', '~> 1.0.4'
+    pod 'CLKits/CLNetworking', '~> 1.0.4'
+    pod 'CLKits/CLPopAnimation', '~> 1.0.4'
+    pod 'CLKits/JKDBModel', '~> 1.0.4'
+
+    pod 'CLKits/CLHUD', '~> 1.0.4'
 end
 
 target 'CLKitsIncludeDemo' do

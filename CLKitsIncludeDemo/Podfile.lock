@@ -14,37 +14,53 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CLKits/CLFaster (1.0.2)
-  - CLKits/CLNetworking (1.0.2):
+  - CLKits/CLFaster (1.0.4)
+  - CLKits/CLHUD (1.0.4):
+    - FTIndicator (~> 1.2.9)
+    - SVProgressHUD (~> 2.1.2)
+  - CLKits/CLNetworking (1.0.4):
     - AFNetworking (~> 3.2.1)
-  - CLKits/CLPopAnimation (1.0.2):
+  - CLKits/CLPopAnimation (1.0.4):
     - pop (~> 1.0.12)
-  - CLKits/JKDBModel (1.0.2):
+  - CLKits/JKDBModel (1.0.4):
     - FMDB (~> 2.7.5)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - FTIndicator (1.2.9):
+    - FTIndicator/FTNotificationIndicator (= 1.2.9)
+    - FTIndicator/FTProgressIndicator (= 1.2.9)
+    - FTIndicator/FTToastIndicator (= 1.2.9)
+  - FTIndicator/FTNotificationIndicator (1.2.9)
+  - FTIndicator/FTProgressIndicator (1.2.9)
+  - FTIndicator/FTToastIndicator (1.2.9)
   - pop (1.0.12)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
-  - CLKits/CLFaster (~> 1.0.2)
-  - CLKits/CLNetworking (~> 1.0.2)
-  - CLKits/CLPopAnimation (~> 1.0.2)
-  - CLKits/JKDBModel (~> 1.0.2)
+  - CLKits/CLFaster (~> 1.0.4)
+  - CLKits/CLHUD (~> 1.0.4)
+  - CLKits/CLNetworking (~> 1.0.4)
+  - CLKits/CLPopAnimation (~> 1.0.4)
+  - CLKits/JKDBModel (~> 1.0.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CLKits
     - FMDB
+    - FTIndicator
     - pop
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CLKits: 1f18aaffd3062ff1a5c8212314ff89c73b025712
+  CLKits: 52f3b128b0620bf3b6f699165040367454439ce0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  FTIndicator: f7f071fd159e5befa1d040a9ef2e3ab53fa9322c
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: d1a0e8b0f691db35acab65462ae18b93ac8b0ada
+PODFILE CHECKSUM: bf5ed44ad1ef58e09cdb66229e7ab649bfd9bd2d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0

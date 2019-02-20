@@ -6,10 +6,9 @@
 //
 // github:https://github.com/Joker-King/JKDBModel
 
-#import <objc/runtime.h>
-
 #import "JKDBHelper.h"
 #import "JKDBModel.h"
+#import <objc/runtime.h>
 
 @interface JKDBHelper ()
 
@@ -21,8 +20,7 @@
 
 static JKDBHelper *_instance = nil;
 
-+ (instancetype)shareInstance
-{
++ (instancetype)shareInstance{
     static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
         _instance = [[super allocWithZone:NULL] init] ;
@@ -31,8 +29,7 @@ static JKDBHelper *_instance = nil;
     return _instance;
 }
 
-+ (NSString *)dbPathWithDirectoryName:(NSString *)directoryName
-{
++ (NSString *)dbPathWithDirectoryName:(NSString *)directoryName{
     NSString *docsdir = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSFileManager *filemanage = [NSFileManager defaultManager];
     if (directoryName == nil || directoryName.length == 0) {

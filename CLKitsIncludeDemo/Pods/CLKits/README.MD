@@ -5,18 +5,19 @@
 ###You can pod install with cocoapods
 
 ```
-pod 'CLKits', '~> 1.0.1'
+pod 'CLKits', '~> 1.0.2'
 	or   
-pod 'CLKits/CLFaster', '~> 1.0.1'
-pod 'CLKits/CLNetworking', '~> 1.0.1'
-pod 'CLKits/CLPopAnimation', '~> 1.0.1'
+pod 'CLKits/CLFaster', '~> 1.0.2'
+pod 'CLKits/CLNetworking', '~> 1.0.2'
+pod 'CLKits/CLPopAnimation', '~> 1.0.2'
+pod 'CLKits/JKDBModel', '~> 1.0.2'
 
 ```
 
 ### CLNetworking:
 
 ```
-pod 'CLKits/CLNetworking', '~> 1.0.1'
+pod 'CLKits/CLNetworking', '~> 1.0.2'
 ```
 ```
 @interface CLNetworking : NSObject
@@ -42,7 +43,7 @@ pod 'CLKits/CLNetworking', '~> 1.0.1'
 
 ### CLPopAnimation:
 ```
-pod 'CLKits/CLPopAnimation', '~> 1.0.1'
+pod 'CLKits/CLPopAnimation', '~> 1.0.2'
 ```
 ```
 
