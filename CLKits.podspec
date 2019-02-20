@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CLKits"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "CLKits framework just save your time. deployment target ios 8.0"
   s.homepage     = "https://github.com/coooliang/CLKits"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -21,10 +21,12 @@ Pod::Spec.new do |s|
   s.default_subspec = 'All'
 
   s.subspec 'All' do |all|
-    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}'
+    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}','Sources/CLUI/**/*.{h,m}'
     all.dependency "AFNetworking", "~> 3.2.1"
     all.dependency "pop", "~> 1.0.12"
     all.dependency "FMDB", "~> 2.7.5"
+    all.dependency "SVProgressHUD", "~> 2.1.2"
+    all.dependency "FTIndicator", "~> 1.2.9"
     all.ios.frameworks = 'AVFoundation', 'UIKit'
   end
 
@@ -52,7 +54,12 @@ Pod::Spec.new do |s|
     ss.ios.frameworks = 'AVFoundation'
   end
 
-  
+  s.subspec 'CLUI' do |ss|
+    ss.source_files = 'Sources/CLUI/**/*.{h,m}'
+    ss.dependency "SVProgressHUD", "~> 2.1.2"
+    ss.dependency "FTIndicator", "~> 1.2.9"
+    ss.ios.frameworks = 'AVFoundation', 'UIKit'
+  end
 
 end
 

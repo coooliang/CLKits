@@ -17,24 +17,38 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - FTIndicator (1.2.9):
+    - FTIndicator/FTNotificationIndicator (= 1.2.9)
+    - FTIndicator/FTProgressIndicator (= 1.2.9)
+    - FTIndicator/FTToastIndicator (= 1.2.9)
+  - FTIndicator/FTNotificationIndicator (1.2.9)
+  - FTIndicator/FTProgressIndicator (1.2.9)
+  - FTIndicator/FTToastIndicator (1.2.9)
   - pop (1.0.12)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
   - FMDB (~> 2.7.5)
+  - FTIndicator (~> 1.2.9)
   - pop (~> 1.0.12)
+  - SVProgressHUD (~> 2.1.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - FMDB
+    - FTIndicator
     - pop
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  FTIndicator: f7f071fd159e5befa1d040a9ef2e3ab53fa9322c
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: f21542a6acb49bea81f1b4f1865d7e03a90b4084
+PODFILE CHECKSUM: e8beb69fbed32eed0618667eb33a65687e2fb392
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.6.0

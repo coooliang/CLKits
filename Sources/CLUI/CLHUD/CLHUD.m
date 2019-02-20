@@ -9,6 +9,7 @@
 #import "CLHUD.h"
 #import "CLActivityIndicatorView.h"
 #import "SVProgressHUD.h"
+#import "FTIndicator.h"
 
 
 static CLActivityIndicatorView *_indicatorView;
@@ -17,11 +18,23 @@ static UIView *_maskBg;
 
 @implementation CLHUD
 
++(void)setStyle:(CLHUDStyleType)type{
+    if (type == CLHUDDark) {
+        [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+        [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+        
+        [FTIndicator setIndicatorStyle:UIBlurEffectStyleDark];
+    }else{
+        [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+        [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+        
+        [FTIndicator setIndicatorStyle:UIBlurEffectStyleLight];
+    }
+}
 +(void)load{
-    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
-    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
-    
+    [CLHUD setStyle:CLHUDDark];
 }
 
 +(void)showCL:(UIView *)view{
@@ -42,8 +55,14 @@ static UIView *_maskBg;
     [SVProgressHUD dismiss];
 }
 
-+(void)showBarHUD:(NSString *)msg image:(UIImage *)image{
-    
++(void)showToast:(NSString *)msg{
+    [FTIndicator showToastMessage:msg];
+}
++(void)showInfo:(NSString *)msg{
+    [FTIndicator showInfoWithMessage:msg];
 }
 
++(void)showNotification:(NSString *)title msg:(NSString *)msg{
+    [FTIndicator showNotificationWithTitle:title message:msg];
+}
 @end

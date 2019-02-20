@@ -18,11 +18,7 @@
 		9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84A21C1FAB900475C50 /* CLNetworkingViewController.m */; };
 		9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84D21C1FAB900475C50 /* CLPopingViewController.m */; };
 		B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B41E2D2F221A5B5900DD5845 /* CLHUD.m */; };
-		B46C0565221CF05700B48510 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B46C055B221CF05600B48510 /* SVRadialGradientLayer.m */; };
-		B46C0566221CF05700B48510 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46C055E221CF05600B48510 /* SVProgressAnimatedView.m */; };
-		B46C0567221CF05700B48510 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B46C0561221CF05600B48510 /* SVProgressHUD.m */; };
-		B46C0568221CF05700B48510 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46C0562221CF05600B48510 /* SVIndefiniteAnimatedView.m */; };
-		B46C0569221CF05700B48510 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B46C0563221CF05600B48510 /* SVProgressHUD.bundle */; };
+		B46C056B221D2A9300B48510 /* CLKits.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B46C056A221D2A9300B48510 /* CLKits.podspec */; };
 		B47324CF221BA318000361CA /* CLColorfulActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47324CB221BA318000361CA /* CLColorfulActivityView.m */; };
 		B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47324CE221BA318000361CA /* CLActivityIndicatorView.m */; };
 		B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = B47324D4221BDC2A000361CA /* ViewMaskAnimatedCircle.png */; };
@@ -37,7 +33,6 @@
 		BA850C1B21F89DDD005248B5 /* UILabel+CLFaster.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C0D21F89DDD005248B5 /* UILabel+CLFaster.m */; };
 		BA850C1C21F89DDD005248B5 /* CLNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C1121F89DDD005248B5 /* CLNetworking.m */; };
 		BA850C1D21F89DDD005248B5 /* EWSHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C1221F89DDD005248B5 /* EWSHttpRequest.m */; };
-		BA850C1E21F89DDD005248B5 /* CLCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C1521F89DDD005248B5 /* CLCircleProgress.m */; };
 		BA850C1F21F89DDD005248B5 /* UIView+CLPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA850C1721F89DDD005248B5 /* UIView+CLPopAnimation.m */; };
 /* End PBXBuildFile section */
 
@@ -64,16 +59,7 @@
 		A737BD4D605BC371409D9C32 /* libPods-CLKits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLKits.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41E2D2E221A5B5900DD5845 /* CLHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLHUD.h; sourceTree = "<group>"; };
 		B41E2D2F221A5B5900DD5845 /* CLHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLHUD.m; sourceTree = "<group>"; };
-		B46C055B221CF05600B48510 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		B46C055C221CF05600B48510 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		B46C055D221CF05600B48510 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		B46C055E221CF05600B48510 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
-		B46C055F221CF05600B48510 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		B46C0560221CF05600B48510 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		B46C0561221CF05600B48510 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		B46C0562221CF05600B48510 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		B46C0563221CF05600B48510 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		B46C0564221CF05600B48510 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		B46C056A221D2A9300B48510 /* CLKits.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CLKits.podspec; path = ../CLKits.podspec; sourceTree = "<group>"; };
 		B47324CB221BA318000361CA /* CLColorfulActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLColorfulActivityView.m; sourceTree = "<group>"; };
 		B47324CC221BA318000361CA /* CLColorfulActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLColorfulActivityView.h; sourceTree = "<group>"; };
 		B47324CD221BA318000361CA /* CLActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLActivityIndicatorView.h; sourceTree = "<group>"; };
@@ -101,8 +87,6 @@
 		BA850C1021F89DDD005248B5 /* EWSHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWSHttpRequest.h; sourceTree = "<group>"; };
 		BA850C1121F89DDD005248B5 /* CLNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNetworking.m; sourceTree = "<group>"; };
 		BA850C1221F89DDD005248B5 /* EWSHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWSHttpRequest.m; sourceTree = "<group>"; };
-		BA850C1421F89DDD005248B5 /* CLCircleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCircleProgress.h; sourceTree = "<group>"; };
-		BA850C1521F89DDD005248B5 /* CLCircleProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCircleProgress.m; sourceTree = "<group>"; };
 		BA850C1721F89DDD005248B5 /* UIView+CLPopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLPopAnimation.m"; sourceTree = "<group>"; };
 		BA850C1821F89DDD005248B5 /* UIView+CLPopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLPopAnimation.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +136,7 @@
 		9024A80E21C1FA6700475C50 = {
 			isa = PBXGroup;
 			children = (
+				B46C056A221D2A9300B48510 /* CLKits.podspec */,
 				9024A81921C1FA6800475C50 /* CLKits */,
 				9024A81821C1FA6800475C50 /* Products */,
 				05389EE2925878FD22AE556E /* Frameworks */,
@@ -216,27 +201,11 @@
 		B41E2D2D221A5B3200DD5845 /* CLHUD */ = {
 			isa = PBXGroup;
 			children = (
+				B47324CA221BA29E000361CA /* CLProgressHUD */,
 				B41E2D2E221A5B5900DD5845 /* CLHUD.h */,
 				B41E2D2F221A5B5900DD5845 /* CLHUD.m */,
 			);
 			path = CLHUD;
-			sourceTree = "<group>";
-		};
-		B46C055A221CF05600B48510 /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				B46C055B221CF05600B48510 /* SVRadialGradientLayer.m */,
-				B46C055C221CF05600B48510 /* SVIndefiniteAnimatedView.h */,
-				B46C055D221CF05600B48510 /* SVProgressHUD.h */,
-				B46C055E221CF05600B48510 /* SVProgressAnimatedView.m */,
-				B46C055F221CF05600B48510 /* SVProgressHUD-Prefix.pch */,
-				B46C0560221CF05600B48510 /* SVRadialGradientLayer.h */,
-				B46C0561221CF05600B48510 /* SVProgressHUD.m */,
-				B46C0562221CF05600B48510 /* SVIndefiniteAnimatedView.m */,
-				B46C0563221CF05600B48510 /* SVProgressHUD.bundle */,
-				B46C0564221CF05600B48510 /* SVProgressAnimatedView.h */,
-			);
-			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		B47324CA221BA29E000361CA /* CLProgressHUD */ = {
@@ -258,15 +227,6 @@
 				B47324D5221BDC2A000361CA /* ViewMaskCenter.png */,
 			);
 			path = resources;
-			sourceTree = "<group>";
-		};
-		BA15E2DE22047B1D00C9D7AE /* CLProgress */ = {
-			isa = PBXGroup;
-			children = (
-				BA850C1421F89DDD005248B5 /* CLCircleProgress.h */,
-				BA850C1521F89DDD005248B5 /* CLCircleProgress.m */,
-			);
-			path = CLProgress;
 			sourceTree = "<group>";
 		};
 		BA15E2E02204800F00C9D7AE /* CLActionSheet */ = {
@@ -337,12 +297,9 @@
 		BA850C1321F89DDD005248B5 /* CLUI */ = {
 			isa = PBXGroup;
 			children = (
-				B46C055A221CF05600B48510 /* SVProgressHUD */,
-				B47324CA221BA29E000361CA /* CLProgressHUD */,
 				B41E2D2D221A5B3200DD5845 /* CLHUD */,
 				BA15E2E12204804100C9D7AE /* CLAlertView */,
 				BA15E2E02204800F00C9D7AE /* CLActionSheet */,
-				BA15E2DE22047B1D00C9D7AE /* CLProgress */,
 			);
 			path = CLUI;
 			sourceTree = "<group>";
@@ -376,6 +333,7 @@
 				9024A81321C1FA6800475C50 /* Sources */,
 				9024A81421C1FA6800475C50 /* Frameworks */,
 				9024A81521C1FA6800475C50 /* Resources */,
+				33DF273E51D575CCDECF7AA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,8 +381,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B46C0569221CF05700B48510 /* SVProgressHUD.bundle in Resources */,
 				9024A82721C1FA6900475C50 /* LaunchScreen.storyboard in Resources */,
+				B46C056B221D2A9300B48510 /* CLKits.podspec in Resources */,
 				B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */,
 				B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */,
 				9024A82421C1FA6900475C50 /* Assets.xcassets in Resources */,
@@ -434,6 +392,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		33DF273E51D575CCDECF7AA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-resources.sh",
+				"${PODS_ROOT}/FTIndicator/FTIndicator/FTProgressIndicator/FTProgressIndicator.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FTProgressIndicator.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		756D677769F554F167F1333B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -464,7 +446,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BB729B21F99065009E7E9C /* User.m in Sources */,
-				B46C0568221CF05700B48510 /* SVIndefiniteAnimatedView.m in Sources */,
 				9024A81F21C1FA6800475C50 /* ViewController.m in Sources */,
 				BA15E2E42204807E00C9D7AE /* CLAlertView.m in Sources */,
 				04BB729821F99037009E7E9C /* CLDBViewController.m in Sources */,
@@ -472,11 +453,9 @@
 				9024A82A21C1FA6900475C50 /* main.m in Sources */,
 				9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */,
 				B47324CF221BA318000361CA /* CLColorfulActivityView.m in Sources */,
-				B46C0565221CF05700B48510 /* SVRadialGradientLayer.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
 				B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */,
 				BA15E2E72204880D00C9D7AE /* CLActionSheet.m in Sources */,
-				B46C0567221CF05700B48510 /* SVProgressHUD.m in Sources */,
 				BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */,
 				B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */,
 				BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */,
@@ -487,8 +466,6 @@
 				BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */,
 				BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */,
 				BA850C1D21F89DDD005248B5 /* EWSHttpRequest.m in Sources */,
-				BA850C1E21F89DDD005248B5 /* CLCircleProgress.m in Sources */,
-				B46C0566221CF05700B48510 /* SVProgressAnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
