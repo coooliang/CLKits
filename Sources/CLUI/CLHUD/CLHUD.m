@@ -7,38 +7,39 @@
 //
 
 #import "CLHUD.h"
-#import "ActivityIndicatorView.h"
+#import "CLActivityIndicatorView.h"
+#import "SVProgressHUD.h"
 
 
-static ActivityIndicatorView *_indicatorView;
-static UIActivityIndicatorView *_aiv;
+static CLActivityIndicatorView *_indicatorView;
+static UIView *_maskBg;
 
 
 @implementation CLHUD
 
-+(void)showProgressHUDInView:(UIView *)view{
++(void)load{
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    
+}
+
++(void)showCL:(UIView *)view{
     if (!_indicatorView) {
-        _indicatorView = [[ActivityIndicatorView alloc]initWithFrame:view.frame];
+        _indicatorView = [[CLActivityIndicatorView alloc]initWithFrame:view.frame];
     }
     [view addSubview:_indicatorView];
     [_indicatorView startAnimat];
 }
-
-+(void)hideProgressHUD{
++(void)hideCL{
     if(_indicatorView)[_indicatorView stopAnimat];
 }
 
-+(void)showMaskInView:(UIView *)view{
-    if (!_aiv) {
-        _aiv = [[UIActivityIndicatorView alloc]init];
-        _aiv.center = view.center;
-        _aiv.color = [UIColor blackColor];
-    }
-    [view addSubview:_aiv];
-    [_aiv startAnimating];
++(void)showSV{
+    [SVProgressHUD show];
 }
-+(void)hideMask{
-    [_aiv stopAnimating];
++(void)hideSV{
+    [SVProgressHUD dismiss];
 }
 
 +(void)showBarHUD:(NSString *)msg image:(UIImage *)image{

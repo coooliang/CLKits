@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CLHUD : NSObject
 
 
-+(void)showProgressHUDInView:(UIView *)view;
-+(void)hideProgressHUD;
++(void)showCL:(UIView *)view;
++(void)hideCL;
 
-+(void)showMaskInView:(UIView *)view;
-+(void)hideMask;
++(void)showSV;
++(void)hideSV;
 
 @end
 

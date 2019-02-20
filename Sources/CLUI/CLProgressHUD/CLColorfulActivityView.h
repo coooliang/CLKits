@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ColorfulActivityView : UIView
+@interface CLColorfulActivityView : UIView
 
 -(void)startAnimating;
 -(void)stopAnimating;

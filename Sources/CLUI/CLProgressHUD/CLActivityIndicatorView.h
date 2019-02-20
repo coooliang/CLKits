@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "ColorfulActivityView.h"
 
-@interface ActivityIndicatorView : UIView
+@interface CLActivityIndicatorView : UIView
 
 
 -(id)initWithFrame:(CGRect)frame;

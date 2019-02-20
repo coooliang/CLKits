@@ -6,9 +6,9 @@
 //  Copyright © 2017年 China Industrial Bank. All rights reserved.
 //
 
-#import "ColorfulActivityView.h"
+#import "CLColorfulActivityView.h"
 
-@interface ColorfulActivityView ()
+@interface CLColorfulActivityView ()
 
 @property(nonatomic, strong) UIImageView *logoImageView;
 @property(nonatomic, strong) UIImageView *animatedCircleImageView;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation ColorfulActivityView
+@implementation CLColorfulActivityView
 
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];

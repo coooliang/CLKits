@@ -74,20 +74,19 @@
 }
 
 -(void)click2{
-    [CLHUD showProgressHUDInView:self.view];
+    [CLHUD showCL:self.view];
     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hideProgress) userInfo:nil repeats:NO];
 }
 -(void)hideProgress{
-    [CLHUD hideProgressHUD];
+    [CLHUD hideCL];
 }
 
-
 -(void)click3{
-    [CLHUD showProgressHUDInView:self.view];
+    [CLHUD showSV];
     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hideMask) userInfo:nil repeats:NO];
 }
 -(void)hideMask{
-    [CLHUD hideMask];
+    [CLHUD hideSV];
 }
 
 @end

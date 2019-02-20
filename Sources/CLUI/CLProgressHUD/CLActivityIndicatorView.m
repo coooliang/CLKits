@@ -6,16 +6,17 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ActivityIndicatorView.h"
+#import "CLActivityIndicatorView.h"
+#import "CLColorfulActivityView.h"
 
-@interface ActivityIndicatorView ()
+@interface CLActivityIndicatorView ()
 
-@property(nonatomic,strong)ColorfulActivityView *indicatorView;
+@property(nonatomic,strong)CLColorfulActivityView *indicatorView;
 @property(nonatomic,strong)UIView *blackView;
 
 
 @end
-@implementation ActivityIndicatorView{
+@implementation CLActivityIndicatorView{
     NSTimer *_timer;
 }
 
@@ -34,7 +35,7 @@
         _blackView.layer.cornerRadius = 10.0;
         _blackView.clipsToBounds = NO;
         // 添加等待动作视图
-        _indicatorView = [[ColorfulActivityView alloc] initWithFrame:CGRectMake((_blackView.bounds.size.width - 122) / 2, (_blackView.bounds.size.height - 53) / 2, 122, 53)];
+        _indicatorView = [[CLColorfulActivityView alloc] initWithFrame:CGRectMake((_blackView.bounds.size.width - 122) / 2, (_blackView.bounds.size.height - 53) / 2, 122, 53)];
         _indicatorView.backgroundColor = [UIColor clearColor];
         _indicatorView.layer.cornerRadius = 10; //圆角
         _indicatorView.layer.masksToBounds = YES;
