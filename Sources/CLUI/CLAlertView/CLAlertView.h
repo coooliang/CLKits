@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CLAlertView : NSObject
 
 -(UIView *)showInView:(UIView *)view title:(NSString *)title message:(NSString *)message buttons:(NSArray *)params block:(void(^)(int index))block;
-
+ 
 @end
 
 NS_ASSUME_NONNULL_END
