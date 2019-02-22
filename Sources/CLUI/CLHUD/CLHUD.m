@@ -34,6 +34,7 @@ static UIView *_maskBg;
     }
 }
 +(void)load{
+    [super load];
     [CLHUD setStyle:CLHUDDark];
 }
 

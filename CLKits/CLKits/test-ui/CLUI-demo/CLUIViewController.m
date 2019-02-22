@@ -9,10 +9,9 @@
 #import "CLUIViewController.h"
 #import "UIViewCLFaster.h"
 
-
-#import "CLAlertView.h"
-#import "CLActionSheet.h"
 #import "CLHUD.h"
+#import "CLAlertView.h"
+
 
 @interface CLUIViewController ()
 
@@ -47,6 +46,10 @@
     UIButton *button4 = [self createButton:CGRectMake(50, 380, 100, 50) title:@"toast"];
     [button4 addTarget:self action:@selector(click4) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button4];
+    
+    UIButton *button5 = [self createButton:CGRectMake(50, 440, 100, 50) title:@"alert"];
+    [button5 addTarget:self action:@selector(click5) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button5];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -63,9 +66,7 @@
 }
 
 -(void)click1{
-    [[CLActionSheet new]show:@[@"hello",@"world",@"cancel"] block:^(int index) {
-        NSLog(@"%d",index);
-    }];
+    
 }
 
 -(void)click2{
@@ -90,5 +91,11 @@
     [CLHUD showToast:@"hello world"];
     [CLHUD showInfo:@"hello world"];
     [CLHUD showNotification:@"title" msg:@"hello world"];
+}
+
+-(void)click5{
+    [[CLAlertView new]show:nil msg:@"" buttons:@[] block:^(int index) {
+        
+    }];
 }
 @end
