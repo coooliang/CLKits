@@ -94,7 +94,9 @@
 }
 
 -(void)click5{
-    [[CLAlertView new]show:nil msg:@"" buttons:@[] block:^(int index) {
+    CLAlertView *alert = [CLAlertView new];
+    alert.closed = YES;
+    [alert show:nil msg:@"" buttons:@[@"cancel",@"sure"] block:^(int index) {
         
     }];
 }
