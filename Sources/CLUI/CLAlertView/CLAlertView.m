@@ -34,7 +34,7 @@
 #pragma mark - init
 -(void)initParams{
     _whiteWidth = 240;
-    _whiteHeight = 180;
+    _whiteHeight = 190;
     _color = CLAlertViewGreenColor;
 }
 - (instancetype)init{
@@ -60,14 +60,21 @@
 
 #pragma mark - show
 -(void)show:(NSString *)title msg:(NSString *)msg buttons:(NSArray *)buttons block:(void(^)(int index))block{
-    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 0, CGRectGetWidth(_whiteView.frame)-100, 50)];
+    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, CGRectGetWidth(_whiteView.frame)-40, 50)];
     _titleLabel.font = [UIFont boldSystemFontOfSize:18];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.text = title;
     [_whiteView addSubview:_titleLabel];
     
-    _messageLabel = [[UILabel alloc]initWithFrame:CGRectMake(button_margin, CGRectGetMaxY(_titleLabel.frame), CGRectGetWidth(_whiteView.frame)-button_margin*2, 50)];
+    
+    float msgWidth = CGRectGetWidth(_whiteView.frame)-button_margin*2;
+    UIFont *msgFont = [UIFont systemFontOfSize:14];
+    CGSize size = CGSizeMake(msgWidth, 150);
+    CGRect rect = [msg boundingRectWithSize:size options:NSStringDrawingUsesFontLeading|NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : msgFont} context:nil];
+    
+  
+    _messageLabel = [[UILabel alloc]initWithFrame:CGRectMake(button_margin, CGRectGetMaxY(_titleLabel.frame), msgWidth, rect.size.height)];
     _messageLabel.font = [UIFont systemFontOfSize:14];
     _messageLabel.textColor = [UIColor blackColor];
     _messageLabel.textAlignment = NSTextAlignmentCenter;
@@ -97,11 +104,20 @@
         [closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
         
         CGRect temp = _titleLabel.frame;
-        temp.size.width = CGRectGetWidth(_whiteView.frame)-40;
+        temp.origin.x = 50;
+        temp.size.width = CGRectGetWidth(_whiteView.frame)-100;
         _titleLabel.frame = temp;
     }
 }
 
+-(void)setImage:(UIImage *)image{
+    _image = image;
+    UIView *imageBG = [[UIView alloc]initWithFrame:CGRectMake((CGRectGetWidth(_whiteView.frame)-50)/2.0, -25, 50, 50)];
+    imageBG.backgroundColor = [UIColor blackColor];
+    imageBG.layer.cornerRadius = 50/2.0;
+    imageBG.layer.masksToBounds = YES;
+    [_whiteView addSubview:imageBG];
+}
 -(void)setColor:(UIColor *)color{
     _color = color;
 }
@@ -109,8 +125,9 @@
 -(void)setButtons:(NSArray *)buttons{
     _buttonCount = buttons.count;
     if (buttons) {
+        float y = CGRectGetMaxY(_messageLabel.frame)+20;
         if (buttons.count == 1) {
-            UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(button_margin, CGRectGetHeight(_whiteView.frame)-60, CGRectGetWidth(_whiteView.frame)-button_margin*2, 40)];
+            UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(button_margin,y, CGRectGetWidth(_whiteView.frame)-button_margin*2, 40)];
             button.tag = 0;
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [button setTitle:buttons[0] forState:UIControlStateNormal];
@@ -123,7 +140,7 @@
         }else if(buttons.count == 2){
             for (int i=0;i<buttons.count;i++) {
                 float w = (CGRectGetWidth(_whiteView.frame)-button_margin*3)/2.0;
-                UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(w*i+button_margin*(i+1), CGRectGetHeight(_whiteView.frame)-60, w, 40)];
+                UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(w*i+button_margin*(i+1), y, w, 40)];
                 button.tag = i;
                 [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 [button setTitle:buttons[i] forState:UIControlStateNormal];
@@ -136,7 +153,7 @@
             }
         }else{
             for (int i=0;i<buttons.count;i++) {
-                UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(button_margin, CGRectGetHeight(_whiteView.frame)-60 + 60*i, CGRectGetWidth(_whiteView.frame)-button_margin*2, 40)];
+                UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(button_margin, y + 60*i, CGRectGetWidth(_whiteView.frame)-button_margin*2, 40)];
                 button.tag = i;
                 [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 [button setTitle:buttons[i] forState:UIControlStateNormal];

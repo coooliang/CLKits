@@ -58,6 +58,10 @@
     UIButton *button7 = [self createButton:CGRectMake(50, 500, 100, 50) title:@"alert3"];
     [button7 addTarget:self action:@selector(click7) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button7];
+    
+    UIButton *button8 = [self createButton:CGRectMake(160, 500, 100, 50) title:@"alert4"];
+    [button8 addTarget:self action:@selector(click8) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button8];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -104,21 +108,30 @@
 -(void)click5{
     CLAlertView *alert = [CLAlertView new];
     alert.closed = YES;
-    [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"确定"] block:^(int index) {
+    [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView " buttons:@[@"确定"] block:^(int index) {
         
     }];
 }
 
 -(void)click6{
     CLAlertView *alert = [CLAlertView new];
-    [alert show:@"温馨提示温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"取消",@"确定"] block:^(int index) {
+    alert.color = [UIColor colorWithRed:0.757 green:0.152 blue:0.177 alpha:1.000];
+    [alert show:@"温馨提示温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"取消",@"确定"] block:^(int index) {
         
     }];
 }
 
 -(void)click7{
     CLAlertView *alert = [CLAlertView new];
-    [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"提示按钮1",@"提示按钮2",@"提示按钮3",@"提示按钮1",@"提示按钮2",@"提示按钮3"] block:^(int index) {
+    [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"提示按钮1",@"提示按钮2",@"提示按钮3",@"提示按钮1",@"提示按钮2",@"提示按钮3"] block:^(int index) {
+        
+    }];
+}
+
+-(void)click8{
+    CLAlertView *alert = [CLAlertView new];
+    alert.image = [UIImage imageNamed:@"github"];
+    [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"提示按钮1",@"提示按钮2",@"提示按钮3",@"提示按钮1",@"提示按钮2",@"提示按钮3"] block:^(int index) {
         
     }];
 }

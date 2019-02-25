@@ -20,6 +20,7 @@
 		B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B41E2D2F221A5B5900DD5845 /* CLHUD.m */; };
 		B452CD7A2223D19600169FF8 /* CLAlertViewCloseButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */; };
 		B452CD7B2223D19600169FF8 /* CLAlertViewCloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */; };
+		B452CD7D2223E52C00169FF8 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD7C2223E52C00169FF8 /* github.png */; };
 		B46C056B221D2A9300B48510 /* CLKits.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B46C056A221D2A9300B48510 /* CLKits.podspec */; };
 		B47324CF221BA318000361CA /* CLColorfulActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47324CB221BA318000361CA /* CLColorfulActivityView.m */; };
 		B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47324CE221BA318000361CA /* CLActivityIndicatorView.m */; };
@@ -63,6 +64,7 @@
 		B41E2D2F221A5B5900DD5845 /* CLHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLHUD.m; sourceTree = "<group>"; };
 		B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CLAlertViewCloseButton@3x.png"; sourceTree = "<group>"; };
 		B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CLAlertViewCloseButton@2x.png"; sourceTree = "<group>"; };
+		B452CD7C2223E52C00169FF8 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
 		B46C056A221D2A9300B48510 /* CLKits.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CLKits.podspec; path = ../CLKits.podspec; sourceTree = "<group>"; };
 		B47324CB221BA318000361CA /* CLColorfulActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLColorfulActivityView.m; sourceTree = "<group>"; };
 		B47324CC221BA318000361CA /* CLColorfulActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLColorfulActivityView.h; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		B452CD772223D17900169FF8 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				B452CD7C2223E52C00169FF8 /* github.png */,
 				B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */,
 				B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */,
 			);
@@ -395,6 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B452CD7D2223E52C00169FF8 /* github.png in Resources */,
 				9024A82721C1FA6900475C50 /* LaunchScreen.storyboard in Resources */,
 				B46C056B221D2A9300B48510 /* CLKits.podspec in Resources */,
 				B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */,
