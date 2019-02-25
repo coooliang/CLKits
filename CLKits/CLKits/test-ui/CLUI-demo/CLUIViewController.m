@@ -47,9 +47,17 @@
     [button4 addTarget:self action:@selector(click4) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button4];
     
-    UIButton *button5 = [self createButton:CGRectMake(50, 440, 100, 50) title:@"alert"];
+    UIButton *button5 = [self createButton:CGRectMake(50, 440, 100, 50) title:@"alert1"];
     [button5 addTarget:self action:@selector(click5) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button5];
+    
+    UIButton *button6 = [self createButton:CGRectMake(160, 440, 100, 50) title:@"alert2"];
+    [button6 addTarget:self action:@selector(click6) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button6];
+    
+    UIButton *button7 = [self createButton:CGRectMake(50, 500, 100, 50) title:@"alert3"];
+    [button7 addTarget:self action:@selector(click7) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button7];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -96,7 +104,21 @@
 -(void)click5{
     CLAlertView *alert = [CLAlertView new];
     alert.closed = YES;
-    [alert show:nil msg:@"" buttons:@[@"cancel",@"sure"] block:^(int index) {
+    [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"确定"] block:^(int index) {
+        
+    }];
+}
+
+-(void)click6{
+    CLAlertView *alert = [CLAlertView new];
+    [alert show:@"温馨提示温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"取消",@"确定"] block:^(int index) {
+        
+    }];
+}
+
+-(void)click7{
+    CLAlertView *alert = [CLAlertView new];
+    [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"提示按钮1",@"提示按钮2",@"提示按钮3",@"提示按钮1",@"提示按钮2",@"提示按钮3"] block:^(int index) {
         
     }];
 }

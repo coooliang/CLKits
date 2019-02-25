@@ -18,6 +18,8 @@
 		9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84A21C1FAB900475C50 /* CLNetworkingViewController.m */; };
 		9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84D21C1FAB900475C50 /* CLPopingViewController.m */; };
 		B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B41E2D2F221A5B5900DD5845 /* CLHUD.m */; };
+		B452CD7A2223D19600169FF8 /* CLAlertViewCloseButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */; };
+		B452CD7B2223D19600169FF8 /* CLAlertViewCloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */; };
 		B46C056B221D2A9300B48510 /* CLKits.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B46C056A221D2A9300B48510 /* CLKits.podspec */; };
 		B47324CF221BA318000361CA /* CLColorfulActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47324CB221BA318000361CA /* CLColorfulActivityView.m */; };
 		B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47324CE221BA318000361CA /* CLActivityIndicatorView.m */; };
@@ -59,6 +61,8 @@
 		A737BD4D605BC371409D9C32 /* libPods-CLKits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLKits.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41E2D2E221A5B5900DD5845 /* CLHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLHUD.h; sourceTree = "<group>"; };
 		B41E2D2F221A5B5900DD5845 /* CLHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLHUD.m; sourceTree = "<group>"; };
+		B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CLAlertViewCloseButton@3x.png"; sourceTree = "<group>"; };
+		B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CLAlertViewCloseButton@2x.png"; sourceTree = "<group>"; };
 		B46C056A221D2A9300B48510 /* CLKits.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CLKits.podspec; path = ../CLKits.podspec; sourceTree = "<group>"; };
 		B47324CB221BA318000361CA /* CLColorfulActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLColorfulActivityView.m; sourceTree = "<group>"; };
 		B47324CC221BA318000361CA /* CLColorfulActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLColorfulActivityView.h; sourceTree = "<group>"; };
@@ -208,6 +212,15 @@
 			path = CLHUD;
 			sourceTree = "<group>";
 		};
+		B452CD772223D17900169FF8 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */,
+				B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		B47324CA221BA29E000361CA /* CLProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +254,7 @@
 		BA15E2E12204804100C9D7AE /* CLAlertView */ = {
 			isa = PBXGroup;
 			children = (
+				B452CD772223D17900169FF8 /* resources */,
 				B4BF40E2221F9D0F00B0C35E /* CLAlertView.h */,
 				B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */,
 			);
@@ -384,6 +398,8 @@
 				9024A82721C1FA6900475C50 /* LaunchScreen.storyboard in Resources */,
 				B46C056B221D2A9300B48510 /* CLKits.podspec in Resources */,
 				B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */,
+				B452CD7A2223D19600169FF8 /* CLAlertViewCloseButton@3x.png in Resources */,
+				B452CD7B2223D19600169FF8 /* CLAlertViewCloseButton@2x.png in Resources */,
 				B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */,
 				9024A82421C1FA6900475C50 /* Assets.xcassets in Resources */,
 			);
