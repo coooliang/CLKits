@@ -13,6 +13,9 @@
 
 #import "CLAlertView.h"
 
+
+typedef void (^CLAlertViewClickCallback)(int index);
+
 @interface CLAlertView ()<UIGestureRecognizerDelegate>
 
 @end
@@ -23,12 +26,21 @@
     
     UILabel *_titleLabel;
     UILabel *_messageLabel;
+    UIView *_iconView;
     
     UIWindow *_CLAlertViewWindow;
+    CLAlertViewClickCallback _block;
     
     float _whiteWidth;
     float _whiteHeight;
     float _buttonCount;
+    
+    NSString *_titleFontFamily;
+    NSString *_msgTextFontFamily;
+    NSString *_buttonsFontFamily;
+    float _titleFontSize;
+    float _msgFontSize;
+    float _buttonsFontSize;
 }
 
 #pragma mark - init
@@ -36,15 +48,32 @@
     _whiteWidth = 240;
     _whiteHeight = 190;
     _color = CLAlertViewGreenColor;
+    
+    _titleFontFamily = @"HelveticaNeue";
+    _msgTextFontFamily = @"HelveticaNeue";
+    _buttonsFontFamily = @"HelveticaNeue-Bold";
+    _titleFontSize = 20.0f;
+    _msgFontSize = 14.0f;
+    _buttonsFontSize = 14.0f;
 }
 - (instancetype)init{
     self = [super init];
     if (self) {
         [self initParams];
-        _backgroundView = [[UIView alloc]initWithFrame:self.view.bounds];
+        
+        UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
+        alertWindow.windowLevel = UIWindowLevelAlert;
+        alertWindow.backgroundColor = [UIColor clearColor];
+        alertWindow.rootViewController = [UIViewController new];
+        alertWindow.accessibilityViewIsModal = YES;
+        [alertWindow.rootViewController addChildViewController:self];
+        [alertWindow.rootViewController.view addSubview:self.view];
+        _CLAlertViewWindow = alertWindow;
+        
+        _backgroundView = [[UIView alloc]initWithFrame:_CLAlertViewWindow.bounds];
         _backgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         _backgroundView.tag = 1;
-        [self.view addSubview:_backgroundView];
+        
         
         _whiteView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _whiteWidth, _whiteHeight)];
         _whiteView.backgroundColor = [UIColor whiteColor];
@@ -53,15 +82,23 @@
         _whiteView.layer.masksToBounds = YES;
         _whiteView.userInteractionEnabled = YES;
         _whiteView.tag = 2;
-        [_backgroundView addSubview:_whiteView];
+        [self.view addSubview:_whiteView];
+        
+        
+        // Add window subview
+        [_CLAlertViewWindow.rootViewController addChildViewController:self];
+        [_CLAlertViewWindow.rootViewController.view addSubview:_backgroundView];
+        [_CLAlertViewWindow.rootViewController.view addSubview:self.view];
     }
     return self;
 }
 
 #pragma mark - show
 -(void)show:(NSString *)title msg:(NSString *)msg buttons:(NSArray *)buttons block:(void(^)(int index))block{
-    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, CGRectGetWidth(_whiteView.frame)-40, 50)];
-    _titleLabel.font = [UIFont boldSystemFontOfSize:18];
+    _block = block;
+    
+    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 15, CGRectGetWidth(_whiteView.frame)-40, 50)];
+    _titleLabel.font = [UIFont fontWithName:_titleFontFamily size:_titleFontSize];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.text = title;
@@ -73,18 +110,18 @@
     CGSize size = CGSizeMake(msgWidth, 150);
     CGRect rect = [msg boundingRectWithSize:size options:NSStringDrawingUsesFontLeading|NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : msgFont} context:nil];
     
-  
+    
     _messageLabel = [[UILabel alloc]initWithFrame:CGRectMake(button_margin, CGRectGetMaxY(_titleLabel.frame), msgWidth, rect.size.height)];
-    _messageLabel.font = [UIFont systemFontOfSize:14];
+    _messageLabel.font = [UIFont fontWithName:_msgTextFontFamily size:_msgFontSize];
     _messageLabel.textColor = [UIColor blackColor];
     _messageLabel.textAlignment = NSTextAlignmentCenter;
-    _messageLabel.text = msg;
     _messageLabel.numberOfLines = 0;
+    _messageLabel.text = msg;
     [_whiteView addSubview:_messageLabel];
     
     [self setButtons:buttons];
     
-    [self calcHeight];
+    [self calcHeight];//calc white bg height
     
     [self showWindow];
 }
@@ -92,17 +129,19 @@
 #pragma mark - sets
 -(void)setClosed:(BOOL)closed{
     _closed = closed;
-    _backgroundView.userInteractionEnabled = closed;
+    self.view.userInteractionEnabled = closed;
     if (closed) {
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(close)];
         tap.delegate = self;
-        [_backgroundView addGestureRecognizer:tap];
+        [self.view addGestureRecognizer:tap];
         
+        //add close button
         UIButton *closeButton = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetWidth(_whiteView.frame)-50, 0, 50, 50)];
         [closeButton setImage:[UIImage imageNamed:@"CLAlertViewCloseButton"] forState:UIControlStateNormal];
         [_whiteView addSubview:closeButton];
         [closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
         
+        //reset title width
         CGRect temp = _titleLabel.frame;
         temp.origin.x = 50;
         temp.size.width = CGRectGetWidth(_whiteView.frame)-100;
@@ -112,11 +151,31 @@
 
 -(void)setImage:(UIImage *)image{
     _image = image;
-    UIView *imageBG = [[UIView alloc]initWithFrame:CGRectMake((CGRectGetWidth(_whiteView.frame)-50)/2.0, -25, 50, 50)];
-    imageBG.backgroundColor = [UIColor blackColor];
-    imageBG.layer.cornerRadius = 50/2.0;
-    imageBG.layer.masksToBounds = YES;
-    [_whiteView addSubview:imageBG];
+    
+    float w = 50;
+    _iconView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, w,w)];
+    _iconView.backgroundColor = [UIColor whiteColor];
+    _iconView.layer.cornerRadius = 50/2.0;
+    _iconView.layer.masksToBounds = YES;
+    _iconView.center = CGPointMake(_whiteView.center.x, CGRectGetMinY(_whiteView.frame));
+    [self.view addSubview:_iconView];
+    
+    CGPoint iconCenter = CGPointMake(w/2.0, w/2.0); w = w-5;
+    
+    UIView *iconBG = [[UIView alloc]initWithFrame:CGRectMake(0, 0, w, w)];
+    iconBG.backgroundColor = _color;
+    iconBG.layer.cornerRadius = w/2.0;
+    iconBG.layer.masksToBounds = YES;
+    iconBG.center = iconCenter;
+    [_iconView addSubview:iconBG];
+    
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    iv.backgroundColor = _color;
+    iv.image = image;
+    iv.layer.cornerRadius = CGRectGetWidth(iv.frame)/2.0;
+    iv.layer.masksToBounds = YES;
+    iv.center = iconCenter;
+    [_iconView addSubview:iv];
 }
 -(void)setColor:(UIColor *)color{
     _color = color;
@@ -131,7 +190,7 @@
             button.tag = 0;
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [button setTitle:buttons[0] forState:UIControlStateNormal];
-            button.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+            button.titleLabel.font = [UIFont fontWithName:_buttonsFontFamily size:_buttonsFontSize];
             button.backgroundColor = _color;
             button.layer.cornerRadius = 5;
             button.layer.masksToBounds = YES;
@@ -144,7 +203,7 @@
                 button.tag = i;
                 [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 [button setTitle:buttons[i] forState:UIControlStateNormal];
-                button.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+                button.titleLabel.font = [UIFont fontWithName:_buttonsFontFamily size:_buttonsFontSize];
                 button.backgroundColor = _color;
                 button.layer.cornerRadius = 5;
                 button.layer.masksToBounds = YES;
@@ -157,7 +216,7 @@
                 button.tag = i;
                 [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 [button setTitle:buttons[i] forState:UIControlStateNormal];
-                button.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+                button.titleLabel.font =[UIFont fontWithName:_buttonsFontFamily size:_buttonsFontSize];
                 button.backgroundColor = _color;
                 button.layer.cornerRadius = 5;
                 button.layer.masksToBounds = YES;
@@ -171,16 +230,7 @@
 
 #pragma mark - private methods
 -(void)showWindow{
-    UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
-    alertWindow.windowLevel = UIWindowLevelAlert;
-    alertWindow.backgroundColor = [UIColor clearColor];
-    alertWindow.rootViewController = [UIViewController new];
-    alertWindow.accessibilityViewIsModal = YES;
-    [alertWindow.rootViewController addChildViewController:self];
-    [alertWindow.rootViewController.view addSubview:self.view];
-    _CLAlertViewWindow = alertWindow;
-    [_CLAlertViewWindow makeKeyAndVisible];
-    
+    [_CLAlertViewWindow makeKeyAndVisible];//show window
     [self show:nil];
 }
 
@@ -189,30 +239,43 @@
     if (_buttonCount>2) {
         th += (_buttonCount-1)*60;
     }
+    
     CGRect temp = _whiteView.frame;
-    temp.size.height = CGRectGetHeight(_titleLabel.frame) + CGRectGetHeight(_messageLabel.frame) + th;
+    temp.size.height = CGRectGetMaxY(_titleLabel.frame) + CGRectGetHeight(_messageLabel.frame) + th;
     _whiteView.frame = temp;
     _whiteView.center = self.view.center;
+    
+    if (_iconView) {
+        _iconView.center = CGPointMake(_whiteView.center.x, CGRectGetMinY(_whiteView.frame));
+    }
 }
 
 #pragma mark - clicks
 -(void)close{
-    NSLog(@"close...");
+    [self close:-1];
+}
+-(void)close:(int)index{
     [self hidden:^{
         [self->_CLAlertViewWindow setHidden:YES];
         self->_CLAlertViewWindow = nil;
+        
+        if (self->_block) {
+            self->_block(index);
+        }
     }];
 }
 
 -(void)click:(UIButton *)button{
-    NSLog(@"button... %ld",(long)button.tag);
-    [self close];
+    [self close:(int)button.tag];
 }
 
 -(void)show:(void(^)(void))finishBlock{
-    _whiteView.transform = CGAffineTransformMakeScale(0,0);
+    self.view.transform = CGAffineTransformConcat(CGAffineTransformIdentity,CGAffineTransformMakeScale(0.1f, 0.1f));
+    
+    self.view.alpha = 0.0f;
     [UIView animateWithDuration:animateWithDuration_times animations:^{
-        self->_whiteView.transform = CGAffineTransformMakeScale(1,1);
+        self.view.transform = CGAffineTransformConcat(CGAffineTransformIdentity,CGAffineTransformMakeScale(1.0f, 1.0f));
+        self.view.alpha = 1.0;
     } completion:^(BOOL finished) {
         if(finishBlock != nil){
             finishBlock();
@@ -220,9 +283,9 @@
     }];
 }
 -(void)hidden:(void(^)(void))finishBlock{
-    self->_whiteView.transform = CGAffineTransformMakeScale(1,1);
+    self.view.transform = CGAffineTransformMakeScale(1,1);
     [UIView animateWithDuration:animateWithDuration_times animations:^{
-        self->_whiteView.transform = CGAffineTransformMakeScale(0.1,0.1);
+        self.view.transform = CGAffineTransformMakeScale(0.1,0.1);
     } completion:^(BOOL finished) {
         if(finishBlock != nil){
             finishBlock();

@@ -109,30 +109,34 @@
     CLAlertView *alert = [CLAlertView new];
     alert.closed = YES;
     [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView " buttons:@[@"确定"] block:^(int index) {
-        
+        NSLog(@"index = %d",index);
     }];
+    
 }
 
 -(void)click6{
     CLAlertView *alert = [CLAlertView new];
     alert.color = [UIColor colorWithRed:0.757 green:0.152 blue:0.177 alpha:1.000];
     [alert show:@"温馨提示温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"取消",@"确定"] block:^(int index) {
-        
+        NSLog(@"index = %d",index);
     }];
+    
 }
 
 -(void)click7{
     CLAlertView *alert = [CLAlertView new];
     [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"提示按钮1",@"提示按钮2",@"提示按钮3",@"提示按钮1",@"提示按钮2",@"提示按钮3"] block:^(int index) {
-        
+        NSLog(@"index = %d",index);
     }];
 }
 
 -(void)click8{
     CLAlertView *alert = [CLAlertView new];
+    alert.closed = YES;
     alert.image = [UIImage imageNamed:@"github"];
     [alert show:@"温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"提示按钮1",@"提示按钮2",@"提示按钮3",@"提示按钮1",@"提示按钮2",@"提示按钮3"] block:^(int index) {
-        
+        NSLog(@"index = %d",index);
     }];
+    
 }
 @end

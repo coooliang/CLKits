@@ -11,7 +11,7 @@
 
 @interface CLAlertView : UIViewController
 
--(void)show:(NSString *)title msg:(NSString *)msg buttons:(NSArray *)buttons block:(void(^)(int index))block;;
+-(void)show:(NSString *)title msg:(NSString *)msg buttons:(NSArray *)buttons block:(void(^)(int index))block;
 
 @property(nonatomic,assign)BOOL closed;
 @property(nonatomic,strong)UIImage *image;
