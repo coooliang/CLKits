@@ -11,7 +11,7 @@
 
 #import "CLHUD.h"
 #import "CLAlertView.h"
-
+#import "CLActionSheet.h"
 
 @interface CLUIViewController ()
 
@@ -31,37 +31,37 @@
 //    [self.button addTarget:self action:@selector(drawCircle) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:self.button];
     
-    UIButton *button1 = [self createButton:CGRectMake(50, 200, 100, 50) title:@"alert"];
-    [button1 addTarget:self action:@selector(click1) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button1];
-    
     UIButton *button2 = [self createButton:CGRectMake(50, 260, 100, 50) title:@"hud"];
     [button2 addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
     
-    UIButton *button3 = [self createButton:CGRectMake(50, 320, 100, 50) title:@"mask"];
+    UIButton *button3 = [self createButton:CGRectMake(160, 260, 100, 50) title:@"mask"];
     [button3 addTarget:self action:@selector(click3) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
     
-    UIButton *button4 = [self createButton:CGRectMake(50, 380, 100, 50) title:@"toast"];
+    UIButton *button4 = [self createButton:CGRectMake(270, 260, 100, 50) title:@"toast"];
     [button4 addTarget:self action:@selector(click4) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button4];
     
-    UIButton *button5 = [self createButton:CGRectMake(50, 440, 100, 50) title:@"alert1"];
+    UIButton *button5 = [self createButton:CGRectMake(50, 320, 100, 50) title:@"alert1"];
     [button5 addTarget:self action:@selector(click5) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button5];
     
-    UIButton *button6 = [self createButton:CGRectMake(160, 440, 100, 50) title:@"alert2"];
+    UIButton *button6 = [self createButton:CGRectMake(160, 320, 100, 50) title:@"alert2"];
     [button6 addTarget:self action:@selector(click6) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button6];
     
-    UIButton *button7 = [self createButton:CGRectMake(50, 500, 100, 50) title:@"alert3"];
+    UIButton *button7 = [self createButton:CGRectMake(270, 320, 100, 50) title:@"alert3"];
     [button7 addTarget:self action:@selector(click7) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button7];
     
-    UIButton *button8 = [self createButton:CGRectMake(160, 500, 100, 50) title:@"alert4"];
+    UIButton *button8 = [self createButton:CGRectMake(50, 380, 100, 50) title:@"alert4"];
     [button8 addTarget:self action:@selector(click8) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button8];
+    
+    UIButton *button11 = [self createButton:CGRectMake(160, 380, 100, 50) title:@"sheet"];
+    [button11 addTarget:self action:@selector(sheet1) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button11];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -75,10 +75,6 @@
     [button setBorder:1 color:[UIColor blackColor]];
     [self.view addSubview:button];
     return button;
-}
-
--(void)click1{
-    
 }
 
 -(void)click2{
@@ -120,7 +116,6 @@
     [alert show:@"温馨提示温馨提示" msg:@"您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView 您好，欢迎使用CLAlertView自定义AlertView" buttons:@[@"取消",@"确定"] block:^(int index) {
         NSLog(@"index = %d",index);
     }];
-    
 }
 
 -(void)click7{
@@ -139,4 +134,11 @@
     }];
     
 }
+
+-(void)sheet1{
+    [[CLActionSheet new]show:@[@"选项1",@"选项2",@"选项3",@"cancel"] block:^(int index) {
+        NSLog(@"index = %d",index);
+    }];
+}
+
 @end

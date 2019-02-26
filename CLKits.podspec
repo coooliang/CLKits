@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'All'
 
   s.subspec 'All' do |all|
-    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}','Sources/CLUI/CLHUD/**/*.{h,m}'
+    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}','Sources/CLUI/CLHUD/**/*.{h,m}','Sources/CLUI/CLAlertView/**/*.{h,m}','Sources/CLUI/CLActionSheet/**/*.{h,m}'
     all.dependency "AFNetworking", "~> 3.2.1"
     all.dependency "pop", "~> 1.0.12"
     all.dependency "FMDB", "~> 2.7.5"
@@ -61,6 +61,15 @@ Pod::Spec.new do |s|
     ss.ios.frameworks = 'AVFoundation', 'UIKit'
   end
 
+  s.subspec 'CLAlertView' do |ss|
+    ss.source_files = 'Sources/CLUI/CLAlertView/**/*.{h,m}'
+    ss.ios.frameworks = 'UIKit'
+  end
+
+  s.subspec 'CLActionSheet' do |ss|
+    ss.source_files = 'Sources/CLUI/CLActionSheet/**/*.{h,m}'
+    ss.ios.frameworks = 'UIKit'
+  end
 end
 
 # https://blog.csdn.net/coooliang/article/details/84869937
