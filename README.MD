@@ -41,8 +41,14 @@ typedef enum : NSUInteger {
 
 @end
 ```
-![](Resources/3.png)_![](Resources/1.png)_![](Resources/2.png)_![](Resources/4.png)
-![](Resources/hud1.png)_![](Resources/hud2.png)_![](Resources/hud3.png)
+![](Resources/3.png)_![](Resources/1.png)_![](Resources/2.png)_![](Resources/4.png)_
+
+<figure class="third">
+	<img src="Resources/hud1.png" width="30%">
+	<img src="Resources/hud2.png" width="30%">
+	<img src="Resources/hud3.png" width="30%">
+</figure>
+
 
 ### JKDBModel
 fork with: [JKDBModel](https://github.com/Joker-King/JKDBModel)
