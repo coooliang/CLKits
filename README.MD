@@ -41,18 +41,19 @@ typedef enum : NSUInteger {
 
 @end
 ```
-<figure class="third">
-    <img src="Resources/3.png" width="10%" height="10%">
-	<img src="Resources/1.png" width="10%" height="10%">
-	<img src="Resources/2.png" width="10%" height="10%">
+<figure class="four">
+	<img src="Resources/3.png" width="20%">
+	<img src="Resources/1.png" width="20%">
+	<img src="Resources/2.png" width="20%">
+	<img src="Resources/4.png" width="20%">
 </figure>
 
+<figure class="third">
+	<img src="Resources/hud1.png" width="30%">
+	<img src="Resources/hud2.png" width="30%">
+	<img src="Resources/hud3.png" width="30%">
+</figure>
 
-
-![](Resources/4.png)
-![](Resources/hud1.png)
-![](Resources/hud2.png)
-![](Resources/hud3.png)
 
 ### JKDBModel
 fork with: [JKDBModel](https://github.com/Joker-King/JKDBModel)
@@ -148,3 +149,4 @@ pod 'CLKits/CLPopAnimation', '~> 1.0.4'
 
 @end
 ```
+<img src="Resources/CLPopAnimation.gif" width="20%">
