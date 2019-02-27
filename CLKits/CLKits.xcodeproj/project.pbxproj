@@ -27,6 +27,7 @@
 		B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = B47324D4221BDC2A000361CA /* ViewMaskAnimatedCircle.png */; };
 		B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */ = {isa = PBXBuildFile; fileRef = B47324D5221BDC2A000361CA /* ViewMaskCenter.png */; };
 		B4BF40E4221F9D0F00B0C35E /* CLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */; };
+		B4C677D022266F6500E2B6E0 /* CLQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C677CF22266F6500E2B6E0 /* CLQRCode.m */; };
 		BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B722034BE600C9D7AE /* JKDBHelper.m */; };
 		BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B822034BE600C9D7AE /* JKDBModel.m */; };
 		BA15E2E72204880D00C9D7AE /* CLActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2E62204880D00C9D7AE /* CLActionSheet.m */; };
@@ -74,6 +75,8 @@
 		B47324D5221BDC2A000361CA /* ViewMaskCenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ViewMaskCenter.png; sourceTree = "<group>"; };
 		B4BF40E2221F9D0F00B0C35E /* CLAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAlertView.h; sourceTree = "<group>"; };
 		B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAlertView.m; sourceTree = "<group>"; };
+		B4C677CE22266F6500E2B6E0 /* CLQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLQRCode.h; sourceTree = "<group>"; };
+		B4C677CF22266F6500E2B6E0 /* CLQRCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLQRCode.m; sourceTree = "<group>"; };
 		BA15E2B622034BE600C9D7AE /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
 		BA15E2B722034BE600C9D7AE /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
 		BA15E2B822034BE600C9D7AE /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
@@ -245,6 +248,22 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		B4C677CC22266DDA00E2B6E0 /* CLScan */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CLScan;
+			sourceTree = "<group>";
+		};
+		B4C677CD22266EF500E2B6E0 /* CLQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				B4C677CE22266F6500E2B6E0 /* CLQRCode.h */,
+				B4C677CF22266F6500E2B6E0 /* CLQRCode.m */,
+			);
+			path = CLQRCode;
+			sourceTree = "<group>";
+		};
 		BA15E2E02204800F00C9D7AE /* CLActionSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +333,8 @@
 		BA850C1321F89DDD005248B5 /* CLUI */ = {
 			isa = PBXGroup;
 			children = (
+				B4C677CD22266EF500E2B6E0 /* CLQRCode */,
+				B4C677CC22266DDA00E2B6E0 /* CLScan */,
 				B41E2D2D221A5B3200DD5845 /* CLHUD */,
 				BA15E2E12204804100C9D7AE /* CLAlertView */,
 				BA15E2E02204800F00C9D7AE /* CLActionSheet */,
@@ -481,6 +502,7 @@
 				BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */,
 				BA850C1C21F89DDD005248B5 /* CLNetworking.m in Sources */,
 				9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */,
+				B4C677D022266F6500E2B6E0 /* CLQRCode.m in Sources */,
 				BA850C1B21F89DDD005248B5 /* UILabel+CLFaster.m in Sources */,
 				BA850C1F21F89DDD005248B5 /* UIView+CLPopAnimation.m in Sources */,
 				BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */,

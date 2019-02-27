@@ -13,6 +13,8 @@
 #import "CLAlertView.h"
 #import "CLActionSheet.h"
 
+#import "CLQRCode.h"
+
 @interface CLUIViewController ()
 
 @property(nonatomic,strong)UIButton *button;
@@ -62,6 +64,11 @@
     UIButton *button11 = [self createButton:CGRectMake(160, 380, 100, 50) title:@"sheet"];
     [button11 addTarget:self action:@selector(sheet1) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button11];
+    
+    
+    UIButton *button12 = [self createButton:CGRectMake(270, 380, 100, 50) title:@"qrcode"];
+    [button12 addTarget:self action:@selector(qrcode) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button12];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -139,6 +146,11 @@
     [[CLActionSheet new]show:@[@"选项1",@"选项2",@"选项3",@"cancel"] block:^(int index) {
         NSLog(@"index = %d",index);
     }];
+}
+
+-(void)qrcode{
+    UIImage *image = [[CLQRCode new]createQRImageWithContent:@"http://www.baidu.com" size:CGSizeMake(280, 280) red:1 green:1 blue:1 withLogo:[UIImage imageNamed:@"AppIcon"] logoFrame:CGRectMake(0, 0, 50, 50)];
+    NSLog(@"%@",image);
 }
 
 @end
