@@ -10,28 +10,66 @@
 
 @implementation CLQRCode
 
--(UIImage *)createQRImageWithContent:(NSString *)content size:(CGSize)size red:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue withLogo:(UIImage *)logo logoFrame:(CGRect)logoFrame{
-    UIImage *image = [self createQRImageWithContent:content size:size red:red green:green blue:blue withLogo:logo];
-    //有 logo 则绘制 logo
-//    if (logo != nil) {
-//        UIGraphicsBeginImageContext(image.size);
-//        [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
-//        [logo drawInRect:logoFrame];
-//
-//        UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//        return resultImage;
-//    }else{
-//
-//    }
+#pragma mark - 获取条形码
+-(UIImage*)createBarImageWithContent:(NSString *)content{
+    // 创建条形码
+    CIFilter *filter = [CIFilter filterWithName:@"CICode128BarcodeGenerator"];
+    // 恢复滤镜的默认属性
+    [filter setDefaults];
+    // 将字符串转换成NSData
+    NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+    // 通过KVO设置滤镜inputMessage数据
+    [filter setValue:data forKey:@"inputMessage"];
+    // 获得滤镜输出的图像
+    CIImage *outputImage = [filter outputImage];
+    // 将CIImage转换成UIImage，并放大显示
+    UIImage* image =  [UIImage imageWithCIImage:outputImage scale:0 orientation:UIImageOrientationUp];
     return image;
 }
 
--(UIImage *)createQRImageWithContent:(NSString *)content size:(CGSize)size red:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue withLogo:(UIImage *)logo{
-    UIImage *image = [self createQRImageWithContent:content size:size red:red green:green blue:blue];
-    //为空则返回
-    if (!logo) { return image;}
-    UIImage *resultImage = [self imageWithQRImage:image logo:logo logoSize:logo.size];
+-(UIImage *)createQRImageWithContent:(NSString *)content size:(CGSize)size color:(UIColor *)color withLogo:(UIImage *)logo logoSize:(CGFloat)logoSize{
+    if (color == nil) {
+        color = [UIColor blackColor];
+    }
+    NSArray *components = [self changeUIColorToRGB:color];
+    
+    UIImage *image = [self createQRImageWithContent:content size:size red:[components[0]floatValue] green:[components[1]floatValue] blue:[components[2]floatValue]];
+    //有 logo 则绘制 logo
+    if (logo != nil){
+        if (logoSize == 0) {
+            logoSize = logo.size.width;
+        }
+        UIGraphicsBeginImageContextWithOptions(image.size, NO, 0.0);// 开始图形上下文
+        CGContextRef ctx = UIGraphicsGetCurrentContext();// 获得图形上下文
+
+        CGRect rect = CGRectMake((image.size.width-logoSize)/2.0, (image.size.height-logoSize)/2.0, logoSize,logoSize);
+        CGContextAddPath(ctx, [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:5].CGPath);
+        CGContextClip(ctx);
+        [logo drawInRect:rect];
+        UIImage *logoImage = UIGraphicsGetImageFromCurrentImageContext();// 从上下文上获取剪裁后的照片
+        UIGraphicsEndImageContext();// 关闭上下文
+        image = [self drawImage:image withBadge:logoImage];
+    }
+    return image;
+}
+
+
+//将UIColor转换为RGB值
+- (NSArray *)changeUIColorToRGB:(UIColor *)color{
+    CGFloat red = 0.0;
+    CGFloat green = 0.0;
+    CGFloat blue = 0.0;
+    CGFloat alpha = 0.0;
+    [color getRed:&red green:&green blue:&blue alpha:&alpha];
+    return @[@(red), @(green), @(blue), @(alpha)];
+}
+    
+-(UIImage *)drawImage:(UIImage*)profileImage withBadge:(UIImage *)badge{
+    UIGraphicsBeginImageContextWithOptions(profileImage.size, NO, 0.0f);
+    [profileImage drawInRect:CGRectMake(0, 0, profileImage.size.width, profileImage.size.height)];
+    [badge drawInRect:CGRectMake(0, profileImage.size.height - badge.size.height, badge.size.width, badge.size.height)];
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     return resultImage;
 }
 
@@ -166,38 +204,6 @@
     return radiusImage;
 }
 
--(UIImage *)imageWithQRImage:(UIImage *)qrImage logo:(UIImage *)logo logoSize:(CGSize)size{
-    BOOL opaque = 1.0;
-    // 获取当前设备的scale
-    CGFloat scale = [UIScreen mainScreen].scale;
-    // 创建画布Rect
-    CGRect bgRect = CGRectMake(0, 0, size.width, size.height);
-    // 头像大小不能大于画布的1/4 （这个大小之内的不会遮挡二维码的有效信息）
-    CGFloat logoWidth = (size.width/4);
-    CGFloat logoHeight = logoWidth;
-    //调用一个新的切割绘图方法(裁切头像图片为圆角，并添加bored   返回一个newimage)
-    logo = [self clipCornerRadius:logo withSize:CGSizeMake(logoWidth, logoHeight)];
-    // 设置头像的位置信息
-    CGPoint position = CGPointMake(size.width/2, size.height/2);
-    CGRect logoRect = CGRectMake(position.x-(logoWidth/2), position.y-(logoHeight/2), logoWidth, logoHeight);
-    // 设置画布信息
-    UIGraphicsBeginImageContextWithOptions(size, opaque, scale);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSaveGState(context);{// 开启画布
-        // 翻转context （画布）
-        CGContextTranslateCTM(context, 0, size.height);
-        CGContextScaleCTM(context, 1, -1);
-        // 根据 bgRect 用二维码填充视图
-        CGContextDrawImage(context, bgRect, qrImage.CGImage);
-        //  根据newAvatarImage 填充头像区域
-        CGContextDrawImage(context, logoRect, logo.CGImage);
-    }CGContextRestoreGState(context);// 提交画布
-    // 从画布中提取图片
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    // 释放画布
-    UIGraphicsEndImageContext();
-    return image;
-}
 
 
 void ProviderReleaseData(void * info, const void * data, size_t size) {

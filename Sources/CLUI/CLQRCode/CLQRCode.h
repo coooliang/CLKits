@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface CLQRCode : NSObject
 
--(UIImage *)createQRImageWithContent:(NSString *)content size:(CGSize)size red:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue withLogo:(UIImage *)logo logoFrame:(CGRect)logoFrame;
+-(UIImage*)createBarImageWithContent:(NSString *)content;
+
+-(UIImage *)createQRImageWithContent:(NSString *)content size:(CGSize)size color:(UIColor *)color withLogo:(UIImage *)logo logoSize:(CGFloat)logoSize;
 
 @end
 
-NS_ASSUME_NONNULL_END

@@ -33,42 +33,48 @@
 //    [self.button addTarget:self action:@selector(drawCircle) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:self.button];
     
-    UIButton *button2 = [self createButton:CGRectMake(50, 260, 100, 50) title:@"hud"];
+    UIButton *button2 = [self createButton:CGRectMake(50, 150, 100, 50) title:@"hud"];
     [button2 addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
     
-    UIButton *button3 = [self createButton:CGRectMake(160, 260, 100, 50) title:@"mask"];
+    UIButton *button3 = [self createButton:CGRectMake(160, 150, 100, 50) title:@"mask"];
     [button3 addTarget:self action:@selector(click3) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
     
-    UIButton *button4 = [self createButton:CGRectMake(270, 260, 100, 50) title:@"toast"];
+    UIButton *button4 = [self createButton:CGRectMake(270, 150, 100, 50) title:@"toast"];
     [button4 addTarget:self action:@selector(click4) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button4];
     
-    UIButton *button5 = [self createButton:CGRectMake(50, 320, 100, 50) title:@"alert1"];
+    CGFloat y = CGRectGetMaxY(button2.frame)+10;
+    UIButton *button5 = [self createButton:CGRectMake(50, y, 100, 50) title:@"alert1"];
     [button5 addTarget:self action:@selector(click5) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button5];
     
-    UIButton *button6 = [self createButton:CGRectMake(160, 320, 100, 50) title:@"alert2"];
+    UIButton *button6 = [self createButton:CGRectMake(160, y, 100, 50) title:@"alert2"];
     [button6 addTarget:self action:@selector(click6) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button6];
     
-    UIButton *button7 = [self createButton:CGRectMake(270, 320, 100, 50) title:@"alert3"];
+    UIButton *button7 = [self createButton:CGRectMake(270, y, 100, 50) title:@"alert3"];
     [button7 addTarget:self action:@selector(click7) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button7];
     
-    UIButton *button8 = [self createButton:CGRectMake(50, 380, 100, 50) title:@"alert4"];
+    y = CGRectGetMaxY(button7.frame)+10;
+    UIButton *button8 = [self createButton:CGRectMake(50, y, 100, 50) title:@"alert4"];
     [button8 addTarget:self action:@selector(click8) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button8];
     
-    UIButton *button11 = [self createButton:CGRectMake(160, 380, 100, 50) title:@"sheet"];
+    UIButton *button11 = [self createButton:CGRectMake(160, y, 100, 50) title:@"sheet"];
     [button11 addTarget:self action:@selector(sheet1) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button11];
     
-    
-    UIButton *button12 = [self createButton:CGRectMake(270, 380, 100, 50) title:@"qrcode"];
-    [button12 addTarget:self action:@selector(qrcode) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *button12 = [self createButton:CGRectMake(270, y, 100, 50) title:@"barcode"];
+    [button12 addTarget:self action:@selector(barcode) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button12];
+    
+    y = CGRectGetMaxY(button12.frame)+10;
+    UIButton *button13 = [self createButton:CGRectMake(50, y, 100, 50) title:@"qrcode"];
+    [button13 addTarget:self action:@selector(qrcode) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button13];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -149,8 +155,18 @@
 }
 
 -(void)qrcode{
-    UIImage *image = [[CLQRCode new]createQRImageWithContent:@"http://www.baidu.com" size:CGSizeMake(280, 280) red:1 green:1 blue:1 withLogo:[UIImage imageNamed:@"AppIcon"] logoFrame:CGRectMake(0, 0, 50, 50)];
+    UIImage *image = [[CLQRCode new]createQRImageWithContent:@"http://www.baidu.com" size:CGSizeMake(280, 280) color:[UIColor blackColor] withLogo:[UIImage imageNamed:@"AppIcon"] logoSize:50];
     NSLog(@"%@",image);
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(50, 500, 280, 280)];
+    iv.image = image;
+    [self.view addSubview:iv];
+}
+
+-(void)barcode{
+    UIImage *image = [[CLQRCode new]createBarImageWithContent:@"1234567890"];
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(50, 500, 250, 80)];
+    iv.image = image;
+    [self.view addSubview:iv];
 }
 
 @end
