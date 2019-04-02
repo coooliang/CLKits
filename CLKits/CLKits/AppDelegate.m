@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
+#import <TTLoadTime/TTLoadTime.h>
+
 @interface AppDelegate ()
 
 @end
@@ -23,6 +25,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window setRootViewController:root];
     [self.window makeKeyAndVisible];
+    
+    
+    printLoadCostsInfo();
+    
     return YES;
 }
 

@@ -12,6 +12,7 @@ def pods
     pod 'SVProgressHUD', '~> 2.1.2'
     pod 'FTIndicator', '~> 1.2.9'
     
+    pod 'TTAnalyzeLoadTime', '~> 1.0.5'
 end
 
 target 'CLKits' do

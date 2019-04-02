@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CLKits"
-  s.version      = "1.0.4"
+  s.version      = "1.0.5"
   s.summary      = "CLKits framework just save your time. deployment target ios 8.0"
   s.homepage     = "https://github.com/coooliang/CLKits"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'All'
 
   s.subspec 'All' do |all|
-    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}','Sources/CLUI/CLHUD/**/*.{h,m}','Sources/CLUI/CLAlertView/**/*.{h,m}','Sources/CLUI/CLActionSheet/**/*.{h,m}'
+    all.source_files = 'Sources/CLFaster/**/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}','Sources/CLUI/CLHUD/**/*.{h,m}','Sources/CLUI/CLAlertView/**/*.{h,m}','Sources/CLUI/CLActionSheet/**/*.{h,m}','Sources/CLUI/CLQRCode/**/*.{h,m}'
     all.dependency "AFNetworking", "~> 3.2.1"
     all.dependency "pop", "~> 1.0.12"
     all.dependency "FMDB", "~> 2.7.5"
@@ -68,6 +68,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'CLActionSheet' do |ss|
     ss.source_files = 'Sources/CLUI/CLActionSheet/**/*.{h,m}'
+    ss.ios.frameworks = 'UIKit'
+  end
+
+  s.subspec 'CLQRCode' do |ss|
+    ss.source_files = 'Sources/CLUI/CLQRCode/**/*.{h,m}'
     ss.ios.frameworks = 'UIKit'
   end
 end

@@ -207,6 +207,13 @@
 			path = "CLPopAnimation-demo";
 			sourceTree = "<group>";
 		};
+		B41C7F9C222F98CB008C2CDB /* CLTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CLTest;
+			sourceTree = "<group>";
+		};
 		B41E2D2D221A5B3200DD5845 /* CLHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +302,7 @@
 		BA850C0521F89DDD005248B5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B41C7F9C222F98CB008C2CDB /* CLTest */,
 				04BB729121F9615A009E7E9C /* JKDBModel */,
 				BA850C0621F89DDD005248B5 /* CLFaster */,
 				BA850C0E21F89DDD005248B5 /* CLNetworking */,
@@ -372,6 +380,7 @@
 				9024A81421C1FA6800475C50 /* Frameworks */,
 				9024A81521C1FA6800475C50 /* Resources */,
 				33DF273E51D575CCDECF7AA8 /* [CP] Copy Pods Resources */,
+				91372E24FDF056959217332B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -477,6 +486,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91372E24FDF056959217332B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-frameworks.sh",
+				"${PODS_ROOT}/TTAnalyzeLoadTime/Products/TTLoadTime.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTLoadTime.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
