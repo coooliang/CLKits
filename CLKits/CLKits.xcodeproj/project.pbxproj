@@ -18,7 +18,6 @@
 		9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84A21C1FAB900475C50 /* CLNetworkingViewController.m */; };
 		9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84D21C1FAB900475C50 /* CLPopingViewController.m */; };
 		B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B41E2D2F221A5B5900DD5845 /* CLHUD.m */; };
-		B42357F1225B383D00ADCBA5 /* CLScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42357F0225B383D00ADCBA5 /* CLScanViewController.m */; };
 		B452CD7A2223D19600169FF8 /* CLAlertViewCloseButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */; };
 		B452CD7B2223D19600169FF8 /* CLAlertViewCloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */; };
 		B452CD7D2223E52C00169FF8 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD7C2223E52C00169FF8 /* github.png */; };
@@ -64,8 +63,6 @@
 		A737BD4D605BC371409D9C32 /* libPods-CLKits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLKits.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41E2D2E221A5B5900DD5845 /* CLHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLHUD.h; sourceTree = "<group>"; };
 		B41E2D2F221A5B5900DD5845 /* CLHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLHUD.m; sourceTree = "<group>"; };
-		B42357EF225B383D00ADCBA5 /* CLScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLScanViewController.h; path = ../CLScan/CLScanViewController.h; sourceTree = "<group>"; };
-		B42357F0225B383D00ADCBA5 /* CLScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CLScanViewController.m; path = ../CLScan/CLScanViewController.m; sourceTree = "<group>"; };
 		B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CLAlertViewCloseButton@3x.png"; sourceTree = "<group>"; };
 		B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CLAlertViewCloseButton@2x.png"; sourceTree = "<group>"; };
 		B452CD7C2223E52C00169FF8 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
@@ -258,13 +255,6 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
-		B4C677CC22266DDA00E2B6E0 /* CLScan */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CLScan;
-			sourceTree = "<group>";
-		};
 		B4C677CD22266EF500E2B6E0 /* CLQRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,16 +262,6 @@
 				B4C677CF22266F6500E2B6E0 /* CLQRCode.m */,
 			);
 			path = CLQRCode;
-			sourceTree = "<group>";
-		};
-		B4CAC7D6225355F4000F85E1 /* CLScan */ = {
-			isa = PBXGroup;
-			children = (
-				B42357EF225B383D00ADCBA5 /* CLScanViewController.h */,
-				B42357F0225B383D00ADCBA5 /* CLScanViewController.m */,
-			);
-			name = CLScan;
-			path = C;
 			sourceTree = "<group>";
 		};
 		BA15E2E02204800F00C9D7AE /* CLActionSheet */ = {
@@ -354,9 +334,7 @@
 		BA850C1321F89DDD005248B5 /* CLUI */ = {
 			isa = PBXGroup;
 			children = (
-				B4CAC7D6225355F4000F85E1 /* CLScan */,
 				B4C677CD22266EF500E2B6E0 /* CLQRCode */,
-				B4C677CC22266DDA00E2B6E0 /* CLScan */,
 				B41E2D2D221A5B3200DD5845 /* CLHUD */,
 				BA15E2E12204804100C9D7AE /* CLAlertView */,
 				BA15E2E02204800F00C9D7AE /* CLActionSheet */,
@@ -532,7 +510,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BB729B21F99065009E7E9C /* User.m in Sources */,
-				B42357F1225B383D00ADCBA5 /* CLScanViewController.m in Sources */,
 				9024A81F21C1FA6800475C50 /* ViewController.m in Sources */,
 				B4BF40E4221F9D0F00B0C35E /* CLAlertView.m in Sources */,
 				04BB729821F99037009E7E9C /* CLDBViewController.m in Sources */,

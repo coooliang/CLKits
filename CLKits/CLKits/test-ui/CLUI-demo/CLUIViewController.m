@@ -15,6 +15,7 @@
 
 #import "CLQRCode.h"
 
+
 @interface CLUIViewController ()
 
 @property(nonatomic,strong)UIButton *button;
@@ -75,6 +76,11 @@
     UIButton *button13 = [self createButton:CGRectMake(50, y, 100, 50) title:@"qrcode"];
     [button13 addTarget:self action:@selector(qrcode) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button13];
+    
+    y = CGRectGetMaxY(button13.frame)+10;
+    UIButton *button14 = [self createButton:CGRectMake(50, y, 100, 50) title:@"scan"];
+    [button14 addTarget:self action:@selector(scan) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button14];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -167,6 +173,10 @@
     UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(50, 500, 250, 80)];
     iv.image = image;
     [self.view addSubview:iv];
+}
+
+-(void)scan{
+    
 }
 
 @end
