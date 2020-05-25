@@ -39,6 +39,8 @@
 		B479B273247BB552008456A1 /* checkbox_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B479B26F247BB551008456A1 /* checkbox_selected@3x.png */; };
 		B479B274247BB552008456A1 /* checkbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B479B270247BB551008456A1 /* checkbox@2x.png */; };
 		B479B275247BB552008456A1 /* checkbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B479B271247BB552008456A1 /* checkbox@3x.png */; };
+		B479B278247BB69D008456A1 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B277247BB69D008456A1 /* NSString+Utils.m */; };
+		B479B27B247BB6C7008456A1 /* JSONWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B279247BB6C7008456A1 /* JSONWrapper.m */; };
 		B4BF40E4221F9D0F00B0C35E /* CLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */; };
 		B4C677D022266F6500E2B6E0 /* CLQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C677CF22266F6500E2B6E0 /* CLQRCode.m */; };
 		BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B722034BE600C9D7AE /* JKDBHelper.m */; };
@@ -108,6 +110,10 @@
 		B479B26F247BB551008456A1 /* checkbox_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_selected@3x.png"; sourceTree = "<group>"; };
 		B479B270247BB551008456A1 /* checkbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox@2x.png"; sourceTree = "<group>"; };
 		B479B271247BB552008456A1 /* checkbox@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox@3x.png"; sourceTree = "<group>"; };
+		B479B276247BB69D008456A1 /* NSString+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		B479B277247BB69D008456A1 /* NSString+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		B479B279247BB6C7008456A1 /* JSONWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONWrapper.m; sourceTree = "<group>"; };
+		B479B27A247BB6C7008456A1 /* JSONWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONWrapper.h; sourceTree = "<group>"; };
 		B4BF40E2221F9D0F00B0C35E /* CLAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAlertView.h; sourceTree = "<group>"; };
 		B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAlertView.m; sourceTree = "<group>"; };
 		B4C677CE22266F6500E2B6E0 /* CLQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLQRCode.h; sourceTree = "<group>"; };
@@ -313,10 +319,14 @@
 		B479B24C247BAEA8008456A1 /* CLExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				B479B27A247BB6C7008456A1 /* JSONWrapper.h */,
+				B479B279247BB6C7008456A1 /* JSONWrapper.m */,
 				B479B251247BAF3A008456A1 /* NSString+Helper.h */,
 				B479B250247BAF3A008456A1 /* NSString+Helper.m */,
 				B479B24E247BAF3A008456A1 /* NSString+Separate.h */,
 				B479B24F247BAF3A008456A1 /* NSString+Separate.m */,
+				B479B276247BB69D008456A1 /* NSString+Utils.h */,
+				B479B277247BB69D008456A1 /* NSString+Utils.m */,
 				B479B252247BAF3A008456A1 /* UITextField+ExtentRange.h */,
 				B479B253247BAF3A008456A1 /* UITextField+ExtentRange.m */,
 			);
@@ -630,6 +640,7 @@
 				04BB729B21F99065009E7E9C /* User.m in Sources */,
 				9024A81F21C1FA6800475C50 /* ViewController.m in Sources */,
 				B4BF40E4221F9D0F00B0C35E /* CLAlertView.m in Sources */,
+				B479B27B247BB6C7008456A1 /* JSONWrapper.m in Sources */,
 				04BB729821F99037009E7E9C /* CLDBViewController.m in Sources */,
 				BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */,
 				B479B254247BAF3B008456A1 /* NSString+Separate.m in Sources */,
@@ -638,6 +649,7 @@
 				B47324CF221BA318000361CA /* CLColorfulActivityView.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
 				B479B256247BAF3B008456A1 /* UITextField+ExtentRange.m in Sources */,
+				B479B278247BB69D008456A1 /* NSString+Utils.m in Sources */,
 				B479B262247BB4BF008456A1 /* CLCheckBox.m in Sources */,
 				B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */,
 				B479B25E247BB39E008456A1 /* CLImageButton.m in Sources */,
