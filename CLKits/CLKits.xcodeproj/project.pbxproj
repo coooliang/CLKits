@@ -27,6 +27,11 @@
 		B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = B47324D4221BDC2A000361CA /* ViewMaskAnimatedCircle.png */; };
 		B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */ = {isa = PBXBuildFile; fileRef = B47324D5221BDC2A000361CA /* ViewMaskCenter.png */; };
 		B479B243247B6A72008456A1 /* UITestBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B242247B6A72008456A1 /* UITestBaseViewController.m */; };
+		B479B249247BAE90008456A1 /* CLFormatField.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B246247BAE90008456A1 /* CLFormatField.m */; };
+		B479B24A247BAE90008456A1 /* clformatfield_clear_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B479B247247BAE90008456A1 /* clformatfield_clear_button.png */; };
+		B479B254247BAF3B008456A1 /* NSString+Separate.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B24F247BAF3A008456A1 /* NSString+Separate.m */; };
+		B479B255247BAF3B008456A1 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B250247BAF3A008456A1 /* NSString+Helper.m */; };
+		B479B256247BAF3B008456A1 /* UITextField+ExtentRange.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B253247BAF3A008456A1 /* UITextField+ExtentRange.m */; };
 		B4BF40E4221F9D0F00B0C35E /* CLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */; };
 		B4C677D022266F6500E2B6E0 /* CLQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C677CF22266F6500E2B6E0 /* CLQRCode.m */; };
 		BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B722034BE600C9D7AE /* JKDBHelper.m */; };
@@ -77,6 +82,15 @@
 		B479B240247B6765008456A1 /* CLConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLConstant.h; sourceTree = "<group>"; };
 		B479B241247B6A72008456A1 /* UITestBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITestBaseViewController.h; sourceTree = "<group>"; };
 		B479B242247B6A72008456A1 /* UITestBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITestBaseViewController.m; sourceTree = "<group>"; };
+		B479B246247BAE90008456A1 /* CLFormatField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLFormatField.m; sourceTree = "<group>"; };
+		B479B247247BAE90008456A1 /* clformatfield_clear_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clformatfield_clear_button.png; sourceTree = "<group>"; };
+		B479B248247BAE90008456A1 /* CLFormatField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLFormatField.h; sourceTree = "<group>"; };
+		B479B24E247BAF3A008456A1 /* NSString+Separate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Separate.h"; sourceTree = "<group>"; };
+		B479B24F247BAF3A008456A1 /* NSString+Separate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Separate.m"; sourceTree = "<group>"; };
+		B479B250247BAF3A008456A1 /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helper.m"; sourceTree = "<group>"; };
+		B479B251247BAF3A008456A1 /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helper.h"; sourceTree = "<group>"; };
+		B479B252247BAF3A008456A1 /* UITextField+ExtentRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ExtentRange.h"; sourceTree = "<group>"; };
+		B479B253247BAF3A008456A1 /* UITextField+ExtentRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ExtentRange.m"; sourceTree = "<group>"; };
 		B4BF40E2221F9D0F00B0C35E /* CLAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAlertView.h; sourceTree = "<group>"; };
 		B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAlertView.m; sourceTree = "<group>"; };
 		B4C677CE22266F6500E2B6E0 /* CLQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLQRCode.h; sourceTree = "<group>"; };
@@ -269,6 +283,29 @@
 			path = UITestBaseViewController;
 			sourceTree = "<group>";
 		};
+		B479B245247BAE90008456A1 /* CLFormatField */ = {
+			isa = PBXGroup;
+			children = (
+				B479B247247BAE90008456A1 /* clformatfield_clear_button.png */,
+				B479B248247BAE90008456A1 /* CLFormatField.h */,
+				B479B246247BAE90008456A1 /* CLFormatField.m */,
+			);
+			path = CLFormatField;
+			sourceTree = "<group>";
+		};
+		B479B24C247BAEA8008456A1 /* CLExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				B479B251247BAF3A008456A1 /* NSString+Helper.h */,
+				B479B250247BAF3A008456A1 /* NSString+Helper.m */,
+				B479B24E247BAF3A008456A1 /* NSString+Separate.h */,
+				B479B24F247BAF3A008456A1 /* NSString+Separate.m */,
+				B479B252247BAF3A008456A1 /* UITextField+ExtentRange.h */,
+				B479B253247BAF3A008456A1 /* UITextField+ExtentRange.m */,
+			);
+			path = CLExtensions;
+			sourceTree = "<group>";
+		};
 		B4C677CD22266EF500E2B6E0 /* CLQRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +346,7 @@
 		BA850C0521F89DDD005248B5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B479B24C247BAEA8008456A1 /* CLExtensions */,
 				BA850C0E21F89DDD005248B5 /* CLNetworking */,
 				BA850C1621F89DDD005248B5 /* CLPopAnimation */,
 				B41C7F9C222F98CB008C2CDB /* CLTest */,
@@ -348,6 +386,7 @@
 		BA850C1321F89DDD005248B5 /* CLUI */ = {
 			isa = PBXGroup;
 			children = (
+				B479B245247BAE90008456A1 /* CLFormatField */,
 				BA850C0621F89DDD005248B5 /* CLViewFaster */,
 				B4C677CD22266EF500E2B6E0 /* CLQRCode */,
 				B41E2D2D221A5B3200DD5845 /* CLHUD */,
@@ -441,6 +480,7 @@
 				B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */,
 				B452CD7A2223D19600169FF8 /* CLAlertViewCloseButton@3x.png in Resources */,
 				B452CD7B2223D19600169FF8 /* CLAlertViewCloseButton@2x.png in Resources */,
+				B479B24A247BAE90008456A1 /* clformatfield_clear_button.png in Resources */,
 				B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */,
 				9024A82421C1FA6900475C50 /* Assets.xcassets in Resources */,
 			);
@@ -529,11 +569,14 @@
 				B4BF40E4221F9D0F00B0C35E /* CLAlertView.m in Sources */,
 				04BB729821F99037009E7E9C /* CLDBViewController.m in Sources */,
 				BA850C0421F89D84005248B5 /* CLUIViewController.m in Sources */,
+				B479B254247BAF3B008456A1 /* NSString+Separate.m in Sources */,
 				9024A82A21C1FA6900475C50 /* main.m in Sources */,
 				9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */,
 				B47324CF221BA318000361CA /* CLColorfulActivityView.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
+				B479B256247BAF3B008456A1 /* UITextField+ExtentRange.m in Sources */,
 				B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */,
+				B479B255247BAF3B008456A1 /* NSString+Helper.m in Sources */,
 				BA15E2E72204880D00C9D7AE /* CLActionSheet.m in Sources */,
 				BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */,
 				B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */,
@@ -546,6 +589,7 @@
 				B479B243247B6A72008456A1 /* UITestBaseViewController.m in Sources */,
 				BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */,
 				BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */,
+				B479B249247BAE90008456A1 /* CLFormatField.m in Sources */,
 				BA850C1D21F89DDD005248B5 /* EWSHttpRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
