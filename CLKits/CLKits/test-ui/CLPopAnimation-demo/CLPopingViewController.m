@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Demos";
+    self.title = @"Demo";
     
     self.button = [self createButton:CGRectMake(50, 150, 150, 40) title:@"shake"];
     [self.button addTarget:self action:@selector(shake) forControlEvents:UIControlEventTouchUpInside];

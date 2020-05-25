@@ -32,6 +32,13 @@
 		B479B254247BAF3B008456A1 /* NSString+Separate.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B24F247BAF3A008456A1 /* NSString+Separate.m */; };
 		B479B255247BAF3B008456A1 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B250247BAF3A008456A1 /* NSString+Helper.m */; };
 		B479B256247BAF3B008456A1 /* UITextField+ExtentRange.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B253247BAF3A008456A1 /* UITextField+ExtentRange.m */; };
+		B479B25A247BB347008456A1 /* CLIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B259247BB347008456A1 /* CLIconButton.m */; };
+		B479B25E247BB39E008456A1 /* CLImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B25C247BB39E008456A1 /* CLImageButton.m */; };
+		B479B262247BB4BF008456A1 /* CLCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B479B261247BB4BF008456A1 /* CLCheckBox.m */; };
+		B479B272247BB552008456A1 /* checkbox_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B479B26E247BB551008456A1 /* checkbox_selected@2x.png */; };
+		B479B273247BB552008456A1 /* checkbox_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B479B26F247BB551008456A1 /* checkbox_selected@3x.png */; };
+		B479B274247BB552008456A1 /* checkbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B479B270247BB551008456A1 /* checkbox@2x.png */; };
+		B479B275247BB552008456A1 /* checkbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B479B271247BB552008456A1 /* checkbox@3x.png */; };
 		B4BF40E4221F9D0F00B0C35E /* CLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */; };
 		B4C677D022266F6500E2B6E0 /* CLQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C677CF22266F6500E2B6E0 /* CLQRCode.m */; };
 		BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B722034BE600C9D7AE /* JKDBHelper.m */; };
@@ -91,6 +98,16 @@
 		B479B251247BAF3A008456A1 /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helper.h"; sourceTree = "<group>"; };
 		B479B252247BAF3A008456A1 /* UITextField+ExtentRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ExtentRange.h"; sourceTree = "<group>"; };
 		B479B253247BAF3A008456A1 /* UITextField+ExtentRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ExtentRange.m"; sourceTree = "<group>"; };
+		B479B258247BB347008456A1 /* CLIconButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLIconButton.h; sourceTree = "<group>"; };
+		B479B259247BB347008456A1 /* CLIconButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLIconButton.m; sourceTree = "<group>"; };
+		B479B25C247BB39E008456A1 /* CLImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLImageButton.m; sourceTree = "<group>"; };
+		B479B25D247BB39E008456A1 /* CLImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLImageButton.h; sourceTree = "<group>"; };
+		B479B260247BB4BF008456A1 /* CLCheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLCheckBox.h; sourceTree = "<group>"; };
+		B479B261247BB4BF008456A1 /* CLCheckBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLCheckBox.m; sourceTree = "<group>"; };
+		B479B26E247BB551008456A1 /* checkbox_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_selected@2x.png"; sourceTree = "<group>"; };
+		B479B26F247BB551008456A1 /* checkbox_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_selected@3x.png"; sourceTree = "<group>"; };
+		B479B270247BB551008456A1 /* checkbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox@2x.png"; sourceTree = "<group>"; };
+		B479B271247BB552008456A1 /* checkbox@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox@3x.png"; sourceTree = "<group>"; };
 		B4BF40E2221F9D0F00B0C35E /* CLAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAlertView.h; sourceTree = "<group>"; };
 		B4BF40E3221F9D0F00B0C35E /* CLAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAlertView.m; sourceTree = "<group>"; };
 		B4C677CE22266F6500E2B6E0 /* CLQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLQRCode.h; sourceTree = "<group>"; };
@@ -306,6 +323,45 @@
 			path = CLExtensions;
 			sourceTree = "<group>";
 		};
+		B479B257247BB30E008456A1 /* CLIconButton */ = {
+			isa = PBXGroup;
+			children = (
+				B479B258247BB347008456A1 /* CLIconButton.h */,
+				B479B259247BB347008456A1 /* CLIconButton.m */,
+			);
+			path = CLIconButton;
+			sourceTree = "<group>";
+		};
+		B479B25B247BB391008456A1 /* CLImageButton */ = {
+			isa = PBXGroup;
+			children = (
+				B479B25D247BB39E008456A1 /* CLImageButton.h */,
+				B479B25C247BB39E008456A1 /* CLImageButton.m */,
+			);
+			path = CLImageButton;
+			sourceTree = "<group>";
+		};
+		B479B25F247BB4AC008456A1 /* CLCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				B479B26D247BB548008456A1 /* images */,
+				B479B260247BB4BF008456A1 /* CLCheckBox.h */,
+				B479B261247BB4BF008456A1 /* CLCheckBox.m */,
+			);
+			path = CLCheckBox;
+			sourceTree = "<group>";
+		};
+		B479B26D247BB548008456A1 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B479B26E247BB551008456A1 /* checkbox_selected@2x.png */,
+				B479B26F247BB551008456A1 /* checkbox_selected@3x.png */,
+				B479B270247BB551008456A1 /* checkbox@2x.png */,
+				B479B271247BB552008456A1 /* checkbox@3x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		B4C677CD22266EF500E2B6E0 /* CLQRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +442,9 @@
 		BA850C1321F89DDD005248B5 /* CLUI */ = {
 			isa = PBXGroup;
 			children = (
+				B479B25F247BB4AC008456A1 /* CLCheckBox */,
+				B479B25B247BB391008456A1 /* CLImageButton */,
+				B479B257247BB30E008456A1 /* CLIconButton */,
 				B479B245247BAE90008456A1 /* CLFormatField */,
 				BA850C0621F89DDD005248B5 /* CLViewFaster */,
 				B4C677CD22266EF500E2B6E0 /* CLQRCode */,
@@ -474,15 +533,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B479B273247BB552008456A1 /* checkbox_selected@3x.png in Resources */,
+				B479B272247BB552008456A1 /* checkbox_selected@2x.png in Resources */,
 				B452CD7D2223E52C00169FF8 /* github.png in Resources */,
 				9024A82721C1FA6900475C50 /* LaunchScreen.storyboard in Resources */,
 				B46C056B221D2A9300B48510 /* CLKits.podspec in Resources */,
 				B47324D7221BDC2A000361CA /* ViewMaskCenter.png in Resources */,
+				B479B275247BB552008456A1 /* checkbox@3x.png in Resources */,
 				B452CD7A2223D19600169FF8 /* CLAlertViewCloseButton@3x.png in Resources */,
 				B452CD7B2223D19600169FF8 /* CLAlertViewCloseButton@2x.png in Resources */,
 				B479B24A247BAE90008456A1 /* clformatfield_clear_button.png in Resources */,
 				B47324D6221BDC2A000361CA /* ViewMaskAnimatedCircle.png in Resources */,
 				9024A82421C1FA6900475C50 /* Assets.xcassets in Resources */,
+				B479B274247BB552008456A1 /* checkbox@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,8 +638,11 @@
 				B47324CF221BA318000361CA /* CLColorfulActivityView.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
 				B479B256247BAF3B008456A1 /* UITextField+ExtentRange.m in Sources */,
+				B479B262247BB4BF008456A1 /* CLCheckBox.m in Sources */,
 				B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */,
+				B479B25E247BB39E008456A1 /* CLImageButton.m in Sources */,
 				B479B255247BAF3B008456A1 /* NSString+Helper.m in Sources */,
+				B479B25A247BB347008456A1 /* CLIconButton.m in Sources */,
 				BA15E2E72204880D00C9D7AE /* CLActionSheet.m in Sources */,
 				BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */,
 				B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */,
