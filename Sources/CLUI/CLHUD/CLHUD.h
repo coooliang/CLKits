@@ -13,13 +13,13 @@
 typedef enum : NSUInteger {
     CLHUDDark,
     CLHUDLight
-} CLHUDStyleType;
+} CLHUDThemeType;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CLHUD : NSObject
 
-+(void)setStyle:(CLHUDStyleType)type;
++(void)setTheme:(CLHUDThemeType)type;
 
 +(void)showCL:(UIView *)view;
 +(void)hideCL;
@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void)showToast:(NSString *)msg;
 +(void)showInfo:(NSString *)msg;
++(void)showSuccess:(NSString *)msg;
++(void)showError:(NSString *)msg;
+
 +(void)showNotification:(NSString *)title msg:(NSString *)msg;
 
 @end

@@ -18,7 +18,7 @@ static UIView *_maskBg;
 
 @implementation CLHUD
 
-+(void)setStyle:(CLHUDStyleType)type{
++(void)setTheme:(CLHUDThemeType)type{
     if (type == CLHUDDark) {
         [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
         [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
@@ -35,7 +35,7 @@ static UIView *_maskBg;
 }
 +(void)load{
     [super load];
-    [CLHUD setStyle:CLHUDDark];
+    [CLHUD setTheme:CLHUDDark];
 }
 
 +(void)showCL:(UIView *)view{
@@ -56,13 +56,24 @@ static UIView *_maskBg;
     [SVProgressHUD dismiss];
 }
 
+#pragma mark -
 +(void)showToast:(NSString *)msg{
     [FTIndicator showToastMessage:msg];
 }
+
 +(void)showInfo:(NSString *)msg{
     [FTIndicator showInfoWithMessage:msg];
 }
 
++(void)showSuccess:(NSString *)msg{
+    [FTIndicator showSuccessWithMessage:msg];
+}
+
++(void)showError:(NSString *)msg{
+    [FTIndicator showErrorWithMessage:msg];
+}
+
+#pragma mark -
 +(void)showNotification:(NSString *)title msg:(NSString *)msg{
     [FTIndicator showNotificationWithTitle:title message:msg];
 }

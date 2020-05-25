@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITestBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CLNetworkingViewController : UIViewController
+@interface CLNetworkingViewController : UITestBaseViewController
 
 @end
 

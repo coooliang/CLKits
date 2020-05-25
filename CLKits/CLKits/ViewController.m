@@ -8,61 +8,36 @@
 
 #import "ViewController.h"
 
-#import "CLPopingViewController.h"
-#import "CLNetworkingViewController.h"
-#import "CLDBViewController.h"
-#import "CLUIViewController.h"
+#import "CLConstant.h"
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *getDataButton = [self createButton:@"CLPopAnimation" frame:CGRectMake(20, 100, 150, 40)];
-    [getDataButton addTarget:self action:@selector(CLPopAnimation) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getDataButton];
-    
-    UIButton *getJsonButton = [self createButton:@"CLNetworking" frame:CGRectMake(20, 180, 150, 40)];
-    [getJsonButton addTarget:self action:@selector(CLNetworking) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getJsonButton];
-    
-    UIButton *dbButton = [self createButton:@"CLDB" frame:CGRectMake(20, 260, 150, 40)];
-    [dbButton addTarget:self action:@selector(CLDB) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:dbButton];
-    
-    UIButton *uiButton = [self createButton:@"CLUI" frame:CGRectMake(20, 320, 150, 40)];
-    [uiButton addTarget:self action:@selector(CLUI) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:uiButton];
+    self.arr = @[@"CLPopingViewController",@"CLNetworkingViewController",@"CLDBViewController",@"CLUIViewController"];
 }
 
--(UIButton *)createButton:(NSString *)title frame:(CGRect)frame{
-    UIButton *button = [[UIButton alloc]initWithFrame:frame];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    return button;
+
+#pragma mark - 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.arr.count;
 }
 
--(void)CLPopAnimation{
-    CLPopingViewController *pop = [[CLPopingViewController alloc]init];
-    [self.navigationController pushViewController:pop animated:YES];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *title = [self.arr objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [self createTableViewCell:title];
+    return cell;
 }
 
--(void)CLNetworking{
-    CLNetworkingViewController *net = [[CLNetworkingViewController alloc]init];
-    [self.navigationController pushViewController:net animated:YES];
-}
-
--(void)CLDB{
-    CLDBViewController *db = [[CLDBViewController alloc]init];
-    [self.navigationController pushViewController:db animated:YES];
-}
-
--(void)CLUI{
-    CLUIViewController *ui = [[CLUIViewController alloc]init];
-    [self.navigationController pushViewController:ui animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger index = indexPath.row;
+    NSString *className =  [self.arr objectAtIndex:index];
+    Class cls = NSClassFromString(className);
+    UIViewController *vc = [[cls alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

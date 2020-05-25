@@ -9,6 +9,7 @@
 #import "CLNetworkingViewController.h"
 #import "UIViewCLFaster.h"
 #import "CLNetworking.h"
+#import "CLConstant.h"
 
 @interface CLNetworkingViewController ()
 
@@ -27,41 +28,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.button = [self createButton:CGRectMake(50, 150, 150, 40) title:@"getData"];
-    [self.button addTarget:self action:@selector(getData) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.button];
     
-    self.button2 = [self createButton:CGRectMake(50, 200, 150, 40) title:@"postData"];
-    [self.button2 addTarget:self action:@selector(postData) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.button2];
+    self.arr = @[@"getData",@"postData",@"getJson",@"postJson",@"upload",@"download",@"soap"];
     
-    self.button3 = [self createButton:CGRectMake(50, 300, 150, 40) title:@"getJson"];
-    [self.button3 addTarget:self action:@selector(getJson) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.button3];
-    
-    self.button4 = [self createButton:CGRectMake(50, 350, 150, 40) title:@"postJson"];
-    [self.button4 addTarget:self action:@selector(postJson) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.button4];
-    
-    self.button5 = [self createButton:CGRectMake(50, 450, 150, 40) title:@"upload"];
-    [self.button5 addTarget:self action:@selector(upload) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.button5];
-    
-    self.button7 = [self createButton:CGRectMake(50, 550, 150, 40) title:@"download"];
-    [self.button7 addTarget:self action:@selector(download) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.button7];
-    
-    self.button8 = [self createButton:CGRectMake(50, 600, 150, 40) title:@"soap"];
-    [self.button8 addTarget:self action:@selector(soap) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.button8];
-}
-
--(UIButton *)createButton:(CGRect)frame title:(NSString *)title{
-    UIButton *button = [[UIButton alloc]initWithFrame:frame];
-    [button setNormalTitle:title color:[UIColor blackColor]];
-    [button setBorder:1 color:[UIColor blackColor]];
-    [self.view addSubview:button];
-    return button;
 }
 
 -(void)getData{
@@ -126,4 +95,27 @@
         NSLog(@"result = %@",result);
     }];
 }
+
+#pragma mark -
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.arr.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *title = [self.arr objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [self createTableViewCell:title];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger index = indexPath.row;
+    NSString *methodName =  [self.arr objectAtIndex:index];
+    SEL sel = NSSelectorFromString(methodName);
+    if ([self respondsToSelector:sel]) {
+        SuppressPerformSelectorLeakWarning([self performSelector:sel]);
+    }
+    
+}
+
+
 @end
