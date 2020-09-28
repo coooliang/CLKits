@@ -17,6 +17,11 @@
 		9024A82A21C1FA6900475C50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A82921C1FA6900475C50 /* main.m */; };
 		9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84A21C1FAB900475C50 /* CLNetworkingViewController.m */; };
 		9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9024A84D21C1FAB900475C50 /* CLPopingViewController.m */; };
+		B413A58825217F4D0075149E /* CLKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = B413A58725217F4D0075149E /* CLKeyboardView.m */; };
+		B413A58C25217F7A0075149E /* CLKeyboardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B413A58B25217F7A0075149E /* CLKeyboardModel.m */; };
+		B413A58F252185A10075149E /* CLKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B413A58E252185A10075149E /* CLKeyboardButton.m */; };
+		B413A596252188100075149E /* AmountScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B413A593252188100075149E /* AmountScrollView.m */; };
+		B413A597252188100075149E /* AmountRuler.m in Sources */ = {isa = PBXBuildFile; fileRef = B413A594252188100075149E /* AmountRuler.m */; };
 		B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B41E2D2F221A5B5900DD5845 /* CLHUD.m */; };
 		B452CD7A2223D19600169FF8 /* CLAlertViewCloseButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */; };
 		B452CD7B2223D19600169FF8 /* CLAlertViewCloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B452CD792223D19600169FF8 /* CLAlertViewCloseButton@2x.png */; };
@@ -76,6 +81,17 @@
 		9024A84D21C1FAB900475C50 /* CLPopingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPopingViewController.m; sourceTree = "<group>"; };
 		9FDBF9F0FFE168A1B954F59E /* Pods-CLKits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLKits.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLKits/Pods-CLKits.release.xcconfig"; sourceTree = "<group>"; };
 		A737BD4D605BC371409D9C32 /* libPods-CLKits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLKits.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B413A58625217F4D0075149E /* CLKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLKeyboardView.h; sourceTree = "<group>"; };
+		B413A58725217F4D0075149E /* CLKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLKeyboardView.m; sourceTree = "<group>"; };
+		B413A58A25217F7A0075149E /* CLKeyboardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLKeyboardModel.h; sourceTree = "<group>"; };
+		B413A58B25217F7A0075149E /* CLKeyboardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLKeyboardModel.m; sourceTree = "<group>"; };
+		B413A58D252185A10075149E /* CLKeyboardButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLKeyboardButton.h; sourceTree = "<group>"; };
+		B413A58E252185A10075149E /* CLKeyboardButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLKeyboardButton.m; sourceTree = "<group>"; };
+		B413A590252187860075149E /* JKSizeFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSizeFix.h; sourceTree = "<group>"; };
+		B413A592252188100075149E /* AmountRuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountRuler.h; sourceTree = "<group>"; };
+		B413A593252188100075149E /* AmountScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountScrollView.m; sourceTree = "<group>"; };
+		B413A594252188100075149E /* AmountRuler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountRuler.m; sourceTree = "<group>"; };
+		B413A595252188100075149E /* AmountScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountScrollView.h; sourceTree = "<group>"; };
 		B41E2D2E221A5B5900DD5845 /* CLHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLHUD.h; sourceTree = "<group>"; };
 		B41E2D2F221A5B5900DD5845 /* CLHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLHUD.m; sourceTree = "<group>"; };
 		B452CD782223D19600169FF8 /* CLAlertViewCloseButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CLAlertViewCloseButton@3x.png"; sourceTree = "<group>"; };
@@ -88,7 +104,7 @@
 		B47324CE221BA318000361CA /* CLActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLActivityIndicatorView.m; sourceTree = "<group>"; };
 		B47324D4221BDC2A000361CA /* ViewMaskAnimatedCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ViewMaskAnimatedCircle.png; sourceTree = "<group>"; };
 		B47324D5221BDC2A000361CA /* ViewMaskCenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ViewMaskCenter.png; sourceTree = "<group>"; };
-		B479B240247B6765008456A1 /* CLConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLConstant.h; sourceTree = "<group>"; };
+		B479B240247B6765008456A1 /* EnvConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvConstant.h; sourceTree = "<group>"; };
 		B479B241247B6A72008456A1 /* UITestBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITestBaseViewController.h; sourceTree = "<group>"; };
 		B479B242247B6A72008456A1 /* UITestBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITestBaseViewController.m; sourceTree = "<group>"; };
 		B479B246247BAE90008456A1 /* CLFormatField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLFormatField.m; sourceTree = "<group>"; };
@@ -247,6 +263,31 @@
 				9024A84D21C1FAB900475C50 /* CLPopingViewController.m */,
 			);
 			path = "CLPopAnimation-demo";
+			sourceTree = "<group>";
+		};
+		B413A58925217F540075149E /* CLKeyboardView */ = {
+			isa = PBXGroup;
+			children = (
+				B413A591252188100075149E /* AmountScrollView */,
+				B413A58A25217F7A0075149E /* CLKeyboardModel.h */,
+				B413A58B25217F7A0075149E /* CLKeyboardModel.m */,
+				B413A58625217F4D0075149E /* CLKeyboardView.h */,
+				B413A58725217F4D0075149E /* CLKeyboardView.m */,
+				B413A58D252185A10075149E /* CLKeyboardButton.h */,
+				B413A58E252185A10075149E /* CLKeyboardButton.m */,
+			);
+			path = CLKeyboardView;
+			sourceTree = "<group>";
+		};
+		B413A591252188100075149E /* AmountScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B413A592252188100075149E /* AmountRuler.h */,
+				B413A593252188100075149E /* AmountScrollView.m */,
+				B413A594252188100075149E /* AmountRuler.m */,
+				B413A595252188100075149E /* AmountScrollView.h */,
+			);
+			path = AmountScrollView;
 			sourceTree = "<group>";
 		};
 		B41C7F9C222F98CB008C2CDB /* CLTest */ = {
@@ -418,7 +459,8 @@
 				B41C7F9C222F98CB008C2CDB /* CLTest */,
 				BA850C1321F89DDD005248B5 /* CLUI */,
 				04BB729121F9615A009E7E9C /* JKDBModel */,
-				B479B240247B6765008456A1 /* CLConstant.h */,
+				B479B240247B6765008456A1 /* EnvConstant.h */,
+				B413A590252187860075149E /* JKSizeFix.h */,
 			);
 			name = Sources;
 			path = ../../Sources;
@@ -452,6 +494,7 @@
 		BA850C1321F89DDD005248B5 /* CLUI */ = {
 			isa = PBXGroup;
 			children = (
+				B413A58925217F540075149E /* CLKeyboardView */,
 				B479B25F247BB4AC008456A1 /* CLCheckBox */,
 				B479B25B247BB391008456A1 /* CLImageButton */,
 				B479B257247BB30E008456A1 /* CLIconButton */,
@@ -646,10 +689,12 @@
 				B479B254247BAF3B008456A1 /* NSString+Separate.m in Sources */,
 				9024A82A21C1FA6900475C50 /* main.m in Sources */,
 				9024A84F21C1FAB900475C50 /* CLPopingViewController.m in Sources */,
+				B413A597252188100075149E /* AmountRuler.m in Sources */,
 				B47324CF221BA318000361CA /* CLColorfulActivityView.m in Sources */,
 				9024A81C21C1FA6800475C50 /* AppDelegate.m in Sources */,
 				B479B256247BAF3B008456A1 /* UITextField+ExtentRange.m in Sources */,
 				B479B278247BB69D008456A1 /* NSString+Utils.m in Sources */,
+				B413A58C25217F7A0075149E /* CLKeyboardModel.m in Sources */,
 				B479B262247BB4BF008456A1 /* CLCheckBox.m in Sources */,
 				B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */,
 				B479B25E247BB39E008456A1 /* CLImageButton.m in Sources */,
@@ -660,13 +705,16 @@
 				B41E2D30221A5B5900DD5845 /* CLHUD.m in Sources */,
 				BA850C1921F89DDD005248B5 /* UIView+CLFaster.m in Sources */,
 				BA850C1C21F89DDD005248B5 /* CLNetworking.m in Sources */,
+				B413A58825217F4D0075149E /* CLKeyboardView.m in Sources */,
 				9024A84E21C1FAB900475C50 /* CLNetworkingViewController.m in Sources */,
 				B4C677D022266F6500E2B6E0 /* CLQRCode.m in Sources */,
 				BA850C1B21F89DDD005248B5 /* UILabel+CLFaster.m in Sources */,
 				BA850C1F21F89DDD005248B5 /* UIView+CLPopAnimation.m in Sources */,
 				B479B243247B6A72008456A1 /* UITestBaseViewController.m in Sources */,
 				BA850C1A21F89DDD005248B5 /* UIButton+CLFaster.m in Sources */,
+				B413A596252188100075149E /* AmountScrollView.m in Sources */,
 				BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */,
+				B413A58F252185A10075149E /* CLKeyboardButton.m in Sources */,
 				B479B249247BAE90008456A1 /* CLFormatField.m in Sources */,
 				BA850C1D21F89DDD005248B5 /* EWSHttpRequest.m in Sources */,
 			);

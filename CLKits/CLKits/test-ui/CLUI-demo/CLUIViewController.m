@@ -8,7 +8,7 @@
 
 #import "CLUIViewController.h"
 
-#import "CLConstant.h"
+#import "EnvConstant.h"
 
 #import "UIViewCLFaster.h"
 #import "CLHUD.h"
@@ -31,7 +31,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.arr = @[@"showCL",@"hideCL",@"showSV",@"hideSV",@"show",@"click1",@"click2",@"click3",@"click4",@"sheet",@"qrcode",@"barcode"];
+    self.arr = @[@"show CL loading",
+                 @"hide CL loading",
+                 @"show SV loading",
+                 @"hide SV loading",
+                 @"HUB",
+                 @"alert",
+                 @"alert two button",
+                 @"alert 3",
+                 @"alert 4",
+                 @"sheet",
+                 @"qrcode",
+                 @"barcode"];
 }
 
 -(void)showCL{

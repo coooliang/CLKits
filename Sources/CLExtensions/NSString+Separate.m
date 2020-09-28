@@ -7,7 +7,7 @@
 //
 
 #import "NSString+Separate.h"
-#import "CLConstant.h"
+#import "EnvConstant.h"
 
 @implementation NSString (Separate)
 

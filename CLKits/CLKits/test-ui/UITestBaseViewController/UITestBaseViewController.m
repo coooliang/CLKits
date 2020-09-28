@@ -7,7 +7,7 @@
 //
 
 #import "UITestBaseViewController.h"
-#import "CLConstant.h"
+#import "EnvConstant.h"
 
 @interface UITestBaseViewController ()<UITableViewDataSource,UITableViewDelegate>
 

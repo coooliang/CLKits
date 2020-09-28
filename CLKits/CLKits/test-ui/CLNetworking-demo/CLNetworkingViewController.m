@@ -9,7 +9,7 @@
 #import "CLNetworkingViewController.h"
 #import "UIViewCLFaster.h"
 #import "CLNetworking.h"
-#import "CLConstant.h"
+#import "EnvConstant.h"
 
 @interface CLNetworkingViewController ()
 

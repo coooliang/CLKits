@@ -1,13 +1,13 @@
 //
-//  CLConstant.h
+//  EnvConstant.h
 //  CLKits
 //
 //  Created by lion on 2020/5/25.
 //  Copyright © 2020 chenl. All rights reserved.
 //
 
-#ifndef CLConstant_h
-#define CLConstant_h
+#ifndef EnvConstant_h
+#define EnvConstant_h
 
 #define SuppressPerformSelectorLeakWarning(Stuff) \
 do { \
@@ -22,4 +22,4 @@ do { \
 
 #define safeString(obj) (([obj isEqual:[NSNull null]] || (obj == nil) || [@"null" isEqual:obj] || [@"<null>" isEqual:obj] || [@"(null)" isEqual:obj]) ? @"" : ([NSString stringWithFormat:@"%@",obj]))
 
-#endif /* CLConstant_h */
+#endif /* EnvConstant_h */
