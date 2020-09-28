@@ -22,6 +22,7 @@
 
 -(instancetype)initWithModel:(CLKeyboardModel *)model;
 -(void)show;
+-(void)hide;
 
 @property(nonatomic,strong) CLKeyboardModel *model;
 

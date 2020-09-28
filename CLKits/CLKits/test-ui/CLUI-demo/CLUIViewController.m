@@ -26,13 +26,14 @@
 @end
 
 @implementation CLUIViewController{
-    
+    CLKeyboardView *_keyboardView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.arr = @[@"showKeyboard",
+                 @"hideKeyboard",
                  @"showCL",
                  @"hideCL",
                  @"showSV",
@@ -49,8 +50,13 @@
 
 -(void)showKeyboard{
     CLKeyboardModel *model = [CLKeyboardModel new];
-    CLKeyboardView *v = [[CLKeyboardView alloc]initWithModel:model];
-    [v show];
+    model.type = CLKeyboardTypeFloat;
+    model.hideToolbar = true;
+    _keyboardView = [[CLKeyboardView alloc]initWithModel:model];
+    [_keyboardView show];
+}
+-(void)hideKeyboard{
+    [_keyboardView hide];
 }
 
 -(void)showCL{
