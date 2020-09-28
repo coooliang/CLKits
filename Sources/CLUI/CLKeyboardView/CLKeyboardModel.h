@@ -27,9 +27,9 @@ typedef enum : NSUInteger {
 @property(nonatomic,assign)BOOL isRandom;
 @property(nonatomic,assign)BOOL hideToolbar;
 
-@property(nonatomic,assign)CGFloat minAmount;
-@property(nonatomic,assign)CGFloat maxAmount;
-@property(nonatomic,assign)CGFloat average;//平均水平
+@property(nonatomic,assign)NSString *minAmount;
+@property(nonatomic,assign)NSString * maxAmount;
+@property(nonatomic,assign)NSString * average;//平均水平
 
 @end
 

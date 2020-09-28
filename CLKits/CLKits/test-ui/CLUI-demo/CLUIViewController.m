@@ -15,6 +15,7 @@
 #import "CLAlertView.h"
 #import "CLActionSheet.h"
 #import "CLQRCode.h"
+#import "CLKeyboardView.h"
 
 @interface CLUIViewController ()
 
@@ -31,18 +32,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.arr = @[@"show CL loading",
-                 @"hide CL loading",
-                 @"show SV loading",
-                 @"hide SV loading",
+    self.arr = @[@"showKeyboard",
+                 @"showCL",
+                 @"hideCL",
+                 @"showSV",
+                 @"hideSV",
                  @"HUB",
                  @"alert",
-                 @"alert two button",
-                 @"alert 3",
-                 @"alert 4",
+                 @"alert2",
+                 @"alert3",
+                 @"alert4",
                  @"sheet",
                  @"qrcode",
                  @"barcode"];
+}
+
+-(void)showKeyboard{
+    CLKeyboardModel *model = [CLKeyboardModel new];
+    CLKeyboardView *v = [[CLKeyboardView alloc]initWithModel:model];
+    [v show];
 }
 
 -(void)showCL{

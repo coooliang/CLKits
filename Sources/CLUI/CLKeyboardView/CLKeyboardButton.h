@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CLKeyboardButton : UIView
+@interface CLKeyboardButton : UIButton
 
 @property(nonatomic,strong)NSString *value;
 

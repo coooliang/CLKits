@@ -283,9 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				B413A592252188100075149E /* AmountRuler.h */,
-				B413A593252188100075149E /* AmountScrollView.m */,
 				B413A594252188100075149E /* AmountRuler.m */,
 				B413A595252188100075149E /* AmountScrollView.h */,
+				B413A593252188100075149E /* AmountScrollView.m */,
 			);
 			path = AmountScrollView;
 			sourceTree = "<group>";
