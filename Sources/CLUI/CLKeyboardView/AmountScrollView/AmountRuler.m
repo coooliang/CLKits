@@ -22,6 +22,7 @@
         self.isKeyboardPress = NO;
         self.rulerData = [NSMutableArray new];
         _rulerTableView = [[UITableView alloc] initWithFrame:self.bounds];
+        _rulerTableView.backgroundColor = [UIColor whiteColor];
         _rulerTableView.rowHeight = DISTANCEVALUE;
         _rulerTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _rulerTableView.delegate = self;
@@ -50,8 +51,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] init];
+        cell.textLabel.textColor = [UIColor blackColor];
         [cell.textLabel setFont:[UIFont systemFontOfSize:DISTANCEVALUE]];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell.backgroundColor = [UIColor whiteColor];
         
         UIView *shortView = [[UIView alloc] initWithFrame:CGRectMake(self.bounds.size.width - 10, DISTANCEVALUE/2, 10, 1)];
         shortView.tag = 1;

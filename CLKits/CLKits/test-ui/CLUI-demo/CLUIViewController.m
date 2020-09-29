@@ -32,7 +32,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.arr = @[@"showKeyboard",
+    self.arr = @[@"showKeyboardPwd",
+                 @"showKeyboardIDCard",
+                 @"showKeyboardscroll",
+                 @"showKeyboardFloat",
                  @"hideKeyboard",
                  @"showCL",
                  @"hideCL",
@@ -48,10 +51,41 @@
                  @"barcode"];
 }
 
--(void)showKeyboard{
+-(void)showKeyboardPwd{
+    if (_keyboardView) {
+        [_keyboardView hide];
+    }
+    CLKeyboardModel *model = [CLKeyboardModel new];
+    model.type = CLKeyboardTypePwd;
+    model.hideToolbar = true;
+    _keyboardView = [[CLKeyboardView alloc]initWithModel:model];
+    [_keyboardView show];
+}
+-(void)showKeyboardIDCard{
+    if (_keyboardView) {
+        [_keyboardView hide];
+    }
+    CLKeyboardModel *model = [CLKeyboardModel new];
+    model.type = CLKeyboardTypeIDCard;
+    model.hideToolbar = true;
+    _keyboardView = [[CLKeyboardView alloc]initWithModel:model];
+    [_keyboardView show];
+}
+-(void)showKeyboardscroll{
+    if (_keyboardView) {
+        [_keyboardView hide];
+    }
+    CLKeyboardModel *model = [CLKeyboardModel new];
+    model.type = CLKeyboardTypeScroll;
+    _keyboardView = [[CLKeyboardView alloc]initWithModel:model];
+    [_keyboardView show];
+}
+-(void)showKeyboardFloat{
+    if (_keyboardView) {
+        [_keyboardView hide];
+    }
     CLKeyboardModel *model = [CLKeyboardModel new];
     model.type = CLKeyboardTypeFloat;
-    model.hideToolbar = true;
     _keyboardView = [[CLKeyboardView alloc]initWithModel:model];
     [_keyboardView show];
 }
