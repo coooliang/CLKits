@@ -18,6 +18,13 @@
 #define btn_height (JKFixHeightFloat(54))
 #define keyboard_height (JKFixHeightFloat(216))
 
+@interface CLKeyboardView()
+
+@property(nonatomic,strong) UITextField *numberFiled;
+@property(nonatomic,strong) AmountRuler *amountRuler;
+
+@end
+
 @implementation CLKeyboardView{
     NSMutableArray *_numArray;
     
@@ -40,6 +47,8 @@
     
     if (model.type == CLKeyboardTypeScroll) {
         _btnWidth = WIDTH/4;
+        _selfHeight += textfield_height;
+        _selfY -= textfield_height;
     }else{
         _btnWidth = WIDTH/3;
     }
@@ -233,6 +242,7 @@
 
 #pragma mark - scroll view
 -(void)createScrollView:(CGRect)frame{
+    _model.hideToolbar = false;//scorll view 总是有tool bar
     if ([@""isEqualToString:safeString(_model.minAmount)]) {
         _model.minAmount = @"0";
     }
@@ -242,10 +252,28 @@
     if ([@""isEqualToString:safeString(_model.average)]) {
         _model.average = @"10";
     }
+    
+    [self createNumberField];
     [self createKeyboardView:frame];
     [self createRightViewWithMinAmount:_model.minAmount andMaxAmount:_model.maxAmount andAverage:_model.average];
 }
-
+-(void)createNumberField{
+    UIImageView *bgimageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, tool_height, WIDTH, textfield_height)];
+    _numberFiled = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, WIDTH-20, textfield_height)];
+    _numberFiled.delegate = self;
+    _numberFiled.adjustsFontSizeToFitWidth = YES;
+    _numberFiled.borderStyle = UITextBorderStyleNone;
+    _numberFiled.textAlignment =  NSTextAlignmentRight;
+    _numberFiled.font =[UIFont systemFontOfSize:25];
+    _numberFiled.text = _model.text;
+    _numberFiled.inputView = nil;
+    
+    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"numberBg"]];
+    image.frame = CGRectMake(0, 0, WIDTH, textfield_height);
+    [bgimageview addSubview:image];
+    [bgimageview addSubview:_numberFiled];
+    [self addSubview:bgimageview];
+}
 -(void)createRightViewWithMinAmount:(NSString *)minAmount andMaxAmount:(NSString *)maxAmount andAverage:(NSString *)average{
     float y = _keyboardY-_selfY;
     self.amountRuler = [[AmountRuler alloc] initWithFrame:CGRectMake(_btnWidth * 3, y, _btnWidth, btn_height * 3)];

@@ -35,6 +35,7 @@
     self.arr = @[@"showKeyboardPwd",
                  @"showKeyboardIDCard",
                  @"showKeyboardscroll",
+                 @"showKeyboardscroll2",
                  @"showKeyboardFloat",
                  @"hideKeyboard",
                  @"showCL",
@@ -77,6 +78,16 @@
     }
     CLKeyboardModel *model = [CLKeyboardModel new];
     model.type = CLKeyboardTypeScroll;
+    _keyboardView = [[CLKeyboardView alloc]initWithModel:model];
+    [_keyboardView show];
+}
+-(void)showKeyboardscroll2{
+    if (_keyboardView) {
+        [_keyboardView hide];
+    }
+    CLKeyboardModel *model = [CLKeyboardModel new];
+    model.type = CLKeyboardTypeScroll;
+    model.hideToolbar = true;
     _keyboardView = [[CLKeyboardView alloc]initWithModel:model];
     [_keyboardView show];
 }

@@ -26,9 +26,6 @@
 
 @property(nonatomic,strong) CLKeyboardModel *model;
 
-@property(nonatomic,strong) UITextField *numberFiled;
-@property(nonatomic,strong) AmountRuler *amountRuler;
-
 @property(nonatomic,assign) id<CLKeyboardViewDelegate> delegate;
 
 @end
