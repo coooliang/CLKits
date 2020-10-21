@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "AmountRuler.h"
 #import "CLKeyboardModel.h"
+#import "CLKeyboardButton.h"
+
+typedef void (^CloseBlock)(void);
 
 @protocol CLKeyboardViewDelegate <NSObject>
 
 - (void)CLKeyboardInput:(NSString *)text;
 - (void)CLKeyboardBackspace;
-- (void)CLKeyboardOtherButton:(NSString *)text;
+- (void)CLKeyboardOtherButton:(CLKeyboardButton *)sender;
 
 @end
 
@@ -27,6 +30,8 @@
 @property(nonatomic,strong) CLKeyboardModel *model;
 
 @property(nonatomic,assign) id<CLKeyboardViewDelegate> delegate;
+
+@property(nonatomic,assign)CloseBlock _closeBlock;
 
 @end
 

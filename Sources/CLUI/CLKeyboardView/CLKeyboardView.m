@@ -18,7 +18,7 @@
 #define btn_height (JKFixHeightFloat(54))
 #define keyboard_height (JKFixHeightFloat(216))
 
-@interface CLKeyboardView()
+@interface CLKeyboardView()<AmountRulerDelegate>
 
 @property(nonatomic,strong) UITextField *numberFiled;
 @property(nonatomic,strong) AmountRuler *amountRuler;
@@ -47,8 +47,10 @@
     
     if (model.type == CLKeyboardTypeScroll) {
         _btnWidth = WIDTH/4;
-        _selfHeight += textfield_height;
-        _selfY -= textfield_height;
+        if (!model.hideField) {
+            _selfHeight += textfield_height;
+            _selfY -= textfield_height;
+        }
     }else{
         _btnWidth = WIDTH/3;
     }
@@ -81,17 +83,38 @@
 }
 
 -(void)hide{
-    [UIView animateWithDuration:0.3 animations:^{
-        CGRect frame = CGRectMake(0, HEIGHT,WIDTH,self->_selfHeight);
-        self.frame = frame;
-    } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-    }];
+//    if(_delegate != nil && [_delegate isKindOfClass:[NumberKeyBoardPlugin class]]){
+    //        NumberKeyBoardPlugin *temp = (NumberKeyBoardPlugin *)_delegate;
+    //        for (UIView *view in [temp.webView.superview subviews]) {//越狱键盘BUG修改
+    //            if([view isKindOfClass:[UIToolbar class]]){
+    //                [view removeFromSuperview];
+    //            }
+    //        }
+    //        [temp scrollWebView:NO];
+    //    }
+        
+        //        if(self->_delegate != nil && [self->_delegate isKindOfClass:[NumberKeyBoardPlugin class]]){
+        //            NumberKeyBoardPlugin *temp = (NumberKeyBoardPlugin*)self->_delegate;
+        //            if (![@""isEqualToString:self->_nid]) {
+        //                [temp.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"var el=document.getElementById('%@');if(el.onblur){el.onblur();}if(eval('window.assignScrollCenter')){assignScrollCenter();}",self->_nid]];
+        //            }
+        //            self->_numberFiled.text = @"";
+        //        }
+        [UIView animateWithDuration:0.2 animations:^{
+            CGRect temp = self.frame;
+            temp.origin.y = HEIGHT;
+            self.frame = temp;
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+            if (_closeBlock) {
+                _closeBlock();
+            }
+        }];
 }
 
 #pragma mark - keyboard view
 -(void)createKeyboardView:(CGRect)frame{
-    if (_model.hideToolbar == false) {
+    if (!_model.hideToolbar) {
         [self addToolBar];
     }
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, _keyboardY-_selfY, WIDTH, keyboard_height)];
@@ -130,14 +153,20 @@
     sureButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [sureButton setTitleColor:BUTTON_NORMAL_COLOR forState:UIControlStateNormal];
     [sureButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    [sureButton addTarget:self action:@selector(sure) forControlEvents:UIControlEventTouchUpInside];
+    [sureButton addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
     [tool addSubview:sureButton];
     
     UIColor *color = [UIColor colorWithRed:188/255.0 green:192/255.0 blue:199/255.0 alpha:1];
     UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, ONE_SCALE)];
     topLine.backgroundColor = color;
     [tool addSubview:topLine];
-
+    
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, WIDTH, tool_height)];
+    titleLabel.font = [UIFont systemFontOfSize:14];
+    titleLabel.textColor = [UIColor colorWithRed:1 green:0.455 blue:0.267 alpha:1];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = @"系统安全键盘";
+    [tool addSubview:titleLabel];
     [self addSubview:tool];
 }
 -(CLKeyboardButton *)createButtonX:(NSInteger) x Y:(NSInteger) y{
@@ -204,7 +233,7 @@
     }else if (num == 10){
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frameW, btn_height)];
         label.font = kNumFont;
-        if(_model.type == CLKeyboardTypeFloat){
+        if(_model.type == CLKeyboardTypeFloat || _model.type == CLKeyboardTypeScroll){
             label.text = @".";
         }else if(_model.type == CLKeyboardTypeIDCard){
             label.text = @"X";
@@ -242,7 +271,6 @@
 
 #pragma mark - scroll view
 -(void)createScrollView:(CGRect)frame{
-    _model.hideToolbar = false;//scorll view 总是有tool bar
     if ([@""isEqualToString:safeString(_model.minAmount)]) {
         _model.minAmount = @"0";
     }
@@ -253,19 +281,25 @@
         _model.average = @"10";
     }
     
-    [self createNumberField];
+    if (!_model.hideField) {
+        [self createNumberField];
+    }
     [self createKeyboardView:frame];
     [self createRightViewWithMinAmount:_model.minAmount andMaxAmount:_model.maxAmount andAverage:_model.average];
 }
 -(void)createNumberField{
-    UIImageView *bgimageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, tool_height, WIDTH, textfield_height)];
+    float y = 0;
+    if (!_model.hideToolbar) {
+        y = tool_height;
+    }
+    UIImageView *bgimageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, y, WIDTH, textfield_height)];
     _numberFiled = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, WIDTH-20, textfield_height)];
-    _numberFiled.delegate = self;
     _numberFiled.adjustsFontSizeToFitWidth = YES;
     _numberFiled.borderStyle = UITextBorderStyleNone;
     _numberFiled.textAlignment =  NSTextAlignmentRight;
     _numberFiled.font =[UIFont systemFontOfSize:25];
     _numberFiled.text = _model.text;
+    _numberFiled.textColor = [UIColor blackColor];
     _numberFiled.inputView = nil;
     
     UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"numberBg"]];
@@ -290,7 +324,7 @@
     [self addSubview:topLine];
     
     UIButton *confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(_btnWidth * 3, btn_height * 3+y, _btnWidth, btn_height)];
-    [confirmBtn addTarget:self action:@selector(sure) forControlEvents:UIControlEventTouchUpInside];
+    [confirmBtn addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmBtn];
     
     confirmBtn.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
@@ -319,11 +353,44 @@
     [self addSubview:leftBtnLine];
 }
 
-- (void)getAmountRulerValue:(CGFloat)rulerValue{
-    if (rulerValue == (int)rulerValue) {
-        _numberFiled.text = [NSString stringWithFormat:@"%.0f",rulerValue];
+#pragma mark - click and callback
+-(void)buttonClick:(CLKeyboardButton *)sender{
+    if (sender.tag == 10){
+        [self.delegate performSelector:@selector(CLKeyboardOtherButton:) withObject:sender];
+    }else if(sender.tag == 12){
+        [self.delegate performSelector:@selector(CLKeyboardBackspace)];
     }else{
-        _numberFiled.text = [NSString stringWithFormat:@"%.2f",rulerValue];
+        [self.delegate performSelector:@selector(CLKeyboardInput:) withObject:sender.value];
+    }
+    [self fieldChange:sender];
+}
+
+-(void)fieldChange:(CLKeyboardButton *)sender{
+    if (_numberFiled && _model.type == CLKeyboardTypeScroll) {
+        NSMutableString *text = [NSMutableString stringWithString:_numberFiled.text];
+        if (sender.tag == 10) {
+            [text appendString:@"."];
+        }else if(sender.tag == 12){
+            if (text.length > 0) {
+                [text deleteCharactersInRange:NSMakeRange(text.length-1, 1)];
+            }
+        }else{
+            [text appendString:sender.value];
+        }
+        _numberFiled.text = text;
+    }
+}
+
+#pragma mark - AmountRulerDelegate
+- (void)getAmountRulerValue:(CGFloat)rulerValue{
+    NSString *rs = @"";
+    if (rulerValue == (int)rulerValue) {
+        rs = [NSString stringWithFormat:@"%.0f",rulerValue];
+    }else{
+        rs = [NSString stringWithFormat:@"%.2f",rulerValue];
+    }
+    if (_numberFiled) {
+        _numberFiled.text = rs;
     }
     
 //    if(_delegate != nil && [_delegate isKindOfClass:[NumberKeyBoardPlugin class]]){
@@ -331,74 +398,8 @@
 //        NSString *script = [NSString stringWithFormat:@"var _dataInput = $('#%@'); var maxLen=_dataInput.attr('maxlength'); maxLen=typeof(maxLen) == 'undefined' || maxLen == null ? %d : maxLen; _dataInput.val('%@'.substring(0, maxLen));if(typeof(_dataInput[0].oninput) != 'undefined'){var ev = document.createEvent('HTMLEvents');ev.initEvent('input', false, true);_dataInput[0].dispatchEvent(ev);}if(typeof(_dataInput[0].onpropertychange) != 'undefined'){var ev = document.createEvent('HTMLEvents');ev.initEvent('propertychange', false, true);_dataInput[0].dispatchEvent(ev);}if(_dataInput.attr('alt') == 'cardNo'){_dataInput.val(getCardNo(_dataInput.val()));}",_nid,(int)_numberFiled.text.length,_numberFiled.text];
 //        [temp.webView stringByEvaluatingJavaScriptFromString:script];
 //    }
-}
-
-#pragma mark - click and callback
--(void)buttonClick:(CLKeyboardButton *)sender{
-    if (sender.tag == 10){
-        [self.delegate performSelector:@selector(CLKeyboardOtherButton:) withObject:sender.value];
-    }else if(sender.tag == 12){
-        [self.delegate performSelector:@selector(CLKeyboardBackspace)];
-    }else{
-        [self.delegate performSelector:@selector(CLKeyboardInput:) withObject:sender.value];
+    if (_delegate) {
+        [_delegate CLKeyboardInput:rs];
     }
-}
-
--(void)sure{
-    [self sure:^{
-        [self removeFromSuperview];
-    }];
-}
-
--(void)sure:(void(^)(void))finishBlock{
-    [self closeKeyboard:^{
-//        if(self->_delegate != nil && [self->_delegate isKindOfClass:[NumberKeyBoardPlugin class]]){
-//            NumberKeyBoardPlugin *temp = (NumberKeyBoardPlugin*)self->_delegate;
-//            if (![@""isEqualToString:self->_nid]) {
-//                [temp.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"var el=document.getElementById('%@');if(el.onblur){el.onblur();}if(eval('window.assignScrollCenter')){assignScrollCenter();}",self->_nid]];
-//            }
-//            self->_numberFiled.text = @"";
-//        }
-        if (finishBlock) {
-            finishBlock();
-        }
-    }];
-}
-
--(void)closeKeyboard:(void(^)(void))finishBlock{
-//    if(_delegate != nil && [_delegate isKindOfClass:[NumberKeyBoardPlugin class]]){
-//        NumberKeyBoardPlugin *temp = (NumberKeyBoardPlugin *)_delegate;
-//        for (UIView *view in [temp.webView.superview subviews]) {//越狱键盘BUG修改
-//            if([view isKindOfClass:[UIToolbar class]]){
-//                [view removeFromSuperview];
-//            }
-//        }
-//        [temp scrollWebView:NO];
-//    }
-    [UIView animateWithDuration:0.2 animations:^{
-        CGRect temp = self.frame;
-        temp.origin.y = HEIGHT;
-        self.frame = temp;
-    } completion:^(BOOL finished) {
-        if(finishBlock != nil){
-            finishBlock();
-        }
-    }];
-}
-
--(void)close:(void(^)(void))finishBlock{
-    [self closeKeyboard:^{
-//        if(self->_delegate != nil && [self->_delegate isKindOfClass:[NumberKeyBoardPlugin class]]){
-//            NumberKeyBoardPlugin *temp = (NumberKeyBoardPlugin*)self->_delegate;
-//            [temp.webView stringByEvaluatingJavaScriptFromString:@"if(eval('window.assignScrollCenter')){assignScrollCenter();}"];
-//        }
-        if (finishBlock) {
-            finishBlock();
-        }
-    }];
-}
-
--(void)del{
-    _numberFiled.text = @"";
 }
 @end

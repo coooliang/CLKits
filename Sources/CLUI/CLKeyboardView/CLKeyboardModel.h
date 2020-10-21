@@ -21,11 +21,13 @@ typedef enum : NSUInteger {
 @property(nonatomic,assign)CLKeyboardType type;
 
 @property(nonatomic,strong)NSString *text;
+@property(nonatomic,strong)NSString *title;
 @property(nonatomic,strong)NSString *nid;
 @property(nonatomic,strong)NSString *pageOffset;
 
 @property(nonatomic,assign)BOOL isRandom;
 @property(nonatomic,assign)BOOL hideToolbar;
+@property(nonatomic,assign)BOOL hideField;//只有type等于CLKeyboardTypeScroll时候有效
 
 @property(nonatomic,assign)NSString *minAmount;
 @property(nonatomic,assign)NSString * maxAmount;
