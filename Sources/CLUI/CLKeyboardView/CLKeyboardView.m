@@ -106,8 +106,8 @@
             self.frame = temp;
         } completion:^(BOOL finished) {
             [self removeFromSuperview];
-            if (_closeBlock) {
-                _closeBlock();
+            if (self->_closeBlock) {
+                self->_closeBlock();
             }
         }];
 }

@@ -31,7 +31,7 @@ typedef void (^CloseBlock)(void);
 
 @property(nonatomic,assign) id<CLKeyboardViewDelegate> delegate;
 
-@property(nonatomic,assign)CloseBlock _closeBlock;
+@property(nonatomic,assign)CloseBlock closeBlock;
 
 @end
 

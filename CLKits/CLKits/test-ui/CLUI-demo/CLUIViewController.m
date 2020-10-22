@@ -46,7 +46,7 @@
                  @"hideCL",
                  @"showSV",
                  @"hideSV",
-                 @"HUB",
+                 @"show",
                  @"click1",
                  @"click2",
                  @"click3",
