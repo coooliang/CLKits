@@ -9,7 +9,8 @@
 #import "CLPopingViewController.h"
 #import <POP.h>
 #import "UIView+CLPopAnimation.h"
-#import "UIViewCLFaster.h"
+//#import "UIViewCLFaster.h"
+#import "UIButton+CL.h"
 
 @interface CLPopingViewController ()
 
@@ -32,7 +33,8 @@
     [super viewDidLoad];
     self.title = @"Demo";
     
-    self.button = [self createButton:CGRectMake(50, 150, 150, 40) title:@"shake"];
+    self.button = [UIButton cl_button:@"shake"];
+    self.button.frame = CGRectMake(50, 150, 150, 40);
     [self.button addTarget:self action:@selector(shake) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.button];
     
@@ -80,10 +82,8 @@
 }
 
 -(UIButton *)createButton:(CGRect)frame title:(NSString *)title{
-    UIButton *button = [[UIButton alloc]initWithFrame:frame];
-    [button setNormalTitle:title color:[UIColor blackColor]];
-    [button setBorder:1 color:[UIColor blackColor]];
-    [self.view addSubview:button];
+    UIButton *button = [UIButton cl_button:title];
+    button.frame = frame;
     return button;
 }
 
