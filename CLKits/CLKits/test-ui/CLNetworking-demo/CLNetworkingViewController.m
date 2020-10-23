@@ -7,7 +7,6 @@
 //
 
 #import "CLNetworkingViewController.h"
-#import "UIViewCLFaster.h"
 #import "CLNetworking.h"
 #import "EnvConstant.h"
 

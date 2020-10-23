@@ -10,7 +10,6 @@
 
 #import "EnvConstant.h"
 
-#import "UIViewCLFaster.h"
 #import "CLHUD.h"
 #import "CLAlertView.h"
 #import "CLActionSheet.h"
