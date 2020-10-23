@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CLKits"
-  s.version      = "1.0.6"
+  s.version      = "1.0.7"
   s.summary      = "CLKits framework just save your time. deployment target ios 8.0"
   s.homepage     = "https://github.com/coooliang/CLKits"
   s.license      = { :type => "MIT", :file => "LICENSE" }
