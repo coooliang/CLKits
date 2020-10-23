@@ -10,6 +10,18 @@
 
 @implementation UITextField (CL)
 
++(UITextField *)cl_textField{
+    UITextField *field = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
+    field.backgroundColor = [UIColor whiteColor];
+    field.textColor = [UIColor blackColor];
+    field.font = [UIFont systemFontOfSize:14];
+    field.layer.cornerRadius = 5;
+    field.layer.borderColor = [UIColor grayColor].CGColor;
+    field.layer.borderWidth = 1;
+    field.layer.masksToBounds = true;
+    return field;
+}
+
 -(void)cl_placeholder:(NSString *)placeholder{
     [self cl_placeholder:placeholder color:nil];
 }

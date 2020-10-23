@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'All'
 
   s.subspec 'All' do |all|
-    all.source_files = 'Sources/UIKit+CL/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/CLPopAnimation/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}','Sources/CLUI/CLHUD/**/*.{h,m}','Sources/CLUI/CLAlertView/**/*.{h,m}','Sources/CLUI/CLActionSheet/**/*.{h,m}','Sources/CLUI/CLQRCode/**/*.{h,m}'
+    all.source_files = 'Sources/UIKit+CL/*.{h,m}','Sources/CLNetworking/**/*.{h,m}','Sources/JKDBModel/**/*.{h,m}','Sources/CLUI/CLHUD/**/*.{h,m}','Sources/CLUI/CLAlertView/**/*.{h,m}','Sources/CLUI/CLActionSheet/**/*.{h,m}','Sources/CLUI/CLQRCode/**/*.{h,m}'
     all.dependency "AFNetworking", "~> 3.2.1"
     all.dependency "pop", "~> 1.0.12"
     all.dependency "FMDB", "~> 2.7.5"
@@ -40,12 +40,6 @@ Pod::Spec.new do |s|
     ss.source_files = 'Sources/CLNetworking/**/*.{h,m}'
     ss.dependency "AFNetworking", "~> 3.2.1"
     ss.ios.frameworks = 'AVFoundation'
-  end
-
-  s.subspec 'CLPopAnimation' do |ss|
-    ss.source_files = 'Sources/CLPopAnimation/**/*.{h,m}'
-    ss.dependency "pop", "~> 1.0.12"
-    ss.ios.frameworks = 'UIKit'
   end
 
   s.subspec 'JKDBModel' do |ss|

@@ -10,6 +10,7 @@
 
 
 @interface UITextField (CL)
++(UITextField *)cl_textField;
 
 -(void)cl_placeholder:(NSString *)placeholder;
 -(void)cl_placeholder:(NSString *)placeholder color:(UIColor *)color;
