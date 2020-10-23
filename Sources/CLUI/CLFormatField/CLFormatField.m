@@ -10,9 +10,11 @@
 #import "NSString+Separate.h"
 #import "UITextField+ExtentRange.h"
 #import "NSString+Helper.h"
+#import "EnvConstant.h"
+#import "JKSizeFix.h"
+#import "UITextField+CL.h"
 
 #define FIELD_TEXT_COLOR ([UIColor colorWithRed:42/255.0 green:42/255.0 blue:42/255.0 alpha:1/1.0])
-//#define FIELD_BG_COLOR ([UIColor colorWithRed:240/255.0 green:243/255.0 blue:246/255.0 alpha:1])
 #define FIELD_BG_COLOR ([UIColor whiteColor])
 @interface CLFormatField()<UITextFieldDelegate>
 
@@ -51,12 +53,6 @@
     [self addSubview:_textField];
     
     self.backgroundColor = FIELD_BG_COLOR;
-//    self.layer.cornerRadius = 5;
-//    self.layer.borderWidth = (1/[UIScreen mainScreen].scale);
-//    self.layer.borderColor = ([UIColor colorWithRed:0.871 green:0.871 blue:0.871 alpha:1]).CGColor;
-//    self.layer.masksToBounds = true;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFiledValueDidChanged) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 #pragma mark - initWithFrame
@@ -87,8 +83,7 @@
 
 -(void)setPlaceHolder:(NSString *)placeHolder{
     _placeHolder = placeHolder;
-    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:placeHolder attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:136/255.0 green:136/255.0 blue:136/255.0 alpha:1/1.0],NSFontAttributeName:[UIFont fontWithName:@"PingFangSC-Regular" size:18]}];
-    _textField.attributedPlaceholder = attrString;
+    [_textField cl_placeholder:placeHolder color:[UIColor colorWithRed:136/255.0 green:136/255.0 blue:136/255.0 alpha:1/1.0] font:[UIFont fontWithName:@"PingFangSC-Regular" size:18]];
 }
 
 -(NSString *)getPlaceHolder{
@@ -97,6 +92,8 @@
 
 -(void)setText:(NSString *)text{
     _textField.text = text;
+    [self formatText];
+    [self textFiledValueDidChanged];
 }
 -(NSString *)text{
     return _textField.text;
@@ -117,32 +114,67 @@
     return _textField.enabled;
 }
 
+-(UIToolbar*)createToolbar {
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 35)];
+    toolBar.barTintColor = [UIColor colorWithRed:0.980 green:0.980 blue:0.980 alpha:1.000];
+    UILabel *kl = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-60, 0, 120, 35)];
+    kl.backgroundColor = [UIColor clearColor];
+    kl.textAlignment = NSTextAlignmentCenter;
+    kl.font = [UIFont systemFontOfSize:14];
+    kl.text = @"安全键盘";
+    kl.textColor = [UIColor blackColor];
+    [toolBar addSubview:kl];
+    
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(kl.frame.origin.x - 15, (35-15)/2,13, 15)];
+    iv.backgroundColor = [UIColor clearColor];
+    iv.image = [UIImage imageNamed:@"keyboardIcon_v5"];
+    [toolBar addSubview:iv];
+
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIButton *doneView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
+    [doneView setBackgroundColor:[UIColor clearColor]];
+    [doneView.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [doneView.titleLabel setFont:[UIFont systemFontOfSize:16]];
+    [doneView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [doneView setTitle:@"完成" forState:UIControlStateNormal];
+    [doneView setImage:[UIImage imageNamed:@"keyboard_done"] forState:UIControlStateNormal];
+    [doneView addTarget:self action:@selector(textFieldDone) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithCustomView:doneView];
+    toolBar.items = @[space,done];
+    return toolBar;
+}
+
 - (void)setFieldType:(CLFormatFieldType)fieldType{
     _fieldType = fieldType;
     switch (fieldType) {
         case CLFormatFieldTypeMobilePhone:{
             _textField.keyboardType = UIKeyboardTypeNumberPad;
             _maxTextLength = 11;
+            _textField.inputAccessoryView = [self createToolbar];
         }
             break;
         case CLFormatFieldTypeBankCard:{
             _textField.keyboardType = UIKeyboardTypeNumberPad;
             _maxTextLength = 19;
+            _textField.inputAccessoryView = [self createToolbar];
         }
             break;
         case CLFormatFieldTypeIDCard:{
             _textField.keyboardType = UIKeyboardTypeNumberPad;
             _maxTextLength = 18;
+            _textField.inputAccessoryView = [self createToolbar];
         }
             break;
         case CLFormatFieldTypeSMS:{
             _textField.keyboardType = UIKeyboardTypeNumberPad;
             _maxTextLength = 6;
+            _textField.inputAccessoryView = [self createToolbar];
         }
             break;
         case CLFormatFieldTypeNumber:{
-            _textField.keyboardType = UIKeyboardTypeNumberPad;
+            _textField.keyboardType = UIKeyboardTypeDecimalPad;
             _maxTextLength = 64;
+            _textField.inputAccessoryView = [self createToolbar];
         }
             break;
         default:{
@@ -151,6 +183,7 @@
         }
             break;
     }
+    _textField.returnKeyType = UIReturnKeyDone;
 }
 
 -(void)setSecureTextEntry:(BOOL)secure{
@@ -165,7 +198,6 @@
 -(void)setInputView:(UIView *)view{
     _inputView = view;
     _textField.inputView = view;
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 -(NSRange)selectedRange{
@@ -236,6 +268,10 @@
     return true;
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if(self.fieldType == CLFormatFieldTypeDef){
+        [self textFiledValueDidChanged];
+        return YES;
+    }
     NSString *text = textField.text;
     if ([@""isEqualToString:string] && range.length > 0) {//删除事件
         NSRange selectedRange = [textField selectedRange];
@@ -318,6 +354,7 @@
         }
     }
     [self formatText];
+    [self textFiledValueDidChanged];//复制粘贴也要触发
     
     if([self checkFormat] == false){
         if (_delegate) {
@@ -329,11 +366,6 @@
 }
 
 -(void)customPressKey:(NSString *)key selectedRange:(NSRange)range type:(CLFormatFieldKeyType)type{
-    if (_delegate) {
-        if ([_delegate respondsToSelector:@selector(CLFormatFieldTextValueDidChanged:)]) {
-            [_delegate CLFormatFieldTextValueDidChanged:self];
-        }
-    }
     NSString *text = _textField.text;
     if (type == CLFormatFieldKeyTypeDelete) {//删除事件
         if (range.location == 0) {
@@ -365,7 +397,43 @@
         [string insertString:key atIndex:range.location];
         _textField.text = string;
         [self formatText];
+        //移动光标
+        if (text.length == range.location) {//1.当前光标最后时
+            NSString *afterString = _textField.text;
+            NSInteger upLength = afterString.length - text.length;//前后长度增加数量
+            [_textField setSelectedRange:NSMakeRange(range.location+upLength,0)];
+        }else{
+            //2.当前光标中间时，且后方不是空格时
+            BOOL isBeforeSpace = false;
+            if (text.length > range.location) {
+                NSString *s = [text substringWithRange:NSMakeRange(range.location, 1)];
+                if ([@" "isEqualToString:s]) {
+                    isBeforeSpace = true;
+                }
+            }
+            if (isBeforeSpace) {
+                [_textField setSelectedRange:NSMakeRange(range.location+2,0)];
+            }else{
+                //3.当前光标中间时，后方是空格时光标增加两位
+                [_textField setSelectedRange:NSMakeRange(range.location+1,0)];
+            }
+        }
+    }
+    if (_delegate) {
+        if ([_delegate respondsToSelector:@selector(CLFormatFieldTextValueDidChanged:)]) {
+            [_delegate CLFormatFieldTextValueDidChanged:self];
+        }
     }
 }
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField{
+    self.text = @"";
+    return true;
+}
+
+-(void)textFieldDone{
+    [UIApplication.sharedApplication.keyWindow endEditing:true];
+}
+
 
 @end

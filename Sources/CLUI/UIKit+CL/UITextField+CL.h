@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (CL)
 
-@end
+-(void)cl_placeholder:(NSString *)placeholder;
+-(void)cl_placeholder:(NSString *)placeholder color:(UIColor *)color;
+-(void)cl_placeholder:(NSString *)placeholder color:(UIColor *)color font:(UIFont *)font;
 
-NS_ASSUME_NONNULL_END
+@end
