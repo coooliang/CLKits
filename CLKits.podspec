@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIKit+CL' do |ss|
     ss.source_files = 'Sources/CLUI/UIKit+CL/*.{h,m}'
+    ss.dependency "pop", "~> 1.0.12"
     ss.ios.frameworks = 'UIKit'
   end
 
