@@ -12,13 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Helper)
 
-+ (BOOL)isMobilePhone:(NSString *)phone;
-+ (BOOL)isIDCard:(NSString *)idcard;
-+ (BOOL)isBankCard:(NSString *)bankcard;
-+ (BOOL)isSMS:(NSString *)sms;
-
-+ (BOOL)isEmail:(NSString *)email;
-+ (BOOL)isURL:(NSString *)url;
+-(BOOL)cl_isMobile;
+-(BOOL)cl_isIDCard;
+-(BOOL)cl_isBankCard;
+-(BOOL)cl_isSMS;
+-(BOOL)cl_isEmail;
+-(BOOL)cl_isURL;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,7 +12,7 @@
 @implementation NSString (Separate)
 
 #pragma mark - 对字符串进行分析
--(NSString *)separate:(NSString *)type{
+-(NSString *)cl_separate:(NSString *)type{
     if([@""isEqualToString:safeString(self)]){
         return @"";
     }
@@ -53,7 +53,7 @@
 }
 
 //格式化银行卡为字典，仅用于b2c扫码显示
--(NSMutableDictionary *)formatQRCodeBankName:(UIFont *)font labelWidth:(float)labelWidth{
+-(NSMutableDictionary *)cl_formatQRCodeBankName:(UIFont *)font labelWidth:(float)labelWidth{
     NSString *lastNumber = @"";
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:3];
     [dict setObject:[NSString stringWithFormat:@"%f",labelWidth] forKey:@"width"];
@@ -78,7 +78,7 @@
     return dict;
 }
 
--(NSString *)formatTelPhone{
+-(NSString *)cl_formatTelPhone{
     if (self.length == 11) {
         NSString *firstNumber = [self substringToIndex:3];
         NSString *lastNumber = [self substringWithRange:NSMakeRange(7, 4)];

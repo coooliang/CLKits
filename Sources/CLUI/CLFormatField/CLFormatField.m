@@ -239,19 +239,19 @@
     text = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
     switch (_fieldType) {
         case CLFormatFieldTypeMobilePhone:{
-            return [NSString isMobilePhone:text];
+            return [text cl_isMobile];
         }
             break;
         case CLFormatFieldTypeBankCard:{
-            return [NSString isBankCard:text];
+            return [text cl_isBankCard];
         }
             break;
         case CLFormatFieldTypeIDCard:{
-            return [NSString isIDCard:text];
+            return [text cl_isIDCard];
         }
             break;
         case CLFormatFieldTypeSMS:{
-            return [NSString isSMS:text];
+            return [text cl_isSMS];
         }
             break;
         default:

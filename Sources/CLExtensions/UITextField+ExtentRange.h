@@ -10,7 +10,7 @@
 
 @interface UITextField (ExtentRange)
 
-- (NSRange) selectedRange;
-- (void) setSelectedRange:(NSRange)range;
+- (NSRange)selectedRange;
+- (void)setSelectedRange:(NSRange)range;
 
 @end

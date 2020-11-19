@@ -13,33 +13,31 @@
 /**
  判断字符串是否为手机号
  */
-+ (BOOL)isMobilePhone:(NSString *)phone{
-    phone = [self clearSpaces:phone];
+-(BOOL)cl_isMobile{
+    NSString *mobile = [self clearSpaces];
     NSString *regexnumber = @"^1[0-9]{10}$";
     NSPredicate *numbertest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",regexnumber];
-    return [numbertest evaluateWithObject:phone];
+    return [numbertest evaluateWithObject:mobile];
 }
 
 /**
  身份证号码的匹配
  */
-+ (BOOL)isIDCard:(NSString *)idcard{
-    idcard = [self clearSpaces:idcard];
+-(BOOL)cl_isIDCard{
+    NSString *idCard = [self clearSpaces];
     BOOL flag;
-    if (idcard.length <= 0){
+    if (self.length <= 0){
         flag = NO;
         return flag;
     }
     
     NSString *regex2 = @"^(^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$)|(^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])((\\d{4})|\\d{3}[Xx])$)$";
     NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
-    flag = [identityCardPredicate evaluateWithObject:idcard];
-    
+    flag = [identityCardPredicate evaluateWithObject:idCard];
     
     //如果通过该验证，说明身份证格式正确，但准确性还需计算
-    if(flag)
-    {
-        if(idcard.length==18)
+    if(flag){
+        if(idCard.length==18)
         {
             //将前17位加权因子保存在数组里
             NSArray * idCardWiArray = @[@"7", @"9", @"10", @"5", @"8", @"4", @"2", @"1", @"6", @"3", @"7", @"9", @"10", @"5", @"8", @"4", @"2"];
@@ -52,7 +50,7 @@
             NSInteger idCardWiSum = 0;
             for(int i = 0;i < 17;i++)
             {
-                NSInteger subStrIndex = [[idcard substringWithRange:NSMakeRange(i, 1)] integerValue];
+                NSInteger subStrIndex = [[idCard substringWithRange:NSMakeRange(i, 1)] integerValue];
                 NSInteger idCardWiIndex = [[idCardWiArray objectAtIndex:i] integerValue];
                 
                 idCardWiSum+= subStrIndex * idCardWiIndex;
@@ -63,7 +61,7 @@
             NSInteger idCardMod=idCardWiSum%11;
             
             //得到最后一位身份证号码
-            NSString * idCardLast= [idcard substringWithRange:NSMakeRange(17, 1)];
+            NSString * idCardLast= [idCard substringWithRange:NSMakeRange(17, 1)];
             
             //如果等于2，则说明校验码是10，身份证号码最后一位应该是X
             if(idCardMod==2)
@@ -105,22 +103,22 @@
 /**
  银行卡号的匹配
  */
-+ (BOOL)isBankCard:(NSString *)bankcard{
-    bankcard = [self clearSpaces:bankcard];
-    NSInteger card = [bankcard integerValue];
+-(BOOL)cl_isBankCard{
+    NSString *bankCard = [self clearSpaces];
+    NSInteger card = [self integerValue];
     if (card > 0){
-        char bit = [self getBankCardCheckCode:bankcard];
+        char bit = [self getBankCardCheckCode:bankCard];
         if (bit == 'N') {
             return NO;
         }
-        return [bankcard UTF8String][[bankcard length]-1] == bit;
+        return [self UTF8String][[bankCard length]-1] == bit;
     }else{
         return NO;
     }
 }
 
-+ (BOOL)isSMS:(NSString *)sms{
-    sms = [self clearSpaces:sms];
+-(BOOL)cl_isSMS{
+    NSString *sms = [self clearSpaces];
     NSString *regexnumber = @"^[0-9]{6}$";
     NSPredicate *numbertest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",regexnumber];
     return [numbertest evaluateWithObject:sms];
@@ -129,8 +127,8 @@
 /**
  判断字符串是否为邮箱
  */
-+ (BOOL)isEmail:(NSString *)email{
-    email = [self clearSpaces:email];
+-(BOOL)cl_isEmail{
+    NSString *email = [self clearSpaces];
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",emailRegex];
     return [emailTest evaluateWithObject:email];
@@ -140,27 +138,26 @@
 /**
  判断字符串是否为标准URL
  */
-+ (BOOL)isURL:(NSString *)url{
-    url = [self clearSpaces:url];
+-(BOOL)cl_isURL{
+    NSString *url = [self clearSpaces];
     NSString *urlRegex = @"http(s)?://([\\w-]+\\.)+(/[\\w-./?%&=]*)?";
     NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",urlRegex];
     return [urlTest evaluateWithObject:url];
 }
 
-+(BOOL)isName:(NSString *)name{
+-(BOOL)cl_isName:(NSString *)name{
     NSString *userRegex = @"^[a-zA-Z\u4e00-\u9fa5\u00b7]+$";
     NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userRegex];
     BOOL isUserMatch = [userPredicate evaluateWithObject:name];
     return isUserMatch;
 }
 
-#pragma mark -
-+(NSString *)clearSpaces:(NSString *)text{
-    text = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    return text;
+#pragma mark - private methods
+-(NSString *)clearSpaces{
+    return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 
-+ (char)getBankCardCheckCode:(NSString *)string {
+-(char)getBankCardCheckCode:(NSString *)string {
     const char *cvalue = [string UTF8String];
     int len = (int)strlen(cvalue);
     for (int i = 0; i < len; i++) {
@@ -186,4 +183,5 @@ BOOL isNumber (char ch){
     }
     return TRUE;
 }
+
 @end

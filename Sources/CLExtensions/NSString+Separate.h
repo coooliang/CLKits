@@ -15,10 +15,10 @@
 
 @interface NSString (Separate)
 
--(NSString *)separate:(NSString *)type;
+-(NSString *)cl_separate:(NSString *)type;
 
--(NSMutableDictionary *)formatQRCodeBankName:(UIFont *)font labelWidth:(float)labelWidth;
+-(NSMutableDictionary *)cl_formatQRCodeBankName:(UIFont *)font labelWidth:(float)labelWidth;
 
--(NSString *)formatTelPhone;
+-(NSString *)cl_formatTelPhone;
 
 @end

@@ -10,8 +10,7 @@
 
 @implementation UITextField (ExtentRange)
 
-- (NSRange) selectedRange
-{
+-(NSRange) selectedRange{
     UITextPosition* beginning = self.beginningOfDocument;
     
     UITextRange* selectedRange = self.selectedTextRange;
@@ -24,8 +23,7 @@
     return NSMakeRange(location, length);
 }
 
-- (void) setSelectedRange:(NSRange) range
-{
+-(void) setSelectedRange:(NSRange) range{
     UITextPosition* beginning = self.beginningOfDocument;
     
     UITextPosition* startPosition = [self positionFromPosition:beginning offset:range.location];
