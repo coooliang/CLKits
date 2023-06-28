@@ -1,6 +1,0 @@
-framework module TTLoadTime {
-  umbrella header "TTLoadTime.h"
-
-  export *
-  module * { export * }
-}
