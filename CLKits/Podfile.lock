@@ -27,6 +27,7 @@ PODS:
   - pop (1.0.12)
   - SVProgressHUD (2.1.2)
   - TTAnalyzeLoadTime (1.0.5)
+  - YYCache (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
@@ -35,24 +36,27 @@ DEPENDENCIES:
   - pop (~> 1.0.12)
   - SVProgressHUD (~> 2.1.2)
   - TTAnalyzeLoadTime (~> 1.0.5)
+  - YYCache (~> 1.0.4)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - FMDB
     - FTIndicator
     - pop
     - SVProgressHUD
     - TTAnalyzeLoadTime
+    - YYCache
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FTIndicator: f7f071fd159e5befa1d040a9ef2e3ab53fa9322c
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TTAnalyzeLoadTime: d22374b69fbf1e792c9be07482a63a7150c23f5c
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: ee4abdcac838d0c65a70c4a7d08839f8fa6d52ce
+PODFILE CHECKSUM: 324b064e8f86435f54c993584a8506e24e97fcdf
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.11.3

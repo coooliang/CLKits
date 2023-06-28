@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.arr = @[@"CLPopingViewController",@"CLNetworkingViewController",@"CLDBViewController",@"CLUIViewController"];
+    self.arr = @[@"CLPopingViewController",@"CLNetworkingViewController",@"CLDBViewController",@"CLUIViewController",@"YYUserDefaultsViewController"];
 }
 
 

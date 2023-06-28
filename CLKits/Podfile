@@ -13,6 +13,8 @@ def pods
     pod 'FTIndicator', '~> 1.2.9'
     
     pod 'TTAnalyzeLoadTime', '~> 1.0.5'
+    
+    pod 'YYCache', '~> 1.0.4'
 end
 
 target 'CLKits' do

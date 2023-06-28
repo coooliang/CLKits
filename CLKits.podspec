@@ -70,6 +70,13 @@ Pod::Spec.new do |s|
     ss.source_files = 'Sources/CLUI/CLQRCode/**/*.{h,m}'
     ss.ios.frameworks = 'UIKit'
   end
+
+  s.subspec 'YYUserDefaults' do |ss|
+    ss.source_files = 'Sources/YYUserDefaults/**/*.{h,m}'
+    ss.dependency "FMDB", "~> 2.7.5"
+    ss.dependency "YYCache", "~> 1.0.4"
+    ss.ios.frameworks = 'UIKit'
+  end
 end
 
 # https://blog.csdn.net/coooliang/article/details/84869937

@@ -218,15 +218,15 @@
     text = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
     switch (_fieldType) {
         case CLFormatFieldTypeMobilePhone:{
-            _textField.text = [text separate:NSSTRING_SEPARATE_PHONE];
+            _textField.text = [text cl_separate:NSSTRING_SEPARATE_PHONE];
         }
             break;
         case CLFormatFieldTypeBankCard:{
-            _textField.text = [text separate:NSSTRING_SEPARATE_CARD];
+            _textField.text = [text cl_separate:NSSTRING_SEPARATE_CARD];
         }
             break;
         case CLFormatFieldTypeIDCard:{
-            _textField.text = [text separate:NSSTRING_SEPARATE_ID];
+            _textField.text = [text cl_separate:NSSTRING_SEPARATE_ID];
         }
             break;
             

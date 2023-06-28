@@ -26,7 +26,6 @@
     [self.window setRootViewController:root];
     [self.window makeKeyAndVisible];
     
-    
     printLoadCostsInfo();
     
     return YES;

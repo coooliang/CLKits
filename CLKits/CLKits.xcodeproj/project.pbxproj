@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,6 +56,8 @@
 		B4C1E49D254270BF00D6E5E8 /* UITextField+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C1E49C254270BF00D6E5E8 /* UITextField+CL.m */; };
 		B4C1E4A02542713A00D6E5E8 /* UIView+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C1E49F2542713A00D6E5E8 /* UIView+CL.m */; };
 		B4C1E4A3254272DD00D6E5E8 /* UILabel+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C1E4A2254272DD00D6E5E8 /* UILabel+CL.m */; };
+		B4C5837029C00785003E0817 /* YYUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C5836F29C00785003E0817 /* YYUserDefaults.m */; };
+		B4C5837429C00F34003E0817 /* YYUserDefaultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C5837329C00F34003E0817 /* YYUserDefaultsViewController.m */; };
 		B4C677D022266F6500E2B6E0 /* CLQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C677CF22266F6500E2B6E0 /* CLQRCode.m */; };
 		BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B722034BE600C9D7AE /* JKDBHelper.m */; };
 		BA15E2BB22034BE700C9D7AE /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E2B822034BE600C9D7AE /* JKDBModel.m */; };
@@ -151,6 +153,10 @@
 		B4C1E49F2542713A00D6E5E8 /* UIView+CL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CL.m"; sourceTree = "<group>"; };
 		B4C1E4A1254272DD00D6E5E8 /* UILabel+CL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+CL.h"; sourceTree = "<group>"; };
 		B4C1E4A2254272DD00D6E5E8 /* UILabel+CL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CL.m"; sourceTree = "<group>"; };
+		B4C5836E29C00785003E0817 /* YYUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYUserDefaults.h; sourceTree = "<group>"; };
+		B4C5836F29C00785003E0817 /* YYUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYUserDefaults.m; sourceTree = "<group>"; };
+		B4C5837229C00F34003E0817 /* YYUserDefaultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYUserDefaultsViewController.h; sourceTree = "<group>"; };
+		B4C5837329C00F34003E0817 /* YYUserDefaultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYUserDefaultsViewController.m; sourceTree = "<group>"; };
 		B4C677CE22266F6500E2B6E0 /* CLQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLQRCode.h; sourceTree = "<group>"; };
 		B4C677CF22266F6500E2B6E0 /* CLQRCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLQRCode.m; sourceTree = "<group>"; };
 		BA15E2B622034BE600C9D7AE /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
@@ -250,6 +256,7 @@
 		9024A84721C1FAB900475C50 /* test-ui */ = {
 			isa = PBXGroup;
 			children = (
+				B4C5837129C00F17003E0817 /* YYUserDefaults-demo */,
 				B479B244247B6A88008456A1 /* UITestBaseViewController */,
 				04BB729521F9900C009E7E9C /* CLDB-demo */,
 				BA850C0121F89D84005248B5 /* CLUI-demo */,
@@ -479,6 +486,24 @@
 			path = "UIKit+CL";
 			sourceTree = "<group>";
 		};
+		B4C5836D29C0076F003E0817 /* YYUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				B4C5836E29C00785003E0817 /* YYUserDefaults.h */,
+				B4C5836F29C00785003E0817 /* YYUserDefaults.m */,
+			);
+			path = YYUserDefaults;
+			sourceTree = "<group>";
+		};
+		B4C5837129C00F17003E0817 /* YYUserDefaults-demo */ = {
+			isa = PBXGroup;
+			children = (
+				B4C5837229C00F34003E0817 /* YYUserDefaultsViewController.h */,
+				B4C5837329C00F34003E0817 /* YYUserDefaultsViewController.m */,
+			);
+			path = "YYUserDefaults-demo";
+			sourceTree = "<group>";
+		};
 		B4C677CD22266EF500E2B6E0 /* CLQRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +544,7 @@
 		BA850C0521F89DDD005248B5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B4C5836D29C0076F003E0817 /* YYUserDefaults */,
 				B479B24C247BAEA8008456A1 /* CLExtensions */,
 				BA850C0E21F89DDD005248B5 /* CLNetworking */,
 				B41C7F9C222F98CB008C2CDB /* CLTest */,
@@ -658,18 +684,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-resources.sh",
-				"${PODS_ROOT}/FTIndicator/FTIndicator/FTProgressIndicator/FTProgressIndicator.bundle",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FTProgressIndicator.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -704,16 +723,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-frameworks.sh",
-				"${PODS_ROOT}/TTAnalyzeLoadTime/Products/TTLoadTime.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTLoadTime.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-CLKits/Pods-CLKits-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -744,6 +758,7 @@
 				B479B256247BAF3B008456A1 /* UITextField+ExtentRange.m in Sources */,
 				B479B278247BB69D008456A1 /* NSString+Utils.m in Sources */,
 				B413A58C25217F7A0075149E /* CLKeyboardModel.m in Sources */,
+				B4C5837429C00F34003E0817 /* YYUserDefaultsViewController.m in Sources */,
 				B479B262247BB4BF008456A1 /* CLCheckBox.m in Sources */,
 				B47324D0221BA318000361CA /* CLActivityIndicatorView.m in Sources */,
 				B479B25E247BB39E008456A1 /* CLImageButton.m in Sources */,
@@ -761,6 +776,7 @@
 				BA850C1F21F89DDD005248B5 /* UIView+CLPopAnimation.m in Sources */,
 				B479B243247B6A72008456A1 /* UITestBaseViewController.m in Sources */,
 				B413A596252188100075149E /* AmountScrollView.m in Sources */,
+				B4C5837029C00785003E0817 /* YYUserDefaults.m in Sources */,
 				BA15E2BA22034BE600C9D7AE /* JKDBHelper.m in Sources */,
 				B413A58F252185A10075149E /* CLKeyboardButton.m in Sources */,
 				B479B249247BAE90008456A1 /* CLFormatField.m in Sources */,
