@@ -1,0 +1,23 @@
+{
+  "name": "CLUI",
+  "version": "0.1.0",
+  "summary": "A short description of Assemma.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://gitee.com/coooliang/CLKits",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "chenliang": "lion"
+  },
+  "source": {
+    "git": "https://github.com/CocoaPods/Specs.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "static_framework": true,
+  "source_files": "CLKits/Sources/CLUI/**/*"
+}

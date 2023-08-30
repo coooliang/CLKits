@@ -5,10 +5,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def pods
     #pod 'CLKits', :path => '/Users/lion/CLKits/Sources'
-    pod 'CLKits/CLNetworking', :path => '/Users/lion/CLKits/Sources/CLNetworking'
-    pod 'CLKits/CLExtensions', :path => '/Users/lion/CLKits/Sources/CLExtensions'
-    pod 'CLKits/JKDBModel', :path => '/Users/lion/CLKits/Sources/JKDBModel'
-    pod 'CLKits/CLHUD', :path => '/Users/lion/CLKits/Sources/CLUI'
+#    pod 'CLKits/CLNetworking', :path => '/Users/lion/CLKits/Sources/CLNetworking'
+#    pod 'CLKits/CLExtensions', :path => '/Users/lion/CLKits/Sources/CLExtensions'
+#    pod 'CLKits/JKDBModel', :path => '/Users/lion/CLKits/Sources/JKDBModel'
+    pod 'CLUI', :path => '/Users/lion/CLKits/Sources/CLUI'
 end
 
 target 'CLKitsIncludeDemo' do
